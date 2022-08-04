@@ -1,13 +1,219 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Bambino-Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bambino-Black"), url("./fonts/Bambino Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Bambino-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bambino-Bold"), url("./fonts/Bambino\ Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Bambino-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Bambino-Regular"), url("./fonts/Bambino.woff") format("woff");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  --black: "Bambino-Black";
+  --bold: "Bambino-Bold";
+  --regular: "Bambino-Regular";
+  --dark-yellow: #d8a448;
+  --medium-yellow: #fed481;
+  --light-yellow: #fff0c0;
+  --dark-red: #e05151;
+  --medium-red: #fd8180;
+  --dark-green: #169986;
+  --medium-green: #3ccdbf;
+  --dark-blue: #256e93;
+  --nav-width: 100vw;
+  --nav-height: 100px;
+  --nav-content-padding: 2rem;
+  --link-transition: 0.2s all ease-in;
+  --button-transition: 0.1s all ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Bambino-Regular";
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-center {
+  width: 80%;
+  margin: auto;
+}
+
+/*************** Navbar ***************/
+nav {
+  background: #b0acac;
+  width: var(--nav-width);
+  height: var(--nav-height);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-container {
+  background-color: #ffffff;
+  opacity: 70%;
+}
+
+.navbar {
+  height: var(--nav-height);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: "Bambino-Bold";
+}
+
+.navbar .left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link {
+  color: var(--dark-red);
+  font-size: 1.5rem;
+  transition: var(--link-transition);
+}
+
+.link:hover {
+  color: var(--dark-green);
+}
+
+.navbar .middle img {
+  width: 7%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.navbar .right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon {
+  color: var(--dark-red);
+  font-size: 2.2rem;
+  transition: var(--link-transition);
+  cursor: pointer;
+}
+.icon:hover {
+  color: var(--dark-green);
+}
+/*************** End Navbar ***************/
+
+/*************** Header ***************/
+
+header {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-sideline-img-1 {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.header-sideline-img-2 {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.image-container {
+  width: 100vw;
+  height: 100vh;
+  z-index: -4;
+  background: black;
+}
+
+.header-img {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  object-fit: cover;
+  opacity: 80%;
+}
+
+.header-info {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+.header-info h1 {
+  font-size: 7rem;
+}
+
+.header-info h2 {
+  margin-top: 2rem;
+  font-size: 3.5rem;
+}
+
+.header-btn {
+  background: var(--dark-red);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: var(--button-transition);
+}
+
+.header-btn:hover {
+  background: var(--dark-green);
+}
+/*************** End Header ***************/
+
+.Introduction {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.intro-sideline-img-1 {
+  position: absolute;
+  top: -0.1%;
+  left: 0;
+  height: 100.1vh;
+  z-index: 5;
+}
+
+.intro-sideline-img-2 {
+  position: absolute;
+  top: -0.1%;
+  right: 0;
+  height: 100.1vh;
+  z-index: 5;
 }
