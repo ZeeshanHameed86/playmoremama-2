@@ -163,7 +163,7 @@ header {
 .header-info {
   position: absolute;
   top: 60%;
-  left: 50%;
+  left: 49%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
@@ -177,6 +177,17 @@ header {
 .header-info h2 {
   margin-top: 2rem;
   font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.header-container h3 {
+  color: white;
+  position: absolute;
+  left: 12%;
+  bottom: 2%;
+  z-index: 5;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
 .header-btn {
@@ -194,9 +205,22 @@ header {
 .header-btn:hover {
   background: var(--dark-green);
 }
+
+.rainbow-img-container {
+  position: absolute;
+  right: 0;
+  bottom: -0.8%;
+  z-index: 5;
+  width: 900px;
+}
+
+.rainbow-img {
+  width: 100%;
+}
 /*************** End Header ***************/
 
-.Introduction {
+/*************** Intro ***************/
+.intro {
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -217,3 +241,55 @@ header {
   height: 100.1vh;
   z-index: 5;
 }
+
+.intro-details {
+  padding-top: 1rem;
+}
+
+.intro-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.intro-subtitle {
+  margin-top: -1.5rem;
+}
+
+.intro-layout {
+  padding-top: 1rem;
+}
+
+.intro-layout img {
+  width: 12%;
+}
+
+.intro-layout .img-1 {
+  width: 14%;
+}
+
+.intro-main-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-detail-text {
+  padding-bottom: 3rem;
+  width: 50%;
+}
+
+.main-detail-text h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.main-detail-text div {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main-detail-text p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+/*************** End Intro ***************/
