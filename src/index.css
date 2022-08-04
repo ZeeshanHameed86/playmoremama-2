@@ -293,3 +293,38 @@ header {
   text-align: center;
 }
 /*************** End Intro ***************/
+
+@media screen and (max-width: 1600px) {
+  .main-detail-text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .main-detail-text p {
+    font-size: 1rem;
+  }
+  .main-detail-text div {
+    width: 90%;
+  }
+  .intro-layout img {
+    width: 11%;
+  }
+
+  .intro-layout .img-1 {
+    width: 13%;
+  }
+  .header-info h1 {
+    font-size: 6rem;
+  }
+
+  .header-info h2 {
+    margin-top: 2rem;
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .header-btn {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+}
