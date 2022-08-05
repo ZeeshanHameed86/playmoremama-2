@@ -196,7 +196,7 @@ header {
   border: none;
   font-size: 2rem;
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   cursor: pointer;
   position: relative;
   transition: var(--button-transition);
@@ -294,6 +294,233 @@ header {
 }
 /*************** End Intro ***************/
 
+/*************** Featured ***************/
+.featured-products {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.featured-sideline-img-1 {
+  position: absolute;
+  top: -0.1%;
+  left: 0;
+  height: 100.1vh;
+  z-index: 5;
+}
+
+.featured-sideline-img-2 {
+  position: absolute;
+  top: -0.1%;
+  right: 0;
+  height: 100.1vh;
+  z-index: 5;
+}
+
+.featured-title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.featured-img {
+  width: 40%;
+  z-index: 1;
+}
+
+.featured-image-shadow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--dark-red);
+}
+
+.featured-image-shadow-1 {
+  top: 44%;
+  left: 19%;
+  opacity: 0.8;
+  filter: blur(3px);
+}
+
+.featured-image-shadow-2 {
+  top: 44%;
+  left: 19%;
+  opacity: 0.8;
+  filter: blur(3px);
+}
+
+.featured-image-shadow-3 {
+  top: 44%;
+  left: 19%;
+  background: #d2042d;
+}
+
+.rainbow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 900px;
+}
+
+.leaf {
+  width: 20%;
+  position: absolute;
+  top: -55%;
+  left: 15%;
+}
+
+.single-featured-detail {
+  width: 55%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-featured-detail-1 {
+  top: 25%;
+  left: 43%;
+}
+
+.single-featured-detail-2 {
+  top: 52%;
+  left: 48%;
+}
+
+.single-featured-detail-3 {
+  top: 80%;
+  left: 53%;
+}
+
+.single-featured-detail p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.single-featured-detail h2 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/*************** End Featured ***************/
+
+/*************** Footer ***************/
+footer {
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-yellow);
+  position: relative;
+}
+
+footer h1:first-of-type {
+  padding-top: 1rem;
+}
+
+.footer-title {
+  text-align: center;
+}
+
+.insta-posts {
+  position: absolute;
+  width: 100vw;
+  height: 500px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--dark-blue);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  overflow: hidden;
+}
+
+.footer-img-left {
+  position: relative;
+  top: -30%;
+  left: -50%;
+}
+
+.footer-img-left img {
+  width: 200%;
+  position: absolute;
+}
+
+.footer-img-middle {
+  background: white;
+  z-index: 5;
+}
+
+.footer-img-right {
+  position: absolute;
+  right: -1%;
+}
+
+.footer-img-right img {
+  width: 100%;
+}
+
+.footer-brand {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6rem;
+  color: var(--dark-blue);
+}
+
+.footer-bottom {
+  background: #b0acac;
+  width: var(--nav-width);
+  height: var(--nav-height);
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-bottom-container {
+  background-color: #ffffff;
+  opacity: 70%;
+}
+
+.footer-bottom-main {
+  height: var(--nav-height);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: "Bambino-Bold";
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-main div {
+  font-size: 1.5rem;
+}
+
+.footer-bottom-left {
+  text-align: start;
+}
+.footer-bottom-middle {
+  text-align: center;
+}
+.footer-bottom-right {
+  text-align: end;
+}
+/*************** End Footer ***************/
+
+@media screen and (max-width: 1800px) {
+  .featured-image-shadow {
+    width: 200px;
+    height: 200px;
+  }
+  .footer-img-right {
+    right: -3%;
+  }
+  .footer-img-left {
+    top: -25%;
+  }
+}
+
 @media screen and (max-width: 1600px) {
   .main-detail-text h2 {
     font-size: 2rem;
@@ -321,8 +548,31 @@ header {
     font-size: 3rem;
     letter-spacing: 2px;
   }
-  .header-btn {
-    padding: 1.5rem 2rem;
+  .featured-image-shadow {
+    width: 185px;
+    height: 185px;
+  }
+  .single-featured-detail h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .single-featured-detail p {
+    font-size: 1rem;
+  }
+  .footer-img-left {
+    top: -20%;
+  }
+
+  .footer-img-right {
+    position: absolute;
+    right: -7%;
+  }
+
+  .footer-img-right img {
+    width: 100%;
+  }
+  .footer-brand {
+    bottom: 3%;
   }
 }
 
