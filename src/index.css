@@ -463,7 +463,18 @@ footer {
 }
 
 .footer-title-container {
-  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-title-img-container {
+  text-align: center;
+}
+
+.footer-title-container img {
+  width: 25%;
 }
 
 .footer-title {
@@ -471,7 +482,7 @@ footer {
 }
 
 .insta-posts {
-  margin-top: 3rem;
+  margin-top: 1rem;
   width: 100vw;
   height: 25vw;
   display: grid;
@@ -504,6 +515,23 @@ footer {
 
 .footer-img-right img {
   width: 100%;
+}
+
+.footer-brand-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-brand-img-container {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.footer-brand-img-container img {
+  width: 30%;
+  align-self: center;
 }
 
 .footer-brand {
