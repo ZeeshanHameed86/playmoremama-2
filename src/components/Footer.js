@@ -1,12 +1,14 @@
 import React from "react";
-import img1 from "../assets/Footer-Image-1.png";
+import img1 from "../assets/Footer-Image-1.jpg";
 import img2 from "../assets/Footer-Image-2.jpg";
 
 const Footer = () => {
   return (
     <footer>
-      <h1 className="footer-title">How Do You Sensory?</h1>
-      <h1 className="footer-title">Tag Us @play.more.mama</h1>
+      <div className="footer-title-container">
+        <h1 className="footer-title">How Do You Sensory?</h1>
+        <h1 className="footer-title">Tag Us @play.more.mama</h1>
+      </div>
       <div className="insta-posts">
         <div className="footer-img-left">
           <img src={img1} alt="" />

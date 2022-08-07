@@ -13,45 +13,44 @@ const Introduction = () => {
       <div className="intro-details">
         <h1 className="intro-title">Say Hello to Calm, Happy, and</h1>
         <h1 className="intro-title intro-subtitle">Creative Experiences</h1>
-        <div className="intro-layout">
-          <div className="intro-main-detail">
-            <img src={world} alt="" className="img-1" />
-            <div className="main-detail-text">
-              <h2>Just For You</h2>
-              <div>
-                <p>
-                  Sensory rich play is inclusive for everyone in any
-                  environment. Indoors - check. Outdoors - check. On the moon?
-                  Probably. (Just need the right training and equipment!).
-                </p>
-              </div>
+
+        <div className="single-detail">
+          <img src={world} alt="" className="img-1" />
+          <div className="main-detail-text">
+            <h2>Just For You</h2>
+            <div>
+              <p>
+                Sensory rich play is inclusive for everyone in any environment.
+                Indoors - check. Outdoors - check. On the moon? Probably. <br />{" "}
+                (Just need the right training and equipment!).
+              </p>
             </div>
           </div>
-          <div className="intro-main-detail">
-            <div className="main-detail-text">
-              <h2>And Your Brain</h2>
-              <div>
-                <p>
-                  While you play, connections on the brain's pathways are being
-                  made which lead to more complex learning tasks. Memory,
-                  language, and cognitive development improve. High-fives for
-                  learning!
-                </p>
-              </div>
+        </div>
+        <div className="single-detail">
+          <div className="main-detail-text">
+            <h2>And Your Brain</h2>
+            <div>
+              <p>
+                While you play, connections on the brain's pathways are being
+                made which lead to more complex learning tasks. Memory,
+                language, and cognitive development improve. High-fives for
+                learning!
+              </p>
             </div>
-            <img src={brain} alt="" />
           </div>
-          <div className="intro-main-detail">
-            <img src={hands} alt="" />
-            <div className="main-detail-text">
-              <h2>And Your Body</h2>
-              <div>
-                <p>
-                  A body is made up of lots of muscles that can become tense or
-                  agitated. Sensory play helps calm the body while developing
-                  fine and gross motor skills.
-                </p>
-              </div>
+          <img src={brain} alt="" />
+        </div>
+        <div className="single-detail">
+          <img src={hands} alt="" />
+          <div className="main-detail-text">
+            <h2>And Your Body</h2>
+            <div>
+              <p>
+                A body is made up of lots of muscles that can become tense or
+                agitated. Sensory play helps calm the body while developing fine
+                and gross motor skills.
+              </p>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import sideline1 from "../assets/Sideline-1.png";
 import sideline2 from "../assets/Sideline-2.png";
-import headerimg from "../assets/Header-image.jpg";
+import headerimg from "../assets/Header-image-1.jpg";
 import rainbowimg from "../assets/Rainbow.png";
 
 const Header = () => {

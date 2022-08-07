@@ -1,7 +1,7 @@
 import React from "react";
 import sideline1 from "../assets/Sideline-1.png";
 import sideline2 from "../assets/Sideline-2.png";
-import product from "../assets/product-1.png";
+import product from "../assets/Product.jpg";
 import leaf from "../assets/Leaf.png";
 import rainbow2 from "../assets/Rainbow-2.png";
 
@@ -13,9 +13,11 @@ const FeaturedProducts = () => {
       <h1 className="featured-title">SENSORY PRODUCTS</h1>
       <img src={rainbow2} alt="" className="rainbow" />
       <div className="single-featured-detail single-featured-detail-1">
-        <div className="featured-image-shadow featured-image-shadow-1"></div>
-        <img src={product} alt="" className="featured-img" />
-        <div>
+        <div className="featured-img-container">
+          <div className="featured-img-shadow"></div>
+          <img src={product} alt="" />
+        </div>
+        <div className="featured-text">
           <h2>Sensory Jars</h2>
           <p>
             Whether it's dangerously racing cars to the finish line, preparing
@@ -25,9 +27,11 @@ const FeaturedProducts = () => {
         </div>
       </div>
       <div className="single-featured-detail single-featured-detail-2">
-        <div className="featured-image-shadow featured-image-shadow-2"></div>
-        <img src={product} alt="" className="featured-img" />
-        <div>
+        <div className="featured-img-container">
+          <div className="featured-img-shadow"></div>
+          <img src={product} alt="" />
+        </div>
+        <div className="featured-text">
           <h2>Sensory Shakers</h2>
           <p>
             Want to see your favorite colors dance? Shake away and watch as
@@ -38,10 +42,12 @@ const FeaturedProducts = () => {
         </div>
       </div>
       <div className="single-featured-detail single-featured-detail-3">
-        <img src={leaf} alt="" className="leaf" />
-        <div className="featured-image-shadow featured-image-shadow-3"></div>
-        <img src={product} alt="" className="featured-img" />
-        <div>
+        <div className="featured-img-container">
+          <div className="featured-img-shadow cherry"></div>
+          <img src={leaf} alt="" className="leaf" />
+          <img src={product} alt="" />
+        </div>
+        <div className="featured-text">
           <h2>Complements</h2>
           <p>
             Six-Sided Stamps, Dough-Tools, Stickers and more! Open-ended play is
