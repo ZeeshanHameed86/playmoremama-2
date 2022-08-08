@@ -493,13 +493,13 @@ footer {
 
 .footer-img-left {
   position: relative;
-  left: -35%;
-  top: -10%;
+  left: -30%;
+  top: -15%;
   width: 100%;
 }
 
 .footer-img-left img {
-  width: 160%;
+  width: 200%;
 }
 
 .footer-img-middle {
