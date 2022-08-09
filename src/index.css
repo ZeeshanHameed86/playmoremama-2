@@ -838,7 +838,11 @@ footer {
   .footer-title-container {
     display: block;
     width: 100%;
+    padding-top: 2rem;
     text-align: center;
+  }
+  .footer-title {
+    font-size: 1.5rem;
   }
   footer {
     height: 350px;
@@ -850,11 +854,16 @@ footer {
     display: block;
     text-align: center;
     height: 200px;
+    padding-top: 2rem;
+  }
+  .footer-bottom-main h3 {
+    font-size: 1rem;
   }
   .footer-bottom-left,
   .footer-bottom-middle,
   .footer-bottom-right {
     text-align: center;
+    font-size: 0.5rem;
   }
   .footer-bottom-left,
   .footer-bottom-middle {
