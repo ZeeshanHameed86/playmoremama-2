@@ -770,7 +770,7 @@ footer {
     top: 55%;
   }
   .header-info h1 {
-    font-size: 5.5rem;
+    font-size: 20vw;
   }
   .header-info h2 {
     font-size: 2.2rem;
@@ -824,5 +824,40 @@ footer {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+  }
+  .insta-posts {
+    display: none;
+  }
+  .footer-brand-container {
+    display: none;
+  }
+
+  .footer-title-img-container {
+    display: none;
+  }
+  .footer-title-container {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  footer {
+    height: 350px;
+  }
+  .footer-bottom {
+    height: 200px;
+  }
+  .footer-bottom-main {
+    display: block;
+    text-align: center;
+    height: 200px;
+  }
+  .footer-bottom-left,
+  .footer-bottom-middle,
+  .footer-bottom-right {
+    text-align: center;
+  }
+  .footer-bottom-left,
+  .footer-bottom-middle {
+    padding-bottom: 1.5rem;
   }
 }
