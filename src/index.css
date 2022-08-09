@@ -782,6 +782,9 @@ footer {
   .main-detail-text {
     width: 100%;
   }
+  .intro {
+    height: 1000px;
+  }
   .intro-title {
     font-size: 2rem;
   }
@@ -789,7 +792,7 @@ footer {
     padding-top: 2.5rem;
   }
   .featured-products {
-    height: 120vh;
+    height: 1200px;
   }
   .single-featured-detail {
     width: 100vw;
@@ -799,6 +802,7 @@ footer {
   .single-featured-detail-1,
   .single-featured-detail-2,
   .single-featured-detail-3 {
+    position: static;
     left: 0;
   }
   .featured-img-container {
