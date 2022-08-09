@@ -27,7 +27,8 @@ const Introduction = () => {
             </div>
           </div>
         </div>
-        <div className="single-detail">
+
+        <div className="single-detail single-detail-oposite">
           <div className="main-detail-text">
             <h2>And Your Brain</h2>
             <div>
@@ -40,6 +41,20 @@ const Introduction = () => {
             </div>
           </div>
           <img src={brain} alt="" />
+        </div>
+        <div className="single-detail single-detail-mobile">
+          <img src={brain} alt="" />
+          <div className="main-detail-text">
+            <h2>And Your Brain</h2>
+            <div>
+              <p>
+                While you play, connections on the brain's pathways are being
+                made which lead to more complex learning tasks. Memory,
+                language, and cognitive development improve. High-fives for
+                learning!
+              </p>
+            </div>
+          </div>
         </div>
         <div className="single-detail">
           <img src={hands} alt="" />

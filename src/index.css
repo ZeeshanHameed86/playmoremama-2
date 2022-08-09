@@ -282,6 +282,10 @@ header {
   margin: 0 auto;
 }
 
+.single-detail-mobile {
+  display: none;
+}
+
 /* .intro-layout .img-1 {
   width: 14%;
 } */
@@ -731,7 +735,7 @@ footer {
   .menu-slide {
     width: 100vw;
     height: 100vh;
-    transform: translateX(100%);
+    transform: translateX(150%);
     background: var(--dark-red);
     display: flex;
     flex-direction: column;
@@ -771,5 +775,50 @@ footer {
   .header-info h2 {
     font-size: 2.2rem;
     margin-top: -0.5rem;
+  }
+  .single-detail {
+    width: 100vw;
+  }
+  .main-detail-text {
+    width: 100%;
+  }
+  .intro-title {
+    font-size: 2rem;
+  }
+  .featured-title {
+    padding-top: 2.5rem;
+  }
+  .featured-products {
+    height: 120vh;
+  }
+  .single-featured-detail {
+    width: 100vw;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+  .single-featured-detail-1,
+  .single-featured-detail-2,
+  .single-featured-detail-3 {
+    left: 0;
+  }
+  .featured-img-container {
+    margin-right: 0;
+  }
+  .single-detail img {
+    width: 20%;
+  }
+  .single-detail .img-1 {
+    width: 25%;
+  }
+  .single-detail-oposite {
+    display: none;
+  }
+  .single-detail-mobile {
+    display: block;
+  }
+  .single-detail-mobile img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
