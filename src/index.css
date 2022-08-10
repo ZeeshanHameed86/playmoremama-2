@@ -794,8 +794,9 @@ footer {
   }
 
   .header-container h3 {
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    left: 0;
   }
   .single-detail {
     width: 100vw;
