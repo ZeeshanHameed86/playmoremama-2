@@ -3,6 +3,7 @@ import sideline1 from "../assets/Sideline-1.png";
 import sideline2 from "../assets/Sideline-2.png";
 import headerimg from "../assets/Header-image-1.jpg";
 import rainbowimg from "../assets/Rainbow.png";
+import buttonbtnimg from "../assets/Header-btn-background.png";
 
 const Header = () => {
   return (
@@ -20,9 +21,12 @@ const Header = () => {
         <div className="header-info">
           <h1>Welcome</h1>
           <h2>Sensory Play for All Ages</h2>
-          <button type="button" className="header-btn">
-            Shop Now!
-          </button>
+          <div className="header-btn-background">
+            <button type="button" className="header-btn">
+              <img src={buttonbtnimg} alt="" />
+              Shop Now!
+            </button>
+          </div>
         </div>
       </div>
     </header>

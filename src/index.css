@@ -203,8 +203,17 @@ header {
   letter-spacing: 2px;
 }
 
+.header-btn-background img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  z-index: -1;
+}
+
 .header-btn {
-  background: var(--dark-red);
+  background: none;
   color: white;
   border: none;
   font-size: 2rem;
@@ -213,10 +222,6 @@ header {
   cursor: pointer;
   position: relative;
   transition: var(--button-transition);
-}
-
-.header-btn:hover {
-  background: var(--dark-green);
 }
 
 .rainbow-img-container {
