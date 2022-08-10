@@ -41,7 +41,6 @@ const Navbar = () => {
           <AiOutlineInstagram className="icon" />
         </div>
       </div>
-
       <section className=" nav-container">
         <div className="navbar section-center">
           <div className="left-mobile">
