@@ -31,6 +31,8 @@ html {
   --dark-blue: #256e93;
   --nav-width: 100vw;
   --nav-height: 100px;
+  --featured-img-width: 200px;
+  --featured-img-height: 200px;
   --nav-content-padding: 2rem;
   --link-transition: 0.2s all ease-in;
   --button-transition: 0.1s all ease-in-out;
@@ -222,6 +224,7 @@ header {
   cursor: pointer;
   position: relative;
   transition: var(--button-transition);
+  font-family: "Bambino-Bold";
 }
 
 .rainbow-img-container {
@@ -401,7 +404,6 @@ header {
 }
 
 .leaf {
-  width: 20%;
   position: absolute;
   top: -55%;
   left: 30%;
@@ -423,14 +425,14 @@ header {
 }
 
 .featured-img-container img {
-  width: 100%;
+  width: var(--featured-img-width);
   border-radius: 50%;
 }
 
 .featured-img-shadow {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: var(--featured-img-width);
+  height: var(--featured-img-height);
   border-radius: 50%;
   background: var(--dark-red);
   left: -4%;
@@ -670,6 +672,10 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  html {
+    --featured-img-width: 150px;
+    --featured-img-height: 150px;
+  }
   .intro-sideline-img-1,
   .header-sideline-img-1,
   .header-sideline-img-2,
@@ -798,6 +804,12 @@ footer {
     text-align: center;
     left: 0;
   }
+  .header-btn {
+    font-size: 1.5rem;
+  }
+  .header-btn-background img {
+    width: 280px;
+  }
   .single-detail {
     width: 100vw;
   }
@@ -805,7 +817,7 @@ footer {
     width: 100%;
   }
   .intro {
-    height: 1000px;
+    height: 970px;
   }
   .intro-title {
     font-size: 2rem;
@@ -814,7 +826,7 @@ footer {
     padding-top: 2.5rem;
   }
   .featured-products {
-    height: 1200px;
+    height: 1250px;
   }
   .single-featured-detail {
     width: 100vw;
@@ -829,7 +841,13 @@ footer {
   }
   .featured-img-container {
     margin-right: 0;
+    left: -4%;
   }
+  .featured-text p {
+    width: 90%;
+    margin: 0 auto;
+  }
+
   .single-detail img {
     width: 20%;
   }
@@ -890,5 +908,20 @@ footer {
   .footer-bottom-left,
   .footer-bottom-middle {
     padding-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro-title {
+    font-size: 1.5rem;
+  }
+  .intro-subtitle {
+    padding-top: 0.8rem;
+  }
+  .featured-title {
+    font-size: 1.8rem;
+  }
+  .header-info h2 {
+    font-size: 1.6rem;
   }
 }
