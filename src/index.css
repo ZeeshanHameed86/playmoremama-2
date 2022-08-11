@@ -670,62 +670,6 @@ footer {
     height: 80vh;
   }
 }
-/* @media screen and (max-width: 1024px) {
-  html {
-    --featured-img-width: 150px;
-    --featured-img-height: 150px;
-  }
-  .intro-sideline-img-1,
-  .header-sideline-img-1,
-  .header-sideline-img-2,
-  .intro-sideline-img-2,
-  .featured-sideline-img-1,
-  .featured-sideline-img-2 {
-    display: none;
-  }
-  .intro {
-    height: 650px;
-  }
-  .featured-products {
-    height: 800px;
-  }
-  .rainbow-img-container,
-  .rainbow {
-    display: none;
-  }
-  .header-container h3 {
-    width: 100%;
-    text-align: center;
-    left: 0;
-  }
-  footer {
-    height: 720px;
-  }
-} */
-
-/* @media screen and (max-width: 768px) {
-  html {
-    --featured-img-width: 150px;
-    --featured-img-height: 150px;
-  }
-  .rainbow-img-container,
-  .rainbow {
-    display: none;
-  }
-  .intro-sideline-img-1,
-  .header-sideline-img-1,
-  .header-sideline-img-2,
-  .intro-sideline-img-2,
-  .featured-sideline-img-1,
-  .featured-sideline-img-2 {
-    display: none;
-  }
-  .header-container h3 {
-    width: 100%;
-    text-align: center;
-    left: 0;
-  }
-} */
 
 @media screen and (max-width: 600px) {
   html {
@@ -851,7 +795,7 @@ footer {
     font-size: 20vw;
   }
   .header-info h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-top: -0.5rem;
   }
 
@@ -978,33 +922,6 @@ footer {
     font-size: 1.8rem;
   }
   .header-info h2 {
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .intro-title {
-    font-size: 1.3rem;
-  }
-  .intro-subtitle {
-    padding-top: 0.8rem;
-  }
-  .featured-title {
     font-size: 1.6rem;
-  }
-  .header-info h2 {
-    font-size: 1.2rem;
-  }
-  .header-btn-background img {
-    width: 250px;
-  }
-  .header-btn {
-    font-size: 1.3rem;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .featured-products {
-    height: 1300px;
   }
 }
