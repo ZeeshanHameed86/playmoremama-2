@@ -670,6 +670,16 @@ footer {
     height: 80vh;
   }
 }
+@media screen and (max-width: 1024px) {
+  .intro-sideline-img-1,
+  .header-sideline-img-1,
+  .header-sideline-img-2,
+  .intro-sideline-img-2,
+  .featured-sideline-img-1,
+  .featured-sideline-img-2 {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 768px) {
   html {
