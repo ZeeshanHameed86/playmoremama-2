@@ -47,6 +47,7 @@ html {
 body {
   overflow-x: hidden;
   font-family: "Bambino-Regular";
+  width: 100vw;
 }
 
 a {
@@ -925,3 +926,60 @@ footer {
     font-size: 1.6rem;
   }
 }
+
+/* @media screen and (max-width: 1024px) {
+  html {
+    --featured-img-width: 150px;
+    --featured-img-height: 150px;
+  }
+  .intro-sideline-img-1,
+  .header-sideline-img-1,
+  .header-sideline-img-2,
+  .intro-sideline-img-2,
+  .featured-sideline-img-1,
+  .featured-sideline-img-2 {
+    display: none;
+  }
+  .intro {
+    height: 650px;
+  }
+  .featured-products {
+    height: 800px;
+  }
+  .rainbow-img-container,
+  .rainbow {
+    display: none;
+  }
+  .header-container h3 {
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
+  footer {
+    height: 720px;
+  }
+} */
+
+/* @media screen and (max-width: 768px) {
+  html {
+    --featured-img-width: 150px;
+    --featured-img-height: 150px;
+  }
+  .rainbow-img-container,
+  .rainbow {
+    display: none;
+  }
+  .intro-sideline-img-1,
+  .header-sideline-img-1,
+  .header-sideline-img-2,
+  .intro-sideline-img-2,
+  .featured-sideline-img-1,
+  .featured-sideline-img-2 {
+    display: none;
+  }
+  .header-container h3 {
+    width: 100%;
+    text-align: center;
+    left: 0;
+  }
+} */
