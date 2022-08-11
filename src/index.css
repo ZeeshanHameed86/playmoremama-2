@@ -46,7 +46,7 @@ html {
 
 html,
 body {
-  width: auto !important;
+  max-width: 100vw !important;
   overflow-x: hidden !important;
   font-family: "Bambino-Regular";
 }
@@ -622,6 +622,10 @@ footer {
 }
 
 @media screen and (max-width: 1600px) {
+  html {
+    --featured-img-width: 170px;
+    --featured-img-height: 170px;
+  }
   footer {
     height: 85vh;
   }
@@ -668,6 +672,10 @@ footer {
 }
 
 @media screen and (max-width: 1366px) {
+  html {
+    --featured-img-width: 150px;
+    --featured-img-height: 150px;
+  }
   footer {
     height: 80vh;
   }
