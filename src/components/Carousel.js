@@ -18,6 +18,7 @@ const Carousel = () => {
       loop={true}
       className="carousel"
       modules={[Navigation]}
+      spaceBetween={100}
       navigation={{
         prevEl: swiperNavPrevRef.current,
         nextEl: swiperNavNextRef.current,
