@@ -4,6 +4,7 @@ import sideline2 from "../assets/Sideline-2.png";
 import headerimg from "../assets/Header-image-1.jpg";
 import rainbowimg from "../assets/Rainbow.png";
 import buttonbtnimg from "../assets/Header-btn-background.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -24,7 +25,9 @@ const Header = () => {
           <div className="header-btn-background">
             <button type="button" className="header-btn">
               <img src={buttonbtnimg} alt="" />
-              Shop Now!
+              <Link to="/products" style={{ color: "white" }}>
+                Shop Now!
+              </Link>
             </button>
           </div>
         </div>

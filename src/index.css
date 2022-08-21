@@ -62,7 +62,6 @@ a {
 
 /*************** Navbar ***************/
 nav {
-  background: #b0acac;
   width: var(--nav-width);
   height: var(--nav-height);
   z-index: 10;
@@ -73,7 +72,7 @@ nav {
 
 .nav-container {
   background-color: #ffffff;
-  opacity: 70%;
+  opacity: 80%;
 }
 
 .navbar {
@@ -606,6 +605,70 @@ footer {
   text-align: end;
 }
 /*************** End Footer ***************/
+
+/*************** Products Page ***************/
+.product-section-layout {
+  min-height: calc(100vh - var(--nav-height));
+  margin-top: var(--nav-height);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  padding-top: 5rem;
+}
+
+.products-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 5rem;
+  gap: 3rem;
+}
+
+.product-card {
+  border: 1px solid lightgray;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-card h1 {
+  padding-bottom: 0.5rem;
+}
+
+.product-card p {
+  padding-bottom: 1rem;
+}
+
+.product-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.product-btn {
+  padding: 0.7rem 1rem;
+  background: var(--dark-red);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--button-transition);
+}
+
+.product-btn:hover {
+  background: var(--dark-green);
+}
+
+.product-category-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dark-red);
+  text-transform: capitalize;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}
+
+/*************** End Products Page ***************/
 
 @media screen and (max-width: 1800px) {
   .intro-sideline-img-1,
