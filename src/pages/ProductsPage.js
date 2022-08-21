@@ -4,6 +4,7 @@ import { data } from "../data";
 import { ProductCard } from "../components";
 import { filterCategories } from "../helpers";
 import { useProductsContext } from "../context/products_context";
+import Carousel from "../components/Carousel";
 
 const ProductsPage = () => {
   const { all_products } = useProductsContext();
@@ -11,6 +12,7 @@ const ProductsPage = () => {
   return (
     <section>
       <Navbar />
+      <Carousel />
       <div className="product-section-layout section-center">
         <div className="categories">
           {filterCategories(all_products).map((item, index) => {
