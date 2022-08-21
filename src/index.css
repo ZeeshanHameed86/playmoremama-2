@@ -1019,8 +1019,8 @@ footer {
   .header-info h2 {
     font-size: 1.6rem;
   }
-  .product-section-layout {
-    width: 100vw;
+  .products-layout {
+    padding: 0;
   }
 }
 
