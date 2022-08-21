@@ -15,7 +15,6 @@ const Carousel = () => {
 
   return (
     <Swiper
-      slidesPerView={3}
       loop={true}
       className="carousel"
       modules={[Navigation]}
@@ -25,11 +24,11 @@ const Carousel = () => {
       }}
       breakpoints={{
         // when window width is >= 1100px
-        1100: {
-          slidesPerView: 3,
-        },
-        480: {
+        100: {
           slidesPerView: 2,
+        },
+        900: {
+          slidesPerView: 3,
         },
       }}
       onInit={(swiper) => {
