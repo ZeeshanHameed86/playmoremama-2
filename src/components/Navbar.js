@@ -22,15 +22,15 @@ const Navbar = () => {
         <div className="exit-btn">
           <BiExit onClick={menuToggle} />
         </div>
-        <Link to="/" className="link">
+        <Link to="/" className="link" onClick={menuToggle}>
           Home
         </Link>
 
-        <Link to="/shop" className="link">
+        <Link to="/products" className="link" onClick={menuToggle}>
           Shop
         </Link>
 
-        <Link to="/faqs" className="link">
+        <Link to="/faqs" className="link" onClick={menuToggle}>
           FAQ
         </Link>
         <div className="mobile-nav-socials">

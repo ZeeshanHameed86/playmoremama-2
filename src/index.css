@@ -984,7 +984,7 @@ footer {
     padding-top: 6rem;
     position: absolute;
     transition: all 0.3s ease-in-out;
-    z-index: 20;
+    z-index: 200;
   }
   .slide-in {
     transform: translateX(0);
