@@ -483,7 +483,7 @@ header {
 /*************** Footer ***************/
 footer {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background: var(--light-yellow);
   position: relative;
   z-index: 6;
@@ -572,7 +572,7 @@ footer {
   width: var(--nav-width);
   height: var(--nav-height);
   z-index: 10;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
 }
@@ -613,6 +613,7 @@ footer {
   display: grid;
   grid-template-columns: 300px 1fr;
   padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .products-layout {
@@ -745,6 +746,7 @@ footer {
   grid-template-columns: 1fr 1fr;
   padding-top: calc(var(--nav-height) + 10rem);
   margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
 .image-gallery {
@@ -1102,7 +1104,7 @@ footer {
     font-size: 1.5rem;
   }
   footer {
-    height: 350px;
+    height: 150px;
   }
   .footer-bottom {
     height: 200px;

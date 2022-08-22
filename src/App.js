@@ -1,7 +1,7 @@
 import React from "react";
 import { HomePage, ProductsPage, SingleProductsPage } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, MainFooter } from "./components";
 
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
         <Route path="/products" exact element={<ProductsPage />} />
         <Route path="/products/:id" element={<SingleProductsPage />} />
       </Routes>
+      <MainFooter />
     </Router>
   );
 };
