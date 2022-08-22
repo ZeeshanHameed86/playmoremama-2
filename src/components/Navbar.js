@@ -16,8 +16,6 @@ const Navbar = () => {
     setToggle(!toggle);
   };
 
-  console.log(window.visualViewport.scale);
-
   return (
     <nav>
       <div className={`${toggle ? "menu-slide slide-in" : "menu-slide"}`}>

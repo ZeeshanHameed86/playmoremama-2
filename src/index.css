@@ -677,12 +677,19 @@ footer {
   padding-bottom: 1rem;
 }
 
+.product-card-link {
+  color: inherit;
+}
+
 .single-slide-container img {
   width: 200px;
 }
 
 .single-slide-container h3 {
-  color: var(--dark-red);
+  color: var(--dark-red) !important;
+}
+.single-slide-container h3 {
+  color: var(--dark-green);
 }
 
 .carousel {
@@ -730,6 +737,60 @@ footer {
   cursor: pointer;
 }
 /*************** End Products Page ***************/
+
+/*************** Single Product Page ***************/
+.single-product-layout {
+  display: grid;
+  width: 80vw;
+  grid-template-columns: 1fr 1fr;
+  padding-top: calc(var(--nav-height) + 10rem);
+  margin: 0 auto;
+}
+
+.image-gallery {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.image-gallery img {
+  width: 100%;
+  display: block;
+}
+
+.main-gallery-image {
+  height: 450px;
+  object-fit: cover;
+}
+
+.sub-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.sub-images img {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.single-product-details h1 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.single-product-details h3 {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.single-product-details p {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  width: 80%;
+}
+/*************** End Single Product Page ***************/
 
 @media screen and (max-width: 1800px) {
   .intro-sideline-img-1,
@@ -1085,6 +1146,19 @@ footer {
   }
   .products-layout {
     padding: 0;
+  }
+  .single-product-layout {
+    grid-template-columns: 1fr;
+    width: 90vw;
+  }
+  .image-gallery {
+    width: 100%;
+  }
+  .single-product-details {
+    text-align: center;
+  }
+  .single-product-details p {
+    width: 100%;
   }
 }
 

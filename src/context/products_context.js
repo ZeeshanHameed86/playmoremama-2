@@ -13,8 +13,8 @@ const table = base("products");
 const initialState = {
   all_products: [],
   // filtered_products: [],
-  // single_product: {},
-  // loading: true,
+  single_product: {},
+  loading: true,
   // default_filter: "Casual Wear",
   // m_category: "Casual Wear",
   // s_category: "",
@@ -25,55 +25,41 @@ const initialState = {
 
 export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [products, setProducts] = useState([]);
-
-  // const getRecords = async () => {
-  //   await table.select().eachPage(
-  //     (records, fetchNextPage) => {
-  //       products.push(records);
-  //       fetchNextPage();
-  //     },
-  //     (err) => {
-  //       if (err) {
-  //         console.error(err);
-  //         return;
-  //       }
-  //       console.log(products);
-  //       dispatch({ type: "PRODUCTS", payload: products });
-  //     }
-  //   );
-  // };
 
   const getRecords = async () => {
+    dispatch({ type: "PRODUCTS_START" });
     const temp = [];
     await table.select().eachPage(
       function page(records, fetchNextPage) {
         records.forEach(function (record) {
-          temp.push(record.fields);
+          temp.push(record);
         });
         fetchNextPage();
       },
       function done(err) {
         if (err) {
           console.error(err);
+          dispatch({ type: "PRODUCTS_END" });
           return;
         }
-        setProducts(temp);
         dispatch({ type: "PRODUCTS", payload: temp });
       }
     );
+    dispatch({ type: "PRODUCTS_END" });
   };
 
-  // const getSingleProduct = async (id) => {
-  //   dispatch({ type: "SINGLE_PRODUCT_START" });
-  //   await table.find(id, function (err, record) {
-  //     if (err) {
-  //       console.error(err);
-  //       return;
-  //     }
-  //     dispatch({ type: "SINGLE_PRODUCT", payload: record });
-  //   });
-  // };
+  const getSingleProduct = async (id) => {
+    dispatch({ type: "SINGLE_PRODUCT_START" });
+    await table.find(id, function (err, record) {
+      if (err) {
+        console.error(err);
+        dispatch({ type: "SINGLE_PRODUCT_END" });
+        return;
+      }
+      dispatch({ type: "SINGLE_PRODUCT", payload: record.fields });
+    });
+    dispatch({ type: "SINGLE_PRODUCT_END" });
+  };
 
   // const clickFilterProducts = (mainCategory, subCategory) => {
   //   dispatch({
@@ -103,7 +89,7 @@ export const ProductsProvider = ({ children }) => {
       value={{
         ...state,
         // clickFilterProducts,
-        // getSingleProduct,
+        getSingleProduct,
         // toggleSortMenu,
         // toggleSidebar,
         // closeSidebar,

@@ -1,17 +1,17 @@
 import React from "react";
-import { Navbar } from "../components";
-import { data } from "../data";
 import { ProductCard } from "../components";
 import { filterCategories } from "../helpers";
 import { useProductsContext } from "../context/products_context";
 import Carousel from "../components/Carousel";
 
 const ProductsPage = () => {
-  const { all_products } = useProductsContext();
+  const { loading, all_products } = useProductsContext();
 
+  if (loading) {
+    return <div className="product-section-layout">Loading...</div>;
+  }
   return (
     <section>
-      <Navbar />
       <Carousel />
       <div className="product-section-layout section-center">
         <div className="categories">
