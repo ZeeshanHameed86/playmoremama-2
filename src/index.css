@@ -36,7 +36,7 @@ html {
   --nav-content-padding: 2rem;
   --link-transition: 0.2s all ease-in;
   --button-transition: 0.1s all ease-in-out;
-  --sideline-responsive-height: height: 100.1vh;
+  --sideline-responsive-height: 100.1vh;
   --sideline-responsive-position: 0;
 }
 
@@ -829,15 +829,13 @@ footer {
 /*************** End Single Product Page ***************/
 
 @media screen and (max-width: 1800px) {
-  html{
-    --sideline-responsive-position:-3%;
+  html {
+    --sideline-responsive-position: -3%;
   }
-  .header-sideline-img-1
-  {
+  .header-sideline-img-1 {
     left: -3%;
   }
-  .header-sideline-img-2
-  {
+  .header-sideline-img-2 {
     right: -3%;
   }
   footer {
@@ -855,21 +853,18 @@ footer {
   html {
     --featured-img-width: 170px;
     --featured-img-height: 170px;
-    --sideline-responsive-height:850px;
-    --sideline-responsive-position:-3.9%;
+    --sideline-responsive-height: 850px;
+    --sideline-responsive-position: -3.9%;
   }
 
-  .header-sideline-img-1
-{
+  .header-sideline-img-1 {
     left: -5%;
   }
 
-
-  .header-sideline-img-2
- {
+  .header-sideline-img-2 {
     right: -5%;
   }
-  
+
   .products-layout {
     grid-template-columns: 1fr 1fr;
   }
@@ -922,8 +917,8 @@ footer {
   html {
     --featured-img-width: 150px;
     --featured-img-height: 150px;
-    --sideline-responsive-height:750px;
-    --sideline-responsive-position:-2.6%;
+    --sideline-responsive-height: 750px;
+    --sideline-responsive-position: -2.6%;
   }
   .intro {
     height: 750px;
@@ -940,10 +935,10 @@ footer {
   .footer-title-container h1 {
     font-size: 1.5rem;
   }
-  .rainbow-img-container{
+  .rainbow-img-container {
     width: 700px;
   }
-  .rainbow{
+  .rainbow {
     width: 700px;
   }
 }
@@ -958,11 +953,13 @@ footer {
   .footer-title-img-container {
     display: none;
   }
-  .single-detail{width: 100%;}
-  .single-featured-detail{
-width: 70%;
+  .single-detail {
+    width: 100%;
   }
-  
+  .single-featured-detail {
+    width: 70%;
+  }
+
   .intro-sideline-img-1,
   .header-sideline-img-1,
   .header-sideline-img-2,
@@ -971,13 +968,13 @@ width: 70%;
   .featured-sideline-img-2 {
     display: none;
   }
-  .rainbow-img-container{
+  .rainbow-img-container {
     width: 600px;
   }
-  .rainbow{
+  .rainbow {
     width: 600px;
   }
-  .header-info h2{
+  .header-info h2 {
     font-size: 2.5rem;
   }
 }
