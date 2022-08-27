@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ item, index }) => {
   return (
-    <Link to={`/products/${item.id}`} className="product-card-link">
+    <Link
+      style={item.fields.images ? {} : { pointerEvents: "none" }}
+      to={`/products/${item.id}`}
+      className="product-card-link"
+    >
       <div className="product-card" key={index}>
         <div className="product-img">
           <img
@@ -16,7 +20,13 @@ const ProductCard = ({ item, index }) => {
           <h1>{item.fields.name}</h1>
           <p>${item.fields.price}</p>
           <Link to={`/products/${item.id}`}>
-            <button className="product-btn">View Details</button>
+            <button
+              disabled={!item.fields.images}
+              className="product-btn"
+              style={item.fields.images ? {} : { background: "grey" }}
+            >
+              {item.fields.images ? "View Details" : "Coming Soon"}
+            </button>
           </Link>
         </div>
       </div>

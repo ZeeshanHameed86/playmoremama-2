@@ -12,7 +12,7 @@ const table = base("products");
 
 const initialState = {
   all_products: [],
-  // filtered_products: [],
+  filtered_products: [],
   single_product: {},
   loading: true,
   // default_filter: "Casual Wear",
@@ -61,12 +61,12 @@ export const ProductsProvider = ({ children }) => {
     dispatch({ type: "SINGLE_PRODUCT_END" });
   };
 
-  // const clickFilterProducts = (mainCategory, subCategory) => {
-  //   dispatch({
-  //     type: "FILTER_PRODUCTS",
-  //     payload: { mainCategory, subCategory },
-  //   });
-  // };
+  const filterProducts = (category) => {
+    dispatch({
+      type: "FILTER_PRODUCTS",
+      payload: category,
+    });
+  };
 
   // const toggleSidebar = () => {
   //   dispatch({ type: "TOGGLE_BAR_MENU" });
@@ -88,7 +88,7 @@ export const ProductsProvider = ({ children }) => {
     <ProductsContext.Provider
       value={{
         ...state,
-        // clickFilterProducts,
+        filterProducts,
         getSingleProduct,
         // toggleSortMenu,
         // toggleSidebar,

@@ -8,16 +8,24 @@ import {
 } from "react-icons/ai";
 import { BiExit } from "react-icons/bi";
 import logo from "../assets/Logo.png";
+import { useEffect } from "react";
 
-const Navbar = () => {
+const Navbar = ({ desc, offset }) => {
   const [toggle, setToggle] = useState(false);
+  const [temp, setTemp] = useState(false);
 
   const menuToggle = () => {
     setToggle(!toggle);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setTemp(window.scrollY);
+    });
+  }, []);
+
   return (
-    <nav>
+    <nav className={`${offset === 0 ? "sticky" : temp >= 40 ? "sticky" : ""}`}>
       <div className={`${toggle ? "menu-slide slide-in" : "menu-slide"}`}>
         <div className="exit-btn">
           <BiExit onClick={menuToggle} />
@@ -39,39 +47,37 @@ const Navbar = () => {
           <AiOutlineInstagram className="icon" />
         </div>
       </div>
-      <section className=" nav-container">
-        <div className="navbar section-center">
-          <div className="left-mobile">
-            <img src={logo} alt="" />
-          </div>
-          <div className="right-mobile">
-            <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
-          </div>
-          <div className="left">
-            <Link to="/" className="link">
-              Home
-            </Link>
-
-            <Link to="/products" className="link">
-              Shop
-            </Link>
-
-            <Link to="/faqs" className="link">
-              FAQ
-            </Link>
-          </div>
-          <div className="middle">
-            <Link to="/">
-              <img src={logo} alt="" />
-            </Link>
-          </div>
-          <div className="right">
-            <AiOutlineSearch className="icon" />
-            <AiOutlineShoppingCart className="icon" />
-            <AiOutlineInstagram className="icon" />
-          </div>
+      <div className="navbar section-center">
+        <div className="left-mobile">
+          <img src={logo} alt="" />
         </div>
-      </section>
+        <div className="right-mobile">
+          <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
+        </div>
+        <div className="left">
+          <Link to="/" className="link">
+            Home
+          </Link>
+
+          <Link to="/products" className="link">
+            Shop
+          </Link>
+
+          <Link to="/faqs" className="link">
+            FAQ
+          </Link>
+        </div>
+        <div className="middle">
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
+        </div>
+        <div className="right">
+          <AiOutlineSearch className="icon" />
+          <AiOutlineShoppingCart className="icon" />
+          <AiOutlineInstagram className="icon" />
+        </div>
+      </div>
     </nav>
   );
 };

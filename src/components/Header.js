@@ -24,7 +24,11 @@ const Header = () => {
           <h2>Sensory Play for All Ages</h2>
           <div className="header-btn-background">
             <button type="button" className="header-btn">
-              <img src={buttonbtnimg} alt="" />
+              <img
+                src={buttonbtnimg}
+                alt=""
+                style={{ width: "400px", height: "400px" }}
+              />
               <Link to="/products" style={{ color: "white" }}>
                 Shop Now!
               </Link>

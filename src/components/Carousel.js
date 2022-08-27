@@ -9,7 +9,7 @@ import product from "../assets/Product.jpg";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Carousel = () => {
-  const { all_products } = useProductsContext();
+  const { all_products, filterProducts } = useProductsContext();
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
 
@@ -41,7 +41,10 @@ const Carousel = () => {
     >
       {filterCategories(all_products).map((item) => (
         <SwiperSlide>
-          <div className="single-slide-container">
+          <div
+            className="single-slide-container"
+            onClick={() => filterProducts(item)}
+          >
             <img src={product} alt="" />
             <h3>{item}</h3>
           </div>

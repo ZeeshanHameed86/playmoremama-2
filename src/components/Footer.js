@@ -3,7 +3,6 @@ import img1 from "../assets/Footer-Image-1.jpg";
 import img2 from "../assets/Footer-Image-2.jpg";
 import hearts from "../assets/Hearts.png";
 import flowers from "../assets/Flowers.png";
-import MainFooter from "./MainFooter";
 
 const Footer = () => {
   return (
