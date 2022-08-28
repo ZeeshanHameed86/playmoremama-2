@@ -12,11 +12,9 @@ const ProductsPage = () => {
     return <div className="product-section-layout">Loading...</div>;
   }
 
-  console.log(filtered_products);
-
   return (
     <section>
-      <Navbar offset={0} />
+      <Navbar />
       <Carousel />
       <div className="product-section-layout section-center">
         <div className="categories">

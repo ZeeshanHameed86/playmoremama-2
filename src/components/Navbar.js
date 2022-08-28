@@ -10,22 +10,15 @@ import { BiExit } from "react-icons/bi";
 import logo from "../assets/Logo.png";
 import { useEffect } from "react";
 
-const Navbar = ({ desc, offset }) => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const [temp, setTemp] = useState(false);
 
   const menuToggle = () => {
     setToggle(!toggle);
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setTemp(window.scrollY);
-    });
-  }, []);
-
   return (
-    <nav className={`${offset === 0 ? "sticky" : temp >= 40 ? "sticky" : ""}`}>
+    <nav>
       <div className={`${toggle ? "menu-slide slide-in" : "menu-slide"}`}>
         <div className="exit-btn">
           <BiExit onClick={menuToggle} />

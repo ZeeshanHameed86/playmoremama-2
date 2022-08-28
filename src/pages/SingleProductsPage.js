@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navbar } from "../components";
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
@@ -12,7 +12,6 @@ const SingleProductsPage = () => {
   const { id } = useParams();
   const [imageIndex, setImageIndex] = useState(1);
   const { loading, getSingleProduct, single_product } = useProductsContext();
-  const [temp, setTemp] = useState(false);
 
   useEffect(() => {
     getSingleProduct(id);
@@ -23,26 +22,17 @@ const SingleProductsPage = () => {
     visible: { opacity: 1, height: "auto" },
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setTemp(window.scrollY);
-    });
-  }, []);
-
   if (loading) {
     return <section className="single-product-layout">Loading...</section>;
   }
 
   return (
     <section>
-      <div
-        className="single-product-bar"
-        style={temp >= 40 ? { marginBottom: "100px" } : {}}
-      >
+      <div className="single-product-bar">
         <p>Mama founded + 100% natural handmade playdough</p>
       </div>
-      <Navbar desc="single-product" offset={40} />
-      <div className="single-product-layout" style={{ overflowX: "hidden" }}>
+      <Navbar />
+      <div className="single-product-layout">
         <div className="product-image-gallery-container">
           <div className="image-gallery">
             <img
@@ -60,6 +50,7 @@ const SingleProductsPage = () => {
                   if (index > 0) {
                     return (
                       <img
+                        key={index}
                         style={{
                           border: index === imageIndex && "1px solid grey",
                         }}
@@ -71,10 +62,10 @@ const SingleProductsPage = () => {
                       />
                     );
                   }
-                  return;
+                  return "";
                 })
               ) : (
-                <img src={NoImage} />
+                <img src={NoImage} alt="" />
               )}
             </div>
           </div>
