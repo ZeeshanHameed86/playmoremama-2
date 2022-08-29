@@ -585,7 +585,7 @@ footer {
 /*************** Products Page ***************/
 .product-section-layout {
   min-height: calc(100vh - var(--nav-height));
-  margin-top: var(--nav-height);
+
   display: grid;
   grid-template-columns: 300px 1fr;
   padding-top: 3rem;
@@ -669,7 +669,6 @@ footer {
 }
 
 .carousel {
-  margin-top: calc(var(--nav-height) + 6rem);
   cursor: grab;
   width: 70vw;
 }
@@ -684,7 +683,7 @@ footer {
 .arrows-container {
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
+  padding-top: 1rem;
   font-size: 2rem;
 }
 .swiper-prev {
@@ -1250,5 +1249,8 @@ section {
   }
   .cart-btn-background {
     margin: 0 auto;
+  }
+  .categories {
+    display: none;
   }
 }

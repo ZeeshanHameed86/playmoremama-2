@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, ProductCard } from "../components";
 import { filterCategories } from "../helpers";
 import { useProductsContext } from "../context/products_context";
@@ -7,6 +7,13 @@ import Carousel from "../components/Carousel";
 const ProductsPage = () => {
   const { loading, all_products, filterProducts, filtered_products } =
     useProductsContext();
+  const [fixed, setFixed] = useState();
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setFixed(window.scrollY);
+    });
+  }, []);
 
   if (loading) {
     return <div className="product-section-layout">Loading...</div>;
@@ -14,7 +21,14 @@ const ProductsPage = () => {
 
   return (
     <section>
-      <Navbar offset={0} />
+      <div
+        className={
+          fixed >= 40 ? "single-product-bar fixed" : "single-product-bar"
+        }
+      >
+        <p>Mama founded + 100% natural handmade playdough</p>
+      </div>
+      <Navbar offset={40} />
       <Carousel />
       <div className="product-section-layout section-center">
         <div className="categories">
