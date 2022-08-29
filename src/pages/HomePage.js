@@ -10,7 +10,7 @@ import {
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar offset={0} />
       <Header />
       <Introduction />
       <FeaturedProducts />

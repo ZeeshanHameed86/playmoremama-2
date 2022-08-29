@@ -14,12 +14,11 @@ const ProductsPage = () => {
 
   return (
     <section>
-      <Navbar />
+      <Navbar offset={0} />
       <Carousel />
       <div className="product-section-layout section-center">
         <div className="categories">
           {filterCategories(all_products).map((item, index) => {
-            console.log("hello", item);
             return (
               <div key={index}>
                 <button
@@ -35,7 +34,7 @@ const ProductsPage = () => {
         </div>
         <div className="products-layout">
           {filtered_products.map((item, index) => {
-            return <ProductCard item={item} index={index} />;
+            return <ProductCard key={index} item={item} index={index} />;
           })}
         </div>
       </div>

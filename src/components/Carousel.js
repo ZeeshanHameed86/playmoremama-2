@@ -39,8 +39,8 @@ const Carousel = () => {
         swiper.navigation.update();
       }}
     >
-      {filterCategories(all_products).map((item) => (
-        <SwiperSlide>
+      {filterCategories(all_products).map((item, index) => (
+        <SwiperSlide key={index}>
           <div
             className="single-slide-container"
             onClick={() => filterProducts(item)}

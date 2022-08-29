@@ -12,6 +12,7 @@ const SingleProductsPage = () => {
   const { id } = useParams();
   const [imageIndex, setImageIndex] = useState(1);
   const { loading, getSingleProduct, single_product } = useProductsContext();
+  const [fixed, setFixed] = useState();
 
   useEffect(() => {
     getSingleProduct(id);
@@ -22,16 +23,26 @@ const SingleProductsPage = () => {
     visible: { opacity: 1, height: "auto" },
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setFixed(window.scrollY);
+    });
+  }, []);
+
   if (loading) {
     return <section className="single-product-layout">Loading...</section>;
   }
 
   return (
     <section>
-      <div className="single-product-bar">
+      <div
+        className={
+          fixed >= 40 ? "single-product-bar fixed" : "single-product-bar"
+        }
+      >
         <p>Mama founded + 100% natural handmade playdough</p>
       </div>
-      <Navbar />
+      <Navbar offset={40} />
       <div className="single-product-layout">
         <div className="product-image-gallery-container">
           <div className="image-gallery">
