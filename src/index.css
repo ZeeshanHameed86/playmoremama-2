@@ -577,6 +577,9 @@ footer {
 .footer-bottom-right {
   text-align: end;
 }
+.footer-bottom-mobile {
+  display: none;
+}
 /*************** End Footer ***************/
 
 /*************** Products Page ***************/
@@ -702,7 +705,7 @@ section {
   display: grid;
   width: 80vw;
   grid-template-columns: 1fr 1fr;
-  padding-top: 5rem;
+  padding-top: 2rem;
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-height) - 40px);
 }
@@ -1215,6 +1218,20 @@ section {
   }
   .products-layout {
     padding: 0;
+  }
+  .footer-bottom-right,
+  .footer-bottom-left {
+    display: none;
+  }
+  .footer-bottom-mobile {
+    display: block;
+  }
+  .footer-bottom {
+    height: 130px;
+  }
+  .footer-bottom-main {
+    padding-top: 1.5rem;
+    height: 130px;
   }
   .single-product-layout {
     grid-template-columns: 1fr;

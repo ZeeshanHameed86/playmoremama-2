@@ -11,6 +11,9 @@ const MainFooter = () => {
           <div className="footer-bottom-middle">
             <h3>Copyright &copy; 2022, play.more.mama</h3>
           </div>
+          <div className="footer-bottom-mobile">
+            <h3>Privacy Policy & Terms and Conditions</h3>
+          </div>
           <div className="footer-bottom-right">
             <h3>Terms and Conditions</h3>
           </div>

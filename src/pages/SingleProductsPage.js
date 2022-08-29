@@ -83,7 +83,7 @@ const SingleProductsPage = () => {
         </div>
         <div className="single-product-details">
           <h1>{single_product && single_product.name}</h1>
-          <h3>${single_product && single_product.price}</h3>
+          <h3>${single_product && single_product.price}.00</h3>
           <div className="cart-btn-background">
             <button type="button" className="cart-btn">
               <img src={buttonbtnimg} alt="" />
