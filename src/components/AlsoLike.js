@@ -52,6 +52,7 @@ const Carousel = () => {
           <div className="single-product-slide-container">
             <img src={item.fields.images[0].url} alt="" />
             <h3>{item.fields.name}</h3>
+            <p>${item.fields.price}.00</p>
           </div>
         </SwiperSlide>
       ))}

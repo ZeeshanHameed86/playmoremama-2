@@ -825,21 +825,6 @@ section {
   font-size: 2.5rem;
 }
 
-.also-like-layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-  padding-bottom: 3rem;
-}
-
-.also-like-layout img {
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
-}
-
 .single-detail-also-like {
   display: grid;
   grid-template-columns: 1fr;
@@ -854,8 +839,8 @@ section {
 .single-product-slide-container h3 {
   color: var(--dark-red) !important;
 }
-.single-product-slide-container h3 {
-  color: var(--dark-green);
+.single-product-slide-container p {
+  color: var(--dark-red);
 }
 
 .carousel {
@@ -1321,6 +1306,9 @@ section {
   .single-product-details {
     text-align: center;
   }
+  .single-product-details h1 {
+    font-size: 2rem;
+  }
   .single-product-details p {
     width: 100%;
   }
@@ -1362,5 +1350,10 @@ section {
 
   .single-product-back-btn h6 {
     font-size: 1rem;
+  }
+  .also-like-container h1 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 3rem;
   }
 }
