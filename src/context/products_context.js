@@ -15,6 +15,7 @@ const initialState = {
   filtered_products: [],
   single_product: {},
   loading: true,
+  also_like_products: [],
   // default_filter: "Casual Wear",
   // m_category: "Casual Wear",
   // s_category: "",

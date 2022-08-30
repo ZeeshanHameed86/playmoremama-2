@@ -669,7 +669,8 @@ footer {
 }
 
 .carousel {
-  cursor: grab;
+  padding-top: 2rem;
+  cursor: pointer;
   width: 70vw;
 }
 
@@ -704,7 +705,7 @@ section {
   display: grid;
   width: 80vw;
   grid-template-columns: 1fr 1fr;
-  padding-top: 2rem;
+  padding-top: 3rem;
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-height) - 40px);
 }
@@ -808,6 +809,81 @@ section {
 
 .cart-btn h6 {
   font-size: 1rem;
+}
+
+.single-product-back-background {
+  display: none;
+}
+
+.also-like-container {
+  margin-top: -3rem;
+}
+
+.also-like-container h1 {
+  text-align: center;
+  padding-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.also-like-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.also-like-layout img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.single-detail-also-like {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+  text-align: center;
+}
+
+.single-product-slide-container img {
+  width: 250px;
+}
+
+.single-product-slide-container h3 {
+  color: var(--dark-red) !important;
+}
+.single-product-slide-container h3 {
+  color: var(--dark-green);
+}
+
+.carousel {
+  padding-top: 2rem;
+  cursor: pointer;
+  width: 70vw;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+}
+.swiper {
+  text-align: center !important;
+}
+.single-arrows-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+.single-swiper-prev {
+  padding-right: 10rem;
+}
+.single-swiper-prev,
+.single-swiper-next {
+  color: var(--dark-red);
+  cursor: pointer;
 }
 /*************** End Single Product Page ***************/
 
@@ -1236,6 +1312,7 @@ section {
     grid-template-columns: 1fr;
     width: 90vw;
     height: auto;
+    padding-top: 0;
   }
   .image-gallery {
     width: 100%;
@@ -1252,5 +1329,38 @@ section {
   }
   .categories {
     display: none;
+  }
+  .single-product-back-background {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+  }
+
+  .single-product-back-background img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: -1;
+  }
+
+  .single-product-back-btn {
+    background: none;
+    width: 100%;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: var(--button-transition);
+    font-family: "Bambino-Bold";
+  }
+
+  .single-product-back-btn h6 {
+    font-size: 1rem;
   }
 }

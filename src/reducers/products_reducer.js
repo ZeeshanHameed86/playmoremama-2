@@ -17,7 +17,20 @@ const products_reducer = (state, action) => {
     return { ...state, loading: true };
   }
   if (action.type === "SINGLE_PRODUCT") {
-    return { ...state, single_product: action.payload };
+    const { all_products } = state;
+    const filter = all_products.filter((item) => {
+      if (item.fields.images !== undefined) {
+        return item.fields;
+      }
+      return null;
+    });
+    // let shuffled = [...filter].sort(() => 0.5 - Math.random());
+    // shuffled = shuffled.slice(0, 4);
+    return {
+      ...state,
+      single_product: action.payload,
+      also_like_products: filter,
+    };
   }
   if (action.type === "SINGLE_PRODUCT_END") {
     return { ...state, loading: false };

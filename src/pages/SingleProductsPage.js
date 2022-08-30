@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "../components";
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
@@ -6,12 +6,19 @@ import NoImage from "../assets/No-Image.jpg";
 import { Link } from "react-router-dom";
 import buttonbtnimg from "../assets/Header-btn-background.png";
 import { motion, AnimatePresence } from "framer-motion";
+import AlsoLike from "../components/AlsoLike";
 
 const SingleProductsPage = () => {
   const [descriptionToggle, setDescriptionToggle] = useState(false);
   const { id } = useParams();
   const [imageIndex, setImageIndex] = useState(1);
-  const { loading, getSingleProduct, single_product } = useProductsContext();
+  const {
+    loading,
+    getSingleProduct,
+    single_product,
+    all_products,
+    also_like_products,
+  } = useProductsContext();
   const [fixed, setFixed] = useState();
 
   useEffect(() => {
@@ -23,11 +30,15 @@ const SingleProductsPage = () => {
     visible: { opacity: 1, height: "auto" },
   };
 
+  const handleScroll = () => {
+    setFixed(window.scrollY);
+  };
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setFixed(window.scrollY);
-    });
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [all_products]);
 
   if (loading) {
     return <section className="single-product-layout">Loading...</section>;
@@ -43,6 +54,14 @@ const SingleProductsPage = () => {
         <p>Mama founded + 100% natural handmade playdough</p>
       </div>
       <Navbar offset={40} />
+      <div className="single-product-back-background">
+        <button type="button" className="single-product-back-btn">
+          <img src={buttonbtnimg} alt="" />
+          <Link to="/products" style={{ color: "white" }}>
+            <h6>Back To Products</h6>
+          </Link>
+        </button>
+      </div>
       <div className="single-product-layout">
         <div className="product-image-gallery-container">
           <div className="image-gallery">
@@ -114,6 +133,22 @@ const SingleProductsPage = () => {
           </AnimatePresence>
           <hr style={{ marginBottom: "3rem" }} />
         </div>
+      </div>
+      <div className="also-like-container section-center">
+        <h1>You May Also Like</h1>
+        <AlsoLike />
+        {/* <div className="also-like-layout">
+          {also_like_products &&
+            also_like_products.map((item, index) => {
+              return (
+                <div key={index} className="single-detail-also-like">
+                  <img src={item.fields.images[0].url} alt="" />
+                  <h3>{item.fields.name}</h3>
+                  <p>${item.fields.price}.00</p>
+                </div>
+              );
+            })}
+        </div> */}
       </div>
     </section>
   );
