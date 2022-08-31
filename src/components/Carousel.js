@@ -55,6 +55,14 @@ const Carousel = () => {
         swiper.navigation.update();
       }}
     >
+      <div className="arrows-container">
+        <div ref={swiperNavPrevRef} className="swiper-prev">
+          <img src={left} alt="" />
+        </div>
+        <div ref={swiperNavNextRef} className="swiper-next">
+          <img src={right} alt="" />
+        </div>
+      </div>
       {["ALL", "Sensory Jars", "Sensory Shakers", "Complements"].map(
         (item, index) => (
           <SwiperSlide key={index}>
@@ -68,14 +76,6 @@ const Carousel = () => {
           </SwiperSlide>
         )
       )}
-      <div className="arrows-container">
-        <div ref={swiperNavPrevRef} className="swiper-prev">
-          <img src={left} alt="" />
-        </div>
-        <div ref={swiperNavNextRef} className="swiper-next">
-          <img src={right} alt="" />
-        </div>
-      </div>
     </Swiper>
   );
 };

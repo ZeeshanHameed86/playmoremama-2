@@ -18,7 +18,7 @@ const ProductCard = ({ item, index }) => {
         </div>
         <div className="product-info">
           <h1>{item.fields.name}</h1>
-          <p>${item.fields.price}</p>
+          <p>${item.fields.price}.00</p>
           <Link to={`/products/${item.id}`}>
             <button
               disabled={!item.fields.images}

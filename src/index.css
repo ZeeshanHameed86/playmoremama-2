@@ -627,6 +627,7 @@ footer {
   border: 1px solid lightgray;
   transition: all 0.1s ease-in;
   cursor: pointer;
+  background: white;
 }
 
 .product-card:hover {
@@ -696,6 +697,8 @@ footer {
   padding-top: 2rem;
   cursor: pointer;
   width: 70vw;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .swiper-button-prev::after,
@@ -707,12 +710,16 @@ footer {
 }
 .arrows-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem 0;
+  position: absolute;
+  width: 70vw;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -60%);
+  z-index: 100;
 }
-.swiper-prev {
-  padding-right: 10rem;
-}
+
 .swiper-prev img,
 .swiper-next img {
   width: 50px;
