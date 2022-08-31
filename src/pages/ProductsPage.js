@@ -30,26 +30,30 @@ const ProductsPage = () => {
       </div>
       <Navbar offset={40} />
       <Carousel />
-      <div className="product-section-layout section-center">
-        <div className="categories">
-          {filterCategories(all_products).map((item, index) => {
-            return (
-              <div key={index}>
-                <button
-                  className="product-category-btn"
-                  onClick={() => filterProducts(item)}
-                >
-                  {item}
-                </button>
-              </div>
-            );
-          })}
-          <hr />
-        </div>
-        <div className="products-layout">
-          {filtered_products.map((item, index) => {
-            return <ProductCard key={index} item={item} index={index} />;
-          })}
+      <div className="products-page">
+        <div className="product-section-layout section-center">
+          <div className="categories">
+            {["ALL", "Sensory Jars", "Sensory Shakers", "Complements"].map(
+              (item, index) => {
+                return (
+                  <div key={index}>
+                    <button
+                      className="product-category-btn"
+                      onClick={() => filterProducts(item)}
+                    >
+                      {item}
+                    </button>
+                  </div>
+                );
+              }
+            )}
+            <hr />
+          </div>
+          <div className="products-layout">
+            {filtered_products.map((item, index) => {
+              return <ProductCard key={index} item={item} index={index} />;
+            })}
+          </div>
         </div>
       </div>
     </section>

@@ -132,6 +132,27 @@ nav {
   align-items: center;
 }
 
+.cart-icon {
+  position: relative;
+}
+
+.cart-items {
+  position: absolute;
+  right: -30%;
+  top: -20%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--dark-red);
+  color: white;
+}
+
+.cart-items p {
+  position: relative;
+  top: -20%;
+  right: -30%;
+}
+
 .icon {
   color: var(--dark-red);
   font-size: 2.2rem;
@@ -585,11 +606,14 @@ footer {
 /*************** Products Page ***************/
 .product-section-layout {
   min-height: calc(100vh - var(--nav-height));
-
   display: grid;
   grid-template-columns: 300px 1fr;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.products-page {
+  background: var(--light-yellow);
 }
 
 .products-layout {
@@ -684,16 +708,14 @@ footer {
 .arrows-container {
   display: flex;
   justify-content: center;
-  padding-top: 1rem;
-  font-size: 2rem;
+  padding: 1rem 0;
 }
 .swiper-prev {
   padding-right: 10rem;
 }
-.swiper-prev,
-.swiper-next {
-  color: var(--dark-red);
-  cursor: pointer;
+.swiper-prev img,
+.swiper-next img {
+  width: 50px;
 }
 /*************** End Products Page ***************/
 
@@ -750,6 +772,7 @@ section {
 .single-product-bar p {
   color: white;
   font-size: 0.9rem;
+  text-transform: capitalize;
 }
 
 .single-product-details h1 {
@@ -811,7 +834,7 @@ section {
   font-size: 1rem;
 }
 
-.single-product-back-background {
+.single-product-back-btn {
   display: none;
 }
 
@@ -1261,6 +1284,9 @@ section {
   .carousel {
     width: 100vw;
   }
+  .categories {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1315,42 +1341,22 @@ section {
   .cart-btn-background {
     margin: 0 auto;
   }
-  .categories {
-    display: none;
-  }
-  .single-product-back-background {
-    display: block;
-    width: 200px;
-    margin: 0 auto;
-    padding-bottom: 1rem;
-  }
-
-  .single-product-back-background img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    z-index: -1;
-  }
 
   .single-product-back-btn {
-    background: none;
-    width: 100%;
-    color: white;
-    border: none;
-    font-size: 2rem;
-    margin-top: 2rem;
-    padding: 1.5rem 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: var(--button-transition);
-    font-family: "Bambino-Bold";
+    display: block;
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
-  .single-product-back-btn h6 {
-    font-size: 1rem;
+  .single-product-back-btn a {
+    color: var(--dark-red);
   }
+
+  .single-product-back-btn a::before {
+    content: "<< ";
+  }
+
   .also-like-container h1 {
     font-size: 1.5rem;
     padding-bottom: 1rem;

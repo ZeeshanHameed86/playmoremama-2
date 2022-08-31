@@ -72,7 +72,15 @@ const Navbar = ({ offset }) => {
             </Link>
             <div className="mobile-nav-socials">
               <AiOutlineSearch className="icon" />
-              <AiOutlineShoppingCart className="icon" />
+              <div className="cart-icon">
+                <div
+                  className="cart-items"
+                  style={{ background: "white", color: "red" }}
+                >
+                  <p>1</p>
+                </div>
+                <AiOutlineShoppingCart className="icon" />
+              </div>
               <AiOutlineInstagram className="icon" />
             </div>
           </motion.div>
@@ -84,7 +92,13 @@ const Navbar = ({ offset }) => {
           <img src={logo} alt="" />
         </div>
         <div className="right-mobile">
-          <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
+          <div className="cart-icon">
+            <div className="cart-items">
+              <p>1</p>
+            </div>
+
+            <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
+          </div>
         </div>
         <div className="left">
           <Link to="/" className="link">
@@ -106,7 +120,12 @@ const Navbar = ({ offset }) => {
         </div>
         <div className="right">
           <AiOutlineSearch className="icon" />
-          <AiOutlineShoppingCart className="icon" />
+          <div className="cart-icon">
+            <div className="cart-items">
+              <p>1</p>
+            </div>
+            <AiOutlineShoppingCart className="icon" />
+          </div>
           <AiOutlineInstagram className="icon" />
         </div>
       </div>

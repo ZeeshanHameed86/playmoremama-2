@@ -54,13 +54,8 @@ const SingleProductsPage = () => {
         <p>Mama founded + 100% natural handmade playdough</p>
       </div>
       <Navbar offset={40} />
-      <div className="single-product-back-background">
-        <button type="button" className="single-product-back-btn">
-          <img src={buttonbtnimg} alt="" />
-          <Link to="/products" style={{ color: "white" }}>
-            <h6>Back To Products</h6>
-          </Link>
-        </button>
+      <div className="single-product-back-btn">
+        <Link to="/products">Back To Products</Link>
       </div>
       <div className="single-product-layout">
         <div className="product-image-gallery-container">

@@ -37,7 +37,7 @@ const products_reducer = (state, action) => {
   }
   if (action.type === "FILTER_PRODUCTS") {
     const { all_products } = state;
-    if (action.payload === "all") {
+    if (action.payload === "ALL") {
       return { ...state, filtered_products: all_products };
     }
     let tempProducts = [...all_products];
