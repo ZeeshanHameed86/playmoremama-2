@@ -1466,4 +1466,7 @@ section {
   .featured-products {
     height: 1310px;
   }
+  .single-slide-container img {
+    width: 150px;
+  }
 }
