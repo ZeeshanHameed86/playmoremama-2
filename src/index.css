@@ -1363,14 +1363,17 @@ section {
   .categories {
     display: none;
   }
+  .header-info {
+    width: 100%;
+  }
   .header-info .heading-1 {
     display: none;
   }
   .header-info .heading-2 {
     display: block;
     position: relative;
-    margin-top: -5rem;
-    left: -60%;
+    margin-top: -8rem;
+    left: -30%;
     margin-bottom: 5rem;
   }
 }
@@ -1385,6 +1388,7 @@ section {
   .featured-title {
     font-size: 1.8rem;
   }
+
   .header-info h2 {
     font-size: 2rem;
   }
