@@ -298,6 +298,7 @@ header {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-y: hidden;
 }
 
 .intro-sideline-img-1 {
@@ -383,6 +384,7 @@ header {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-y: hidden;
 }
 
 .featured-sideline-img-1 {
