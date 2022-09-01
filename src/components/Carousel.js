@@ -4,14 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useProductsContext } from "../context/products_context";
-import { filterCategories } from "../helpers";
 import product from "../assets/Product.jpg";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import left from "../assets/left-arrow.svg";
 import right from "../assets/right-arrow.svg";
 
 const Carousel = () => {
-  const { all_products, filterProducts } = useProductsContext();
+  const { filterProducts } = useProductsContext();
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
 
@@ -35,7 +33,7 @@ const Carousel = () => {
       // }}
       breakpoints={{
         100: {
-          slidesPerView: 1,
+          slidesPerView: 1.4,
         },
         800: {
           slidesPerView: 2,
@@ -66,13 +64,19 @@ const Carousel = () => {
       {["ALL", "Sensory Jars", "Sensory Shakers", "Complements"].map(
         (item, index) => (
           <SwiperSlide key={index}>
-            <div
-              className="single-slide-container"
-              onClick={() => filterProducts(item)}
-            >
-              <img src={product} alt="" />
-              <h3>{item}</h3>
-            </div>
+            {({ isActive }) => (
+              <div
+                className={
+                  isActive
+                    ? "single-slide-container single-slide-active"
+                    : "single-slide-container"
+                }
+                onClick={() => filterProducts(item)}
+              >
+                <img src={product} alt="" />
+                <h3>{item}</h3>
+              </div>
+            )}
           </SwiperSlide>
         )
       )}

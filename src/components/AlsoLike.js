@@ -4,13 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useProductsContext } from "../context/products_context";
-import { filterCategories } from "../helpers";
-import product from "../assets/Product.jpg";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
-  const { all_products, filterProducts, also_like_products } =
-    useProductsContext();
+  const { filterProducts, also_like_products } = useProductsContext();
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
 
@@ -19,6 +17,7 @@ const Carousel = () => {
       loop={true}
       modules={[Navigation]}
       slidesPerView={5}
+      className="single-carousel"
       navigation={{
         prevEl: swiperNavPrevRef.current,
         nextEl: swiperNavNextRef.current,
@@ -48,12 +47,14 @@ const Carousel = () => {
       }}
     >
       {also_like_products.map((item, index) => (
-        <SwiperSlide key={index}>
-          <div className="single-product-slide-container">
-            <img src={item.fields.images[0].url} alt="" />
-            <h3>{item.fields.name}</h3>
-            <p>${item.fields.price}.00</p>
-          </div>
+        <SwiperSlide key={item.id}>
+          <Link to={`/products/${item.id}`}>
+            <div className="single-product-slide-container">
+              <img src={item.fields.images[0].url} alt="" />
+              <h3>{item.fields.name}</h3>
+              <p>${item.fields.price}.00</p>
+            </div>
+          </Link>
         </SwiperSlide>
       ))}
       <div className="single-arrows-container">

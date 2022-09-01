@@ -11,7 +11,14 @@ const Footer = () => {
         <div></div>
         <div>
           <h1 className="footer-title">How Do You Sensory?</h1>
-          <h1 className="footer-title">Tag Us @play.more.mama</h1>
+          <h1 className="footer-title">
+            Tag Us{" "}
+            <span>
+              <a href="https://www.instagram.com/play.more.mama/">
+                @play.more.mama
+              </a>
+            </span>
+          </h1>
         </div>
         <div className="footer-title-img-container">
           <img src={hearts} alt="" />

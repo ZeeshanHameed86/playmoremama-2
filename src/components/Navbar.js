@@ -81,7 +81,9 @@ const Navbar = ({ offset }) => {
                 </div>
                 <AiOutlineShoppingCart className="icon" />
               </div>
-              <AiOutlineInstagram className="icon" />
+              <a href="https://www.instagram.com/play.more.mama/">
+                <AiOutlineInstagram className="icon" />
+              </a>
             </div>
           </motion.div>
         )}
@@ -89,7 +91,9 @@ const Navbar = ({ offset }) => {
 
       <div className="navbar section-center">
         <div className="left-mobile">
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <div className="right-mobile">
           <div className="cart-icon">
@@ -126,7 +130,9 @@ const Navbar = ({ offset }) => {
             </div>
             <AiOutlineShoppingCart className="icon" />
           </div>
-          <AiOutlineInstagram className="icon" />
+          <a href="https://www.instagram.com/play.more.mama/">
+            <AiOutlineInstagram className="icon" />
+          </a>
         </div>
       </div>
     </nav>

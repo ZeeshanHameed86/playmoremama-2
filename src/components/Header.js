@@ -20,15 +20,18 @@ const Header = () => {
           <img src={rainbowimg} alt="" className="rainbow-img" />
         </div>
         <div className="header-info">
-          <h1>Welcome</h1>
-          <h2>Sensory Play for All Ages</h2>
+          <h1 className="heading-1">Welcome</h1>
+          <h1 className="heading-2">Hi.</h1>
+          <h2>
+            Sensory Play{" "}
+            <span>
+              <br />{" "}
+            </span>
+            for All Ages
+          </h2>
           <div className="header-btn-background">
             <button type="button" className="header-btn">
-              <img
-                src={buttonbtnimg}
-                alt=""
-                style={{ width: "400px", height: "400px" }}
-              />
+              <img src={buttonbtnimg} alt="" />
               <Link to="/products" style={{ color: "white" }}>
                 Shop Now!
               </Link>

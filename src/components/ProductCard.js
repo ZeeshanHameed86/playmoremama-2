@@ -20,13 +20,26 @@ const ProductCard = ({ item, index }) => {
           <h1>{item.fields.name}</h1>
           <p>${item.fields.price}.00</p>
           <Link to={`/products/${item.id}`}>
-            <button
-              disabled={!item.fields.images}
-              className="product-btn"
-              style={item.fields.images ? {} : { background: "grey" }}
-            >
-              {item.fields.images ? "View Details" : "Coming Soon"}
-            </button>
+            <div className="product-card-btn-container">
+              <button
+                disabled={!item.fields.images}
+                className="product-btn"
+                style={item.fields.images ? {} : { background: "grey" }}
+              >
+                {item.fields.images ? "View Details" : "Coming Soon"}
+              </button>
+              <button
+                disabled={!item.fields.images}
+                style={
+                  item.fields.images
+                    ? { background: "none", color: "red" }
+                    : { color: "grey", background: "none" }
+                }
+                className="product-btn"
+              >
+                {item.fields.images && "Add To Cart"}
+              </button>
+            </div>
           </Link>
         </div>
       </div>

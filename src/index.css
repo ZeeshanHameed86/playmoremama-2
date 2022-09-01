@@ -108,7 +108,7 @@ nav {
 }
 
 .navbar .middle {
-  width: 20%;
+  width: 105px;
   margin: 0 auto;
 }
 
@@ -117,8 +117,12 @@ nav {
   width: 100%;
 }
 
+.left-mobile {
+  width: 250px;
+}
+
 .left-mobile img {
-  width: 7%;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -215,6 +219,10 @@ header {
   z-index: 5;
 }
 
+.header-info span {
+  display: none;
+}
+
 .header-info h1 {
   font-size: 7rem;
 }
@@ -222,6 +230,13 @@ header {
 .header-info h2 {
   font-size: 3.5rem;
   letter-spacing: 2px;
+}
+
+.header-info .heading-1 {
+  display: block;
+}
+.header-info .heading-2 {
+  display: none;
 }
 
 .header-container h3 {
@@ -247,13 +262,22 @@ header {
   background: none;
   color: white;
   border: none;
-  font-size: 2rem;
+
   margin-top: 2rem;
   padding: 1.5rem 2rem;
   cursor: pointer;
   position: relative;
   transition: var(--button-transition);
   font-family: "Bambino-Bold";
+}
+
+.header-btn a {
+  font-size: 2rem;
+}
+
+.header-btn img {
+  width: 400px;
+  height: 400px;
 }
 
 .rainbow-img-container {
@@ -509,6 +533,14 @@ footer {
   text-align: center;
 }
 
+.footer-title a {
+  color: var(--dark-red);
+}
+
+.footer-title a:hover {
+  color: var(--dark-green);
+}
+
 .insta-posts {
   width: 100vw;
   height: 25vw;
@@ -636,6 +668,13 @@ footer {
   -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.61);
 }
 
+.product-card-btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .product-info {
   padding: 1rem;
 }
@@ -682,6 +721,14 @@ footer {
   color: inherit;
 }
 
+.single-slide-active {
+  margin-right: -6rem;
+}
+
+.single-slide-container {
+  pointer-events: none;
+}
+
 .single-slide-container img {
   width: 200px;
 }
@@ -718,10 +765,12 @@ footer {
   right: 50%;
   transform: translate(50%, -60%);
   z-index: 100;
+  pointer-events: none;
 }
 
 .swiper-prev img,
 .swiper-next img {
+  pointer-events: all;
   width: 50px;
 }
 /*************** End Products Page ***************/
@@ -862,7 +911,14 @@ section {
   text-align: center;
 }
 
+.single-product-slide-container {
+  padding-top: 10px;
+}
+
 .single-product-slide-container img {
+  box-shadow: -11px -11px 5px 0px rgba(254, 212, 129, 0.75);
+  -webkit-box-shadow: -11px -11px 5px 0px rgba(254, 212, 129, 0.75);
+  -moz-box-shadow: -11px -11px 5px 0px rgba(254, 212, 129, 0.75);
   width: 250px;
 }
 
@@ -873,10 +929,11 @@ section {
   color: var(--dark-red);
 }
 
-.carousel {
+.single-carousel {
   padding-top: 2rem;
   cursor: pointer;
-  width: 70vw;
+  width: 90vw;
+  margin-bottom: 1rem;
 }
 
 .swiper-button-prev::after,
@@ -885,20 +942,28 @@ section {
 }
 .swiper {
   text-align: center !important;
+  display: flex;
+  justify-content: center;
 }
 .single-arrows-container {
   display: flex;
-  justify-content: center;
-  padding-top: 1rem;
-  font-size: 2rem;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: absolute;
+  width: 90vw;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -60%);
+  z-index: 100;
+  pointer-events: none;
 }
-.single-swiper-prev {
-  padding-right: 10rem;
-}
+
 .single-swiper-prev,
 .single-swiper-next {
   color: var(--dark-red);
   cursor: pointer;
+  font-size: 2rem;
+  pointer-events: all;
 }
 /*************** End Single Product Page ***************/
 
@@ -1183,11 +1248,13 @@ section {
     text-align: center;
     left: 0;
   }
-  .header-btn {
-    font-size: 1.5rem;
+
+  .header-btn img {
+    width: 300px;
+    height: 300px;
   }
-  .header-btn-background img {
-    width: 280px;
+  .header-btn a {
+    font-size: 1.6rem;
   }
   .single-detail {
     width: 100vw;
@@ -1294,6 +1361,16 @@ section {
   .categories {
     display: none;
   }
+  .header-info .heading-1 {
+    display: none;
+  }
+  .header-info .heading-2 {
+    display: block;
+    position: relative;
+    margin-top: -5rem;
+    left: -60%;
+    margin-bottom: 5rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1307,7 +1384,7 @@ section {
     font-size: 1.8rem;
   }
   .header-info h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
   .products-layout {
     padding: 0;
@@ -1368,5 +1445,19 @@ section {
     font-size: 1.5rem;
     padding-bottom: 1rem;
     padding-top: 3rem;
+  }
+  .header-info span {
+    display: inline;
+  }
+  .arrows-container {
+    right: 55%;
+    width: 80vw;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .featured-products {
+    height: 1310px;
   }
 }

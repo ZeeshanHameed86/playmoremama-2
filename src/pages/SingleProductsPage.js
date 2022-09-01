@@ -129,21 +129,9 @@ const SingleProductsPage = () => {
           <hr style={{ marginBottom: "3rem" }} />
         </div>
       </div>
-      <div className="also-like-container section-center">
+      <div className="also-like-container">
         <h1>You May Also Like</h1>
         <AlsoLike />
-        {/* <div className="also-like-layout">
-          {also_like_products &&
-            also_like_products.map((item, index) => {
-              return (
-                <div key={index} className="single-detail-also-like">
-                  <img src={item.fields.images[0].url} alt="" />
-                  <h3>{item.fields.name}</h3>
-                  <p>${item.fields.price}.00</p>
-                </div>
-              );
-            })}
-        </div> */}
       </div>
     </section>
   );

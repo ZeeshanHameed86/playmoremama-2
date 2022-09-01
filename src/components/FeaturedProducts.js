@@ -4,8 +4,12 @@ import sideline2 from "../assets/Sideline-2-3.png";
 import product from "../assets/Product.jpg";
 import leaf from "../assets/Leaf.png";
 import rainbow2 from "../assets/Rainbow-2.png";
+import { Link } from "react-router-dom";
+import { useProductsContext } from "../context/products_context";
 
 const FeaturedProducts = () => {
+  const { filterProducts } = useProductsContext();
+
   return (
     <section className="featured-products">
       <img src={sideline1} alt="" className="featured-sideline-img-1" />
@@ -15,7 +19,9 @@ const FeaturedProducts = () => {
       <div className="single-featured-detail single-featured-detail-1">
         <div className="featured-img-container">
           <div className="featured-img-shadow"></div>
-          <img src={product} alt="" />
+          <Link to="/products" onClick={() => filterProducts("Sensory Jars")}>
+            <img src={product} alt="" />
+          </Link>
         </div>
         <div className="featured-text">
           <h2>Sensory Jars</h2>
@@ -29,7 +35,12 @@ const FeaturedProducts = () => {
       <div className="single-featured-detail single-featured-detail-2">
         <div className="featured-img-container">
           <div className="featured-img-shadow"></div>
-          <img src={product} alt="" />
+          <Link
+            to="/products"
+            onClick={() => filterProducts("Sensory Shakers")}
+          >
+            <img src={product} alt="" />
+          </Link>
         </div>
         <div className="featured-text">
           <h2>Sensory Shakers</h2>
@@ -45,7 +56,9 @@ const FeaturedProducts = () => {
         <div className="featured-img-container">
           <div className="featured-img-shadow cherry"></div>
           <img src={leaf} alt="" className="leaf" />
-          <img src={product} alt="" />
+          <Link to="/products" onClick={() => filterProducts("Complements")}>
+            <img src={product} alt="" />
+          </Link>
         </div>
         <div className="featured-text">
           <h2>Complements</h2>
