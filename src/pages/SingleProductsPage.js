@@ -48,7 +48,7 @@ const SingleProductsPage = () => {
     <section>
       <div
         className={
-          fixed >= 40 ? "single-product-bar fixed" : "single-product-bar"
+          fixed >= 40 ? "single-product-bar single-fixed" : "single-product-bar"
         }
       >
         <p>Mama founded + 100% natural handmade playdough</p>
