@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: "Bambino-Black";
   font-style: normal;
   font-weight: normal;
@@ -15,7 +15,7 @@
   font-style: normal;
   font-weight: normal;
   src: local("Bambino-Regular"), url("./fonts/Bambino.woff") format("woff");
-} */
+}
 
 html {
   --black: "Bambino-Black";
@@ -48,7 +48,7 @@ html {
 
 html,
 body {
-  font-family: "Bambino-Regular", sans-serif;
+  font-family: "Bambino-Regular";
 }
 
 .main {
@@ -85,7 +85,7 @@ nav {
   height: var(--nav-height);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  font-family: "Bambino-Bold", sans-serif;
+  font-family: sans-serif;
   justify-content: center;
   align-items: center;
 }
@@ -266,7 +266,7 @@ header {
   cursor: pointer;
   position: relative;
   transition: var(--button-transition);
-  font-family: "Bambino-Bold", sans-serif;
+  font-family: "Bambino-Bold";
 }
 
 .header-btn a {
@@ -635,7 +635,7 @@ footer {
   height: var(--nav-height);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  font-family: "Bambino-Bold", sans-serif;
+  font-family: "Bambino-Bold";
   justify-content: space-between;
   align-items: center;
 }
@@ -906,7 +906,7 @@ section {
   cursor: pointer;
   position: relative;
   transition: var(--button-transition);
-  font-family: "Bambino-Bold", sans-serif;
+  font-family: "Bambino-Bold";
 }
 
 .cart-btn h6 {
