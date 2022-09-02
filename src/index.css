@@ -1372,13 +1372,13 @@ section {
   .header-info .heading-1 {
     display: none;
   }
-  .header-info .heading-2 {
+  /* .header-info .heading-2 {
     display: flex;
     position: absolute;
     font-size: 8rem;
     top: -250px;
     left: 100px;
-  }
+  } */
 }
 
 @media screen and (max-width: 480px) {

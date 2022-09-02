@@ -21,7 +21,7 @@ const Header = () => {
         </div>
         <div className="header-info">
           <h1 className="heading-1">Welcome</h1>
-          <h1 className="heading-2">Hi.</h1>
+          {/* <h1 className="heading-2">Hi.</h1> */}
           <h2>
             Sensory Play{" "}
             <span>
