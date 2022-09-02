@@ -32,7 +32,7 @@ const ProductCard = ({ item, index }) => {
                 disabled={!item.fields.images}
                 style={
                   item.fields.images
-                    ? { background: "none", color: "red" }
+                    ? { background: "none", color: "#e05151" }
                     : { color: "grey", background: "none" }
                 }
                 className="product-btn"
