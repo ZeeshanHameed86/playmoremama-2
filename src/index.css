@@ -933,9 +933,9 @@ section {
 }
 
 .single-product-slide-container img {
-  box-shadow: -5px -4px 5px 4px rgba(254, 212, 129, 0.75);
-  -webkit-box-shadow: -5px -4px 5px 4px rgba(254, 212, 129, 0.75);
-  -moz-box-shadow: -5px -4px 5px 4px rgba(254, 212, 129, 0.75);
+  box-shadow: -4px -2px 5px 4px rgba(254, 212, 129, 0.75);
+  -webkit-box-shadow: -4px -2px 5px 4px rgba(254, 212, 129, 0.75);
+  -moz-box-shadow: -4px -2px 5px 4px rgba(254, 212, 129, 0.75);
   width: 250px;
 }
 
