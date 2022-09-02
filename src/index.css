@@ -1368,8 +1368,9 @@ section {
     display: block;
     font-size: 7rem;
     text-align: start;
-    margin-top: -5rem;
-    padding-left: 5rem;
+    margin-top: -13rem;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
