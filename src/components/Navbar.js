@@ -97,9 +97,7 @@ const Navbar = ({ offset }) => {
         </div>
         <div className="right-mobile">
           <div className="cart-icon">
-            <div className="cart-items">
-              <p>0</p>
-            </div>
+            <div className="cart-items">0</div>
 
             <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
           </div>
