@@ -75,10 +75,6 @@ nav {
 }
 
 .fixed {
-  margin-bottom: calc(var(--nav-height) + 2rem);
-}
-
-.single-fixed {
   margin-bottom: var(--nav-height);
 }
 
@@ -1376,7 +1372,7 @@ section {
     display: flex;
     position: absolute;
     font-size: 8rem;
-    top: -250px;
+    top: -350px;
     left: 100px;
   }
 }
@@ -1462,9 +1458,6 @@ section {
   }
   .header-info span {
     display: inline;
-  }
-  .single-slide-container img {
-    width: 160px;
   }
 }
 
