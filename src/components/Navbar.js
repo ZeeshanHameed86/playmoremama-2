@@ -6,7 +6,7 @@ import {
   AiOutlineInstagram,
   AiOutlineMenu,
 } from "react-icons/ai";
-import { BiExit } from "react-icons/bi";
+import { ImCross } from "react-icons/im";
 import logo from "../assets/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
@@ -57,7 +57,7 @@ const Navbar = ({ offset }) => {
             className="menu-slide"
           >
             <div className="exit-btn">
-              <BiExit onClick={menuToggle} />
+              <ImCross onClick={menuToggle} />
             </div>
             <Link to="/" className="link" onClick={menuToggle}>
               Home

@@ -910,9 +910,9 @@ section {
 }
 
 .single-product-slide-container img {
-  box-shadow: -11px -11px 5px 0px rgba(254, 212, 129, 0.75);
-  -webkit-box-shadow: -11px -11px 5px 0px rgba(254, 212, 129, 0.75);
-  -moz-box-shadow: -11px -11px 5px 0px rgba(254, 212, 129, 0.75);
+  box-shadow: -10px -11px 15px -5px rgba(254, 212, 129, 1);
+  -webkit-box-shadow: -10px -11px 15px -5px rgba(254, 212, 129, 1);
+  -moz-box-shadow: -10px -11px 15px -5px rgba(254, 212, 129, 1);
   width: 250px;
 }
 
@@ -1185,7 +1185,7 @@ section {
   .exit-btn {
     position: absolute;
     color: white;
-    right: 10%;
+    left: 10%;
     top: 2%;
     font-size: 2.5rem;
     cursor: pointer;
@@ -1436,7 +1436,7 @@ section {
   .single-product-back-btn {
     display: block;
     text-align: center;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     font-size: 1.5rem;
   }
 

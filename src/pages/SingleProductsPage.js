@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AlsoLike from "../components/AlsoLike";
 
 const SingleProductsPage = () => {
-  const [descriptionToggle, setDescriptionToggle] = useState(false);
+  const [descriptionToggle, setDescriptionToggle] = useState(true);
   const { id } = useParams();
   const [imageIndex, setImageIndex] = useState(1);
   const {
