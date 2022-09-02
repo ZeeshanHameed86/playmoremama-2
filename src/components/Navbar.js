@@ -100,7 +100,6 @@ const Navbar = ({ offset }) => {
             <div className="cart-items">
               <p>0</p>
             </div>
-
             <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
           </div>
         </div>
