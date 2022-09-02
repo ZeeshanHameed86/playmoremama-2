@@ -86,6 +86,8 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   font-family: "Bambino-Bold";
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-slide,
@@ -118,19 +120,6 @@ nav {
 .navbar .middle img {
   position: relative;
   width: 100%;
-}
-
-.left-mobile {
-  width: 250px;
-}
-
-.left-mobile img {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
 }
 
 .navbar .right {
@@ -1182,11 +1171,7 @@ section {
     display: block;
   }
   .left-mobile img {
-    display: block;
-    width: 40%;
-    position: relative;
-    left: 10%;
-    top: 50%;
+    width: 110px;
   }
   .right-mobile {
     justify-self: end;
