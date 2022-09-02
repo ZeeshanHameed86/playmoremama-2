@@ -1364,13 +1364,13 @@ section {
   .header-info .heading-1 {
     display: none;
   }
-  /* .header-info .heading-2 {
-    display: flex;
-    position: absolute;
-    font-size: 8rem;
-    top: -250px;
-    left: 100px;
-  } */
+  .header-info .heading-2 {
+    display: block;
+    font-size: 7rem;
+    text-align: start;
+    margin-top: -5rem;
+    padding-left: 5rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
