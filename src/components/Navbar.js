@@ -77,7 +77,7 @@ const Navbar = ({ offset }) => {
                   className="cart-items"
                   style={{ background: "white", color: "red" }}
                 >
-                  <p>1</p>
+                  <p>0</p>
                 </div>
                 <AiOutlineShoppingCart className="icon" />
               </div>
@@ -98,7 +98,7 @@ const Navbar = ({ offset }) => {
         <div className="right-mobile">
           <div className="cart-icon">
             <div className="cart-items">
-              <p style={{ top: "-10%" }}>1</p>
+              <p>0</p>
             </div>
 
             <AiOutlineMenu className="menu-btn" onClick={menuToggle} />

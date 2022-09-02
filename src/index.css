@@ -1198,8 +1198,9 @@ section {
   }
   .right-mobile {
     justify-self: end;
-    align-self: center;
+    align-content: center;
     cursor: pointer;
+    padding-bottom: 0.5rem;
   }
   .menu-btn {
     font-size: 2.5rem;
