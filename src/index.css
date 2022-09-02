@@ -75,6 +75,9 @@ nav {
 }
 
 .fixed {
+  margin-bottom: calc(var(--nav-height) + 2rem);
+}
+.single-fixed {
   margin-bottom: var(--nav-height);
 }
 
