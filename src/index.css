@@ -1462,13 +1462,13 @@ section {
   .header-info span {
     display: inline;
   }
+  .single-slide-container img {
+    width: 150px;
+  }
 }
 
 @media screen and (max-width: 380px) {
   .featured-products {
     height: 1310px;
-  }
-  .single-slide-container img {
-    width: 150px;
   }
 }
