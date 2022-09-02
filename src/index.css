@@ -735,6 +735,7 @@ footer {
 
 .single-slide-container img {
   width: 200px;
+  pointer-events: all;
 }
 
 .single-slide-container h3 {
@@ -1375,7 +1376,7 @@ section {
     display: flex;
     position: absolute;
     font-size: 8rem;
-    top: -350px;
+    top: -250px;
     left: 100px;
   }
 }

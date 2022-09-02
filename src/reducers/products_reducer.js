@@ -41,7 +41,6 @@ const products_reducer = (state, action) => {
       return { ...state, filtered_products: all_products };
     }
     let tempProducts = [...all_products];
-    console.log(tempProducts);
     tempProducts = tempProducts.filter(
       (item) => item.fields.category === action.payload
     );

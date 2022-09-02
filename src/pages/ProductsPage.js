@@ -50,9 +50,15 @@ const ProductsPage = () => {
             <hr />
           </div>
           <div className="products-layout">
-            {filtered_products.map((item, index) => {
-              return <ProductCard key={index} item={item} index={index} />;
-            })}
+            {filtered_products.length !== 0 ? (
+              filtered_products.map((item, index) => {
+                return <ProductCard key={index} item={item} index={index} />;
+              })
+            ) : (
+              <div style={{ textAlign: "center" }}>
+                <h1>No Products Found...</h1>
+              </div>
+            )}
           </div>
         </div>
       </div>
