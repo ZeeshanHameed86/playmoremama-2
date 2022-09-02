@@ -1,6 +1,5 @@
 import React from "react";
-import sideline1 from "../assets/Sideline-1-2.png";
-import sideline2 from "../assets/Sideline-2-2.png";
+
 import world from "../assets/World.png";
 import brain from "../assets/Brain.png";
 import hands from "../assets/Hands.png";
@@ -8,8 +7,6 @@ import hands from "../assets/Hands.png";
 const Introduction = () => {
   return (
     <section className="intro">
-      <img src={sideline1} alt="" className="intro-sideline-img-1" />
-      <img src={sideline2} alt="" className="intro-sideline-img-2" />
       <div className="intro-details">
         <h1 className="intro-title">Say Hello to Calm, Happy, and</h1>
         <h1 className="intro-title intro-subtitle">Creative Experiences</h1>

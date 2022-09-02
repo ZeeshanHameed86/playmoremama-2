@@ -8,7 +8,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Carousel = () => {
-  const { filterProducts, also_like_products } = useProductsContext();
+  const { also_like_products } = useProductsContext();
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
 
@@ -50,7 +50,9 @@ const Carousel = () => {
         <SwiperSlide key={item.id}>
           <Link to={`/products/${item.id}`}>
             <div className="single-product-slide-container">
-              <img src={item.fields.images[0].url} alt="" />
+              <div className="single-product-slide-img-container">
+                <img src={item.fields.images[0].url} alt="" />
+              </div>
               <h3>{item.fields.name}</h3>
               <p>${item.fields.price}.00</p>
             </div>

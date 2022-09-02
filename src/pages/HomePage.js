@@ -4,6 +4,7 @@ import {
   Header,
   Introduction,
   FeaturedProducts,
+  Value,
   Footer,
 } from "../components";
 
@@ -12,6 +13,7 @@ const HomePage = () => {
     <div>
       <Navbar offset={0} />
       <Header />
+      <Value />
       <Introduction />
       <FeaturedProducts />
       <Footer />

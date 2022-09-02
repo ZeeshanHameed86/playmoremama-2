@@ -5,6 +5,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import Footer from "./Footer";
 import ProductCard from "./ProductCard";
 import MainFooter from "./MainFooter";
+import Value from "./Value.js";
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   Footer,
   ProductCard,
   MainFooter,
+  Value,
 };
