@@ -1451,6 +1451,12 @@ section {
   .single-slide-container img {
     width: 150px;
   }
+  .navbar {
+    width: 95vw;
+  }
+  .right-mobile {
+    padding-right: 1rem;
+  }
 }
 
 @media screen and (max-width: 380px) {
