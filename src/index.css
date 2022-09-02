@@ -141,12 +141,12 @@ nav {
   border-radius: 50%;
   background: var(--dark-red);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cart-items p {
-  position: relative;
-  top: -20%;
-  right: -30%;
 }
 
 .icon {
