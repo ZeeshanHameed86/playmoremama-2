@@ -1221,6 +1221,13 @@ section {
   }
   .navbar {
     grid-template-columns: 1fr 1fr;
+    width: 95vw;
+  }
+  .right-mobile {
+    padding-right: 1rem;
+  }
+  .left-mobile img {
+    margin-top: -0.3rem;
   }
   .header-info {
     top: 55%;
@@ -1450,12 +1457,6 @@ section {
   }
   .single-slide-container img {
     width: 150px;
-  }
-  .navbar {
-    width: 95vw;
-  }
-  .right-mobile {
-    padding-right: 1rem;
   }
 }
 
