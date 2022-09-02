@@ -9,10 +9,12 @@ const Value = () => {
       <img src={sideline2} alt="" className="intro-sideline-img-2" />
       <div className="value-details section-center">
         <h1>
-          At play.more.mama it’s done the right way. Mama says so. Taste-safe
-          handcrafted playdough made with organic coconut oil and oven-baked
-          flour. Carefully curated products created for meaningful hands-on
-          learning. And made to travel, so fun is never left behind.
+          At playmoremama we do it right so you can play more and worry less.{" "}
+          <br />
+          Taste-safe handcrafted playdough made with organic coconut oil and
+          oven-baked flour. <br /> Carefully curated products created for
+          meaningful hands-on learning. <br /> And travel-size, so fun is never
+          left behind.
         </h1>
       </div>
     </section>

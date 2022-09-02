@@ -288,8 +288,10 @@ header {
 /*************** Value ***************/
 .value {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
+  overflow-y: hidden;
+  padding: 3rem 0;
 }
 
 .value-details {
@@ -311,7 +313,6 @@ header {
   height: 100vh;
   position: relative;
   overflow-y: hidden;
-  background: var(--light-yellow);
 }
 
 .intro-sideline-img-1 {
@@ -1409,6 +1410,7 @@ section {
   .intro-title {
     font-size: 1.5rem;
   }
+
   .intro-subtitle {
     padding-top: 0.8rem;
   }
@@ -1495,5 +1497,8 @@ section {
 @media screen and (max-width: 380px) {
   .featured-products {
     height: 1310px;
+  }
+  .intro {
+    height: 1050px;
   }
 }
