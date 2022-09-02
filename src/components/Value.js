@@ -11,10 +11,12 @@ const Value = () => {
         <h1>
           At playmoremama we do it right so you can play more and worry less.{" "}
           <br />
+          <br />
           Taste-safe handcrafted playdough made with organic coconut oil and
-          oven-baked flour. <br /> Carefully curated products created for
-          meaningful hands-on learning. <br /> And travel-size, so fun is never
-          left behind.
+          oven-baked flour. <br />
+          <br /> Carefully curated products created for meaningful hands-on
+          learning. <br />
+          <br /> And travel-size, so fun is never left behind.
         </h1>
       </div>
     </section>
