@@ -18,6 +18,7 @@ const Carousel = () => {
       loop={true}
       className="carousel"
       modules={[Navigation]}
+      centeredSlides={true}
       navigation={{
         prevEl: swiperNavPrevRef.current,
         nextEl: swiperNavNextRef.current,
@@ -33,7 +34,7 @@ const Carousel = () => {
       // }}
       breakpoints={{
         100: {
-          slidesPerView: 1.4,
+          slidesPerView: 1.8,
         },
         800: {
           slidesPerView: 2,
