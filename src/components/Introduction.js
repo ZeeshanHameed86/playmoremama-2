@@ -31,9 +31,8 @@ const Introduction = () => {
             <div>
               <p>
                 While you play, connections on the brain's pathways are being
-                made which lead to more complex learning tasks. Memory,
-                language, and cognitive development improve. High-fives for
-                learning!
+                made which lead to improved cognitive development, memory, and
+                language.
               </p>
             </div>
           </div>
@@ -46,9 +45,8 @@ const Introduction = () => {
             <div>
               <p>
                 While you play, connections on the brain's pathways are being
-                made which lead to more complex learning tasks. Memory,
-                language, and cognitive development improve. High-fives for
-                learning!
+                made which lead to improved cognitive development, memory, and
+                language.
               </p>
             </div>
           </div>
