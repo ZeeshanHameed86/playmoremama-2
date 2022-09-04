@@ -313,7 +313,7 @@ header {
 
 .value-details img {
   position: absolute;
-  z-index: 500;
+  z-index: 20;
 }
 
 .value-1 .img-1 {

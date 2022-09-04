@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useProductsContext } from "../context/products_context";
-import product from "../assets/Product.jpg";
+import Soon from "../assets/Coming Soon.png";
 import left from "../assets/left-arrow.svg";
 import right from "../assets/right-arrow.svg";
 
@@ -74,7 +74,7 @@ const Carousel = () => {
                 }
                 onClick={() => filterProducts(item)}
               >
-                <img src={product} alt="" />
+                <img src={Soon} alt="" />
                 <h3>{item}</h3>
               </div>
             )}
