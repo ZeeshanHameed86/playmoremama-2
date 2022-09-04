@@ -309,6 +309,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .value-details img {
@@ -321,12 +322,16 @@ header {
   top: 50%;
   rotate: 45deg;
   width: 50px;
+  z-index: -1;
+  filter: blur(1px);
 }
 .value-1 .img-2 {
   bottom: -50%;
   rotate: -45deg;
   left: 40%;
   width: 30px;
+  filter: blur(1px);
+  z-index: -1;
 }
 .value-1 .img-3 {
   rotate: 45deg;
@@ -357,6 +362,17 @@ header {
   bottom: -20%;
   right: 20%;
   width: 30px;
+}
+.value-4 .img-8 {
+  rotate: 65deg;
+  top: -15%;
+  left: 0;
+  width: 50px;
+}
+.value-4 .img-9 {
+  bottom: -10%;
+  right: -10%;
+  width: 60px;
 }
 
 .value-details h1 {
