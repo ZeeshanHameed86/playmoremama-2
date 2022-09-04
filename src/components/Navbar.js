@@ -125,7 +125,7 @@ const Navbar = ({ offset }) => {
           <AiOutlineSearch className="icon" />
           <div className="cart-icon">
             <div className="cart-items">
-              <p>1</p>
+              <p>0</p>
             </div>
             <AiOutlineShoppingCart className="icon" />
           </div>

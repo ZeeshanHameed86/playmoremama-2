@@ -294,23 +294,64 @@ header {
 /*************** Value ***************/
 .value {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   overflow-y: hidden;
-  padding: 3rem 0;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .value-details {
-  width: inherit;
-  height: inherit;
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .value-details h1 {
-  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  color: white;
+  text-align: center;
 }
+
+.value-1,
+.value-2,
+.value-3,
+.value-4 {
+  width: 60%;
+  margin-bottom: 4rem;
+}
+
+.value-1 {
+  background: var(--dark-blue);
+  box-shadow: 20px 20px 5px 0px rgba(22, 153, 134, 0.75);
+  -webkit-box-shadow: 20px 20px 5px 0px rgba(22, 153, 134, 0.75);
+  -moz-box-shadow: 20px 20px 5px 0px rgba(22, 153, 134, 0.75);
+}
+.value-2 {
+  background: var(--dark-green);
+  box-shadow: -20px 20px 5px 0px rgba(224, 81, 81, 0.75);
+  -webkit-box-shadow: -20px 20px 5px 0px rgba(224, 81, 81, 0.75);
+  -moz-box-shadow: -20px 20px 5px 0px rgba(224, 81, 81, 0.75);
+}
+.value-3 {
+  background: var(--dark-red);
+  box-shadow: 20px 20px 5px 0px rgba(216, 164, 72, 0.75);
+  -webkit-box-shadow: 20px 20px 5px 0px rgba(216, 164, 72, 0.75);
+  -moz-box-shadow: 20px 20px 5px 0px rgba(216, 164, 72, 0.75);
+}
+.value-4 {
+  background: var(--dark-yellow);
+  box-shadow: -20px 20px 5px 0px rgba(37, 110, 147, 0.75);
+  -webkit-box-shadow: -20px 20px 5px 0px rgba(37, 110, 147, 0.75);
+  -moz-box-shadow: -20px 20px 5px 0px rgba(37, 110, 147, 0.75);
+}
+
 /*************** End Value ***************/
 
 /*************** Intro ***************/
@@ -325,8 +366,8 @@ header {
 .intro-sideline-img-1 {
   position: absolute;
   top: -0.1%;
-  left: var(--sideline-responsive-position);
-  height: var(--sideline-responsive-height);
+  left: 0;
+  height: 100vh;
   z-index: 5;
   pointer-events: none;
 }
@@ -334,8 +375,8 @@ header {
 .intro-sideline-img-2 {
   position: absolute;
   top: -0.1%;
-  right: var(--sideline-responsive-position);
-  height: var(--sideline-responsive-height);
+  right: 0;
+  height: 100vh;
   z-index: 5;
   pointer-events: none;
 }
@@ -1139,6 +1180,12 @@ section {
   .header-info h2 {
     font-size: 2.5rem;
   }
+  .value {
+    height: 100vh;
+  }
+  .value-details h1 {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1401,6 +1448,17 @@ section {
     margin-top: -11rem;
     padding-left: 2rem;
     padding-bottom: 3rem;
+  }
+  .value-1,
+  .value-2,
+  .value-3,
+  .value-4 {
+    width: 80%;
+  }
+
+  .value-details h1 {
+    padding: 2rem 0;
+    font-size: 1rem;
   }
 }
 
