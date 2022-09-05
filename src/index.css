@@ -395,6 +395,7 @@ header {
 }
 
 .value-details .bold {
+  font-size: 1.3rem;
   font-family: var(--black);
 }
 
@@ -1661,7 +1662,7 @@ section {
   }
   .value,
   .value-details {
-    height: 1000px;
+    height: 1050px;
   }
   .value-details br {
     display: inline;
