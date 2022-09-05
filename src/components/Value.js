@@ -22,8 +22,8 @@ const Value = () => {
           <img src={bottle1} alt="" className="img-2" />
           <img src={jar2} alt="" className="img-3" />
           <h1 className="bold">
-            At play.more.mama <br /> we do it right, so you can play more <br />{" "}
-            and worry less.
+            At play.more.mama <br /> we do it right, <br /> so you can play more{" "}
+            <br /> and worry less.
           </h1>
         </div>
         <div className="value-2">
@@ -45,7 +45,8 @@ const Value = () => {
           <img src={jar5} alt="" className="img-8" />
           <img src={dice} alt="" className="img-9" />
           <h1>
-            And travel-size, <br /> so fun is never left behind.
+            And travel-size,
+            <br /> so fun is never left behind.
           </h1>
         </div>
       </div>
