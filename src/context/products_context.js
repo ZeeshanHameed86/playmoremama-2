@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect, useContext } from "react";
+import React, { useReducer, useEffect, useContext } from "react";
 import reducer from "../reducers/products_reducer";
 
 const ProductsContext = React.createContext();
@@ -16,6 +16,8 @@ const initialState = {
   single_product: {},
   loading: true,
   also_like_products: [],
+  cart_items: [],
+  total_amount: 0,
   // default_filter: "Casual Wear",
   // m_category: "Casual Wear",
   // s_category: "",
@@ -69,6 +71,20 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const addCartItems = (id, cartItems, quantity) => {
+    dispatch({
+      type: "CART_ITEMS",
+      payload: { id, cartItems, quantity },
+    });
+  };
+
+  const removeCartItem = (id) => {
+    dispatch({
+      type: "REMOVE_CART_ITEM",
+      payload: id,
+    });
+  };
+
   // const toggleSidebar = () => {
   //   dispatch({ type: "TOGGLE_BAR_MENU" });
   // };
@@ -85,15 +101,18 @@ export const ProductsProvider = ({ children }) => {
     getRecords();
   }, []);
 
+  useEffect(() => {
+    dispatch({ type: "COUNT_CART_TOTALS" });
+  }, [state.cart_items]);
+
   return (
     <ProductsContext.Provider
       value={{
         ...state,
         filterProducts,
         getSingleProduct,
-        // toggleSortMenu,
-        // toggleSidebar,
-        // closeSidebar,
+        addCartItems,
+        removeCartItem,
       }}
     >
       {children}

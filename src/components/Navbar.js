@@ -10,10 +10,12 @@ import { ImCross } from "react-icons/im";
 import logo from "../assets/Logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import { useProductsContext } from "../context/products_context";
 
 const Navbar = ({ offset }) => {
   const [toggle, setToggle] = useState(false);
   const [fixed, setFixed] = useState();
+  const { cart_items } = useProductsContext();
 
   const menuToggle = () => {
     setToggle(!toggle);
@@ -77,9 +79,11 @@ const Navbar = ({ offset }) => {
                   className="cart-items"
                   style={{ background: "white", color: "red" }}
                 >
-                  <p>0</p>
+                  <p>{cart_items.length}</p>
                 </div>
-                <AiOutlineShoppingCart className="icon" />
+                <Link to="/cart">
+                  <AiOutlineShoppingCart className="icon" />
+                </Link>
               </div>
               <a href="https://www.instagram.com/play.more.mama/">
                 <AiOutlineInstagram className="icon" />
@@ -98,7 +102,7 @@ const Navbar = ({ offset }) => {
         <div className="right-mobile">
           <div className="cart-icon">
             <div className="cart-items">
-              <p>0</p>
+              <p>{cart_items.length}</p>
             </div>
             <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
           </div>
@@ -125,9 +129,11 @@ const Navbar = ({ offset }) => {
           <AiOutlineSearch className="icon" />
           <div className="cart-icon">
             <div className="cart-items">
-              <p>0</p>
+              <p>{cart_items.length}</p>
             </div>
-            <AiOutlineShoppingCart className="icon" />
+            <Link to="/cart">
+              <AiOutlineShoppingCart className="icon" />
+            </Link>
           </div>
           <a href="https://www.instagram.com/play.more.mama/">
             <AiOutlineInstagram className="icon" />

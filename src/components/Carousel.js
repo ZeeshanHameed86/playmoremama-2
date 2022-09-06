@@ -7,11 +7,18 @@ import { useProductsContext } from "../context/products_context";
 import Soon from "../assets/Coming Soon.png";
 import left from "../assets/left-arrow.svg";
 import right from "../assets/right-arrow.svg";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Carousel = () => {
   const { filterProducts } = useProductsContext();
+  const [active, setActive] = useState("ALL");
   const swiperNavPrevRef = useRef();
   const swiperNavNextRef = useRef();
+
+  useEffect(() => {
+    filterProducts(active);
+  }, [active]);
 
   return (
     <Swiper
@@ -65,19 +72,21 @@ const Carousel = () => {
       {["ALL", "Sensory Jars", "Sensory Shakers", "Complements"].map(
         (item, index) => (
           <SwiperSlide key={index}>
-            {({ isActive }) => (
-              <div
-                className={
-                  isActive
-                    ? "single-slide-container single-slide-active"
-                    : "single-slide-container"
-                }
-                onClick={() => filterProducts(item)}
-              >
-                <img src={Soon} alt="" />
-                <h3>{item}</h3>
-              </div>
-            )}
+            {({ isActive }) => {
+              isActive && setActive(item);
+              return (
+                <div
+                  className={
+                    isActive
+                      ? "single-slide-container single-slide-active"
+                      : "single-slide-container"
+                  }
+                >
+                  <img src={Soon} alt="" />
+                  <h3>{item}</h3>
+                </div>
+              );
+            }}
           </SwiperSlide>
         )
       )}

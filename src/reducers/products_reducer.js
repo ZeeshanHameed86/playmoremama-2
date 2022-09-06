@@ -46,6 +46,56 @@ const products_reducer = (state, action) => {
     );
     return { ...state, filtered_products: tempProducts };
   }
+  if (action.type === "CART_ITEMS") {
+    const {
+      id,
+      cartItems: { name, price, images },
+      quantity,
+    } = action.payload;
+    const allItems = state.cart_items.filter((item) => item.id !== id);
+    const tempItem = state.cart_items.find((item) => item.id === id);
+    if (tempItem) {
+      const newQuantity = (tempItem.quantity += quantity);
+      tempItem.quantity = newQuantity;
+
+      return { ...state, cart_items: [...allItems, tempItem] };
+    } else {
+      const newItem = {
+        id,
+        name,
+        price,
+        image: images[0] && images[0].url,
+        quantity,
+      };
+      return { ...state, cart_items: [...state.cart_items, newItem] };
+    }
+  }
+
+  if (action.type === "REMOVE_CART_ITEM") {
+    const tempItems = state.cart_items.filter(
+      (item) => item.id !== action.payload
+    );
+    return { ...state, cart_items: tempItems };
+  }
+
+  if (action.type === "COUNT_CART_TOTALS") {
+    const total_amount = state.cart_items.reduce(
+      (total, cartItem) => {
+        const { price, quantity } = cartItem;
+        total += price * quantity;
+
+        return total;
+      },
+
+      0
+    );
+
+    console.log(total_amount);
+
+    return { ...state, total_amount };
+  }
+
+  return { ...state };
 };
 
 export default products_reducer;
