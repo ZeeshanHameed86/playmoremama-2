@@ -8,10 +8,33 @@ import {
   AiFillCaretUp,
 } from "react-icons/ai";
 import { useState } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { useEffect } from "react";
 
 const CartPage = () => {
-  const { cart_items, removeCartItem, total_amount } = useProductsContext();
+  const { cart_items, removeCartItem, total_amount, addCartQuantity } =
+    useProductsContext();
   const [isCouponOpen, setIsCouponOpen] = useState(false);
+  const [cartQuantity, setCartQuantity] = useState([]);
+
+  // useEffect(() => {
+  //   cart_items &&
+  //     cart_items.map((item) => {
+  //       return cartQuantity.push(item.quantity);
+  //     });
+  // }, []);
+
+  // const incrementQuantity = (id, item, index) => {
+  //   let temp = [...cartQuantity];
+  //   temp[index] = temp[index] + 1;
+  //   console.log("temp", temp);
+  //   setCartQuantity(temp);
+  //   console.log("hello", cartQuantity[index]);
+  //   addCartItems(id, item, cartQuantity[index], true);
+  //   return;
+  // };
+
+  console.log("asd");
 
   return (
     <section className="cart-page">
@@ -25,7 +48,7 @@ const CartPage = () => {
             </div>
           )}
           {cart_items.length !== 0 ? (
-            cart_items.map((item) => {
+            cart_items.map((item, index) => {
               return (
                 <div key={item.id} className="single-cart-item">
                   <div className="cart-left">
@@ -40,7 +63,15 @@ const CartPage = () => {
                       className="cart-remove-btn"
                       onClick={() => removeCartItem(item.id)}
                     />
-                    <p>{item.quantity}</p>
+                    <div className="cart-quantity">
+                      <AiOutlineLeft
+                        onClick={() => addCartQuantity(item, "prev")}
+                      />
+                      <p>{item.quantity}</p>
+                      <AiOutlineRight
+                        onClick={() => addCartQuantity(item, "next")}
+                      />
+                    </div>
                   </div>
                 </div>
               );

@@ -64,7 +64,7 @@ const products_reducer = (state, action) => {
         id,
         name,
         price,
-        image: images[0] && images[0].url,
+        image: images && images[0].url,
         quantity,
       };
       return { ...state, cart_items: [...state.cart_items, newItem] };
@@ -79,20 +79,36 @@ const products_reducer = (state, action) => {
   }
 
   if (action.type === "COUNT_CART_TOTALS") {
-    const total_amount = state.cart_items.reduce(
-      (total, cartItem) => {
-        const { price, quantity } = cartItem;
-        total += price * quantity;
+    const total_amount = state.cart_items.reduce((total, cartItem) => {
+      const { price, quantity } = cartItem;
+      total += price * quantity;
 
-        return total;
-      },
+      return total;
+    }, 0);
+    const total_quantity = state.cart_items.reduce((total, cartItem) => {
+      const { quantity } = cartItem;
+      total += parseInt(quantity);
 
-      0
-    );
+      return total;
+    }, 0);
 
-    console.log(total_amount);
+    return { ...state, total_amount, total_quantity };
+  }
+  if (action.type === "CART_QUANTITY") {
+    const { item, direction } = action.payload;
 
-    return { ...state, total_amount };
+    const allItems = state.cart_items.filter((i) => i.id !== item.id);
+    const tempItem = item;
+    if (direction === "next") {
+      tempItem.quantity += 1;
+    } else {
+      if (tempItem.quantity === 1) {
+        tempItem.quantity = 1;
+      } else {
+        tempItem.quantity -= 1;
+      }
+    }
+    return { ...state, cart_items: [...allItems, tempItem] };
   }
 
   return { ...state };

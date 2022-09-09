@@ -1178,6 +1178,7 @@ input::-webkit-inner-spin-button {
 
 .cart-top-bar p {
   padding-left: 0.5rem;
+  text-transform: uppercase;
 }
 
 .cart-container {
@@ -1221,6 +1222,29 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.cart-right input {
+  padding: 0.5rem;
+  width: 40px;
+  border: none;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.cart-right input:focus {
+  outline: none;
+}
+
+.cart-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-quantity p {
+  margin: 0 0.5rem;
 }
 
 .cart-remove-btn {

@@ -15,7 +15,7 @@ import { useProductsContext } from "../context/products_context";
 const Navbar = ({ offset }) => {
   const [toggle, setToggle] = useState(false);
   const [fixed, setFixed] = useState();
-  const { cart_items } = useProductsContext();
+  const { cart_items, total_quantity } = useProductsContext();
 
   const menuToggle = () => {
     setToggle(!toggle);
@@ -79,7 +79,7 @@ const Navbar = ({ offset }) => {
                   className="cart-items"
                   style={{ background: "white", color: "red" }}
                 >
-                  <p>{cart_items.length}</p>
+                  <p>{total_quantity}</p>
                 </div>
                 <Link to="/cart">
                   <AiOutlineShoppingCart className="icon" />
@@ -102,7 +102,7 @@ const Navbar = ({ offset }) => {
         <div className="right-mobile">
           <div className="cart-icon">
             <div className="cart-items">
-              <p>{cart_items.length}</p>
+              <p>{total_quantity}</p>
             </div>
             <AiOutlineMenu className="menu-btn" onClick={menuToggle} />
           </div>
@@ -129,7 +129,7 @@ const Navbar = ({ offset }) => {
           <AiOutlineSearch className="icon" />
           <div className="cart-icon">
             <div className="cart-items">
-              <p>{cart_items.length}</p>
+              <p>{total_quantity}</p>
             </div>
             <Link to="/cart">
               <AiOutlineShoppingCart className="icon" />

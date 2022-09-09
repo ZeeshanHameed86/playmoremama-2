@@ -18,6 +18,7 @@ const initialState = {
   also_like_products: [],
   cart_items: [],
   total_amount: 0,
+  total_quantity: 0,
   // default_filter: "Casual Wear",
   // m_category: "Casual Wear",
   // s_category: "",
@@ -71,10 +72,17 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
-  const addCartItems = (id, cartItems, quantity) => {
+  const addCartItems = (id, cartItems, quantity, isCart = false) => {
     dispatch({
       type: "CART_ITEMS",
-      payload: { id, cartItems, quantity },
+      payload: { id, cartItems, quantity, isCart },
+    });
+  };
+
+  const addCartQuantity = (item, direction) => {
+    dispatch({
+      type: "CART_QUANTITY",
+      payload: { item, direction },
     });
   };
 
@@ -113,6 +121,7 @@ export const ProductsProvider = ({ children }) => {
         getSingleProduct,
         addCartItems,
         removeCartItem,
+        addCartQuantity,
       }}
     >
       {children}

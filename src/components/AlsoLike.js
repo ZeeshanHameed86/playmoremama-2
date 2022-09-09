@@ -48,7 +48,10 @@ const Carousel = () => {
     >
       {also_like_products.map((item, index) => (
         <SwiperSlide key={item.id}>
-          <Link to={`/products/${item.id}`}>
+          <Link
+            to={`/products/${item.id}`}
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <div className="single-product-slide-container">
               <div className="single-product-slide-img-container">
                 <img src={item.fields.images[0].url} alt="" />

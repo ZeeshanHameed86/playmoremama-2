@@ -30,15 +30,6 @@ const Carousel = () => {
         prevEl: swiperNavPrevRef.current,
         nextEl: swiperNavNextRef.current,
       }}
-      // breakpoints={{
-      //   // when window width is >= 1100px
-      //   100: {
-      //     slidesPerView: 2,
-      //   },
-      //   900: {
-      //     slidesPerView: 3,
-      //   },
-      // }}
       breakpoints={{
         100: {
           slidesPerView: 1.8,
@@ -73,7 +64,6 @@ const Carousel = () => {
         (item, index) => (
           <SwiperSlide key={index}>
             {({ isActive }) => {
-              isActive && setActive(item);
               return (
                 <div
                   className={
@@ -82,6 +72,7 @@ const Carousel = () => {
                       : "single-slide-container"
                   }
                 >
+                  {isActive && setActive(item)}
                   <img src={Soon} alt="" />
                   <h3>{item}</h3>
                 </div>
