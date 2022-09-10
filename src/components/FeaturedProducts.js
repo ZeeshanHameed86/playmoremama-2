@@ -1,7 +1,9 @@
 import React from "react";
 import sideline1 from "../assets/Sideline-1-3.png";
 import sideline2 from "../assets/Sideline-2-3.png";
-import product from "../assets/Product.jpg";
+import bottle1 from "../assets/bottle2.png";
+import dice from "../assets/Dice.png";
+import sensoryJar from "../assets/Sensory-Jars.jpeg";
 import leaf from "../assets/Leaf.png";
 import rainbow2 from "../assets/Rainbow-2.png";
 import { Link } from "react-router-dom";
@@ -20,7 +22,7 @@ const FeaturedProducts = () => {
         <div className="featured-img-container">
           <div className="featured-img-shadow"></div>
           <Link to="/products" onClick={() => filterProducts("Sensory Jars")}>
-            <img src={product} alt="" />
+            <img src={sensoryJar} alt="" className="jar-header" />
           </Link>
         </div>
         <div className="featured-text">
@@ -39,7 +41,9 @@ const FeaturedProducts = () => {
             to="/products"
             onClick={() => filterProducts("Sensory Shakers")}
           >
-            <img src={product} alt="" />
+            <div className="shaker-header">
+              <img src={bottle1} alt="" />
+            </div>
           </Link>
         </div>
         <div className="featured-text">
@@ -57,7 +61,9 @@ const FeaturedProducts = () => {
           <div className="featured-img-shadow cherry"></div>
           <img src={leaf} alt="" className="leaf" />
           <Link to="/products" onClick={() => filterProducts("Complements")}>
-            <img src={product} alt="" />
+            <div className="complement-header">
+              <img src={dice} alt="" className="complement-header" />
+            </div>
           </Link>
         </div>
         <div className="featured-text">

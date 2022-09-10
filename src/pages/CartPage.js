@@ -9,32 +9,29 @@ import {
 } from "react-icons/ai";
 import { useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { useEffect } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
 const CartPage = () => {
   const { cart_items, removeCartItem, total_amount, addCartQuantity } =
     useProductsContext();
   const [isCouponOpen, setIsCouponOpen] = useState(false);
-  const [cartQuantity, setCartQuantity] = useState([]);
 
-  // useEffect(() => {
-  //   cart_items &&
-  //     cart_items.map((item) => {
-  //       return cartQuantity.push(item.quantity);
-  //     });
-  // }, []);
+  let sortedCartItems =
+    cart_items && cart_items.sort((a, b) => a.name.localeCompare(b.name));
 
-  // const incrementQuantity = (id, item, index) => {
-  //   let temp = [...cartQuantity];
-  //   temp[index] = temp[index] + 1;
-  //   console.log("temp", temp);
-  //   setCartQuantity(temp);
-  //   console.log("hello", cartQuantity[index]);
-  //   addCartItems(id, item, cartQuantity[index], true);
-  //   return;
-  // };
+  const processPayment = async () => {
+    const url = "/.netlify/functions/charge-card";
+    // const newCart = sortedCartItems.map(({ id, quantity }) => ({
+    //   id,
+    //   quantity,
+    // }));
+    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-  console.log("asd");
+    const { data } = await axios.post(url, { cart: sortedCartItems });
+
+    await stripe.redirectToCheckout({ sessionId: data.id });
+  };
 
   return (
     <section className="cart-page">
@@ -47,8 +44,8 @@ const CartPage = () => {
               <p>Free Shipping for Orders over $50</p>
             </div>
           )}
-          {cart_items.length !== 0 ? (
-            cart_items.map((item, index) => {
+          {sortedCartItems.length !== 0 ? (
+            sortedCartItems.map((item, index) => {
               return (
                 <div key={item.id} className="single-cart-item">
                   <div className="cart-left">
@@ -109,7 +106,9 @@ const CartPage = () => {
                 <p>${total_amount}.00</p>
               </div>
             </div>
-            <button type="button">Checkout</button>
+            <button type="button" onClick={() => processPayment()}>
+              Checkout
+            </button>
           </div>
         )}
       </div>

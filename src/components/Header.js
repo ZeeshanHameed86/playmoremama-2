@@ -1,7 +1,8 @@
 import React from "react";
 import sideline1 from "../assets/Sideline-1.png";
 import sideline2 from "../assets/Sideline-2.png";
-import headerimg from "../assets/Header-image-1.jpg";
+import headerImg1 from "../assets/Header-image-1.jpeg";
+import headerImg2 from "../assets/Header-image-2.jpeg";
 import rainbowimg from "../assets/Rainbow.png";
 import buttonbtnimg from "../assets/Header-btn-background.png";
 import { Link } from "react-router-dom";
@@ -13,7 +14,8 @@ const Header = () => {
       <img src={sideline2} alt="" className="header-sideline-img-2" />
       <div className="header-container">
         <div className="image-container">
-          <img src={headerimg} alt="" className="header-img" />
+          <img src={headerImg1} alt="" className="header-img header-desktop" />
+          <img src={headerImg2} alt="" className="header-img header-mobile" />
         </div>
         <h3>Monterey Bay, CA</h3>
         <div className="rainbow-img-container">
