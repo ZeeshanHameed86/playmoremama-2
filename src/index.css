@@ -1631,6 +1631,10 @@ input::-webkit-inner-spin-button {
     grid-template-columns: 1fr 1fr;
     width: 95vw;
   }
+  .cart-items p {
+    display: block;
+    text-align: center;
+  }
   .right-mobile {
     padding-right: 1rem;
   }
