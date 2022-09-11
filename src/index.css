@@ -1786,7 +1786,7 @@ input::-webkit-inner-spin-button {
 
   .header-mobile {
     display: block;
-    object-position: 80% 50%;
+    object-fit: contain;
   }
   .value-1,
   .value-2,
