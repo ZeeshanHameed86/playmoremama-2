@@ -584,7 +584,7 @@ header {
 .complement-header {
   width: var(--featured-img-width);
   height: var(--featured-img-width);
-  background: var(--dark-blue);
+  background: var(--medium-green);
   border-radius: 50%;
 }
 
@@ -594,6 +594,7 @@ header {
 }
 
 .shaker-header img {
+  rotate: 25deg;
   scale: 0.8;
   object-fit: contain;
 }
@@ -1785,6 +1786,7 @@ input::-webkit-inner-spin-button {
 
   .header-mobile {
     display: block;
+    object-position: 80% 50%;
   }
   .value-1,
   .value-2,
