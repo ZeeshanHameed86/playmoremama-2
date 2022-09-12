@@ -17,7 +17,10 @@ const Carousel = () => {
   const swiperNavNextRef = useRef();
 
   useEffect(() => {
-    filterProducts(active);
+    if (active !== "ALL") {
+      console.log("caro", active);
+      filterProducts(active);
+    }
   }, [active]);
 
   return (

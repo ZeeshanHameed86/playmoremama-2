@@ -2,7 +2,7 @@ import React from "react";
 import sideline1 from "../assets/Sideline-1.png";
 import sideline2 from "../assets/Sideline-2.png";
 import headerImg1 from "../assets/Header-image-1.jpeg";
-import headerImg2 from "../assets/Header-image-2.jpeg";
+import headerImg2 from "../assets/Header-image-2.jpg";
 import rainbowimg from "../assets/Rainbow.png";
 import buttonbtnimg from "../assets/Header-btn-background.png";
 import { Link } from "react-router-dom";

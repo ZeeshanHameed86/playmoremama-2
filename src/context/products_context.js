@@ -19,12 +19,6 @@ const initialState = {
   cart_items: [],
   total_amount: 0,
   total_quantity: 0,
-  // default_filter: "Casual Wear",
-  // m_category: "Casual Wear",
-  // s_category: "",
-  // toggle_menu: false,
-  // menu: [false, false, false, false, false],
-  // //menu: [],
 };
 
 export const ProductsProvider = ({ children }) => {
@@ -66,6 +60,7 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const filterProducts = (category) => {
+    console.log(category);
     dispatch({
       type: "FILTER_PRODUCTS",
       payload: category,

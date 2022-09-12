@@ -6,6 +6,7 @@ import {
   FeaturedProducts,
   Value,
   Footer,
+  MainFooter,
 } from "../components";
 
 const HomePage = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Introduction />
       <FeaturedProducts />
       <Footer />
+      <MainFooter />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import sideline1 from "../assets/Sideline-1-3.png";
 import sideline2 from "../assets/Sideline-2-3.png";
 import bottle1 from "../assets/bottle2.png";
-import dice from "../assets/Dice.png";
+import complements from "../assets/complements.jpeg";
 import sensoryJar from "../assets/Sensory-Jars.jpeg";
 import leaf from "../assets/Leaf.png";
 import rainbow2 from "../assets/Rainbow-2.png";
@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
           <img src={leaf} alt="" className="leaf" />
           <Link to="/products" onClick={() => filterProducts("Complements")}>
             <div className="complement-header">
-              <img src={dice} alt="" className="complement-header" />
+              <img src={complements} alt="" className="complement-header" />
             </div>
           </Link>
         </div>

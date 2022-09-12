@@ -584,8 +584,12 @@ header {
 .complement-header {
   width: var(--featured-img-width);
   height: var(--featured-img-width);
-  background: var(--medium-green);
+
   border-radius: 50%;
+}
+
+.shaker-header {
+  background: var(--medium-green);
 }
 
 .jar-header {
@@ -597,10 +601,6 @@ header {
   rotate: 25deg;
   scale: 0.8;
   object-fit: contain;
-}
-
-.complement-header img {
-  scale: 0.8;
 }
 
 .rainbow {
@@ -1790,7 +1790,6 @@ input::-webkit-inner-spin-button {
 
   .header-mobile {
     display: block;
-    object-fit: contain;
   }
   .value-1,
   .value-2,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, ProductCard } from "../components";
+import { MainFooter, Navbar, ProductCard } from "../components";
 import { filterCategories } from "../helpers";
 import { useProductsContext } from "../context/products_context";
 import Carousel from "../components/Carousel";
@@ -62,6 +62,7 @@ const ProductsPage = () => {
           </div>
         </div>
       </div>
+      <MainFooter />
     </section>
   );
 };

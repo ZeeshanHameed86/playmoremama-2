@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../components";
+import { MainFooter, Navbar } from "../components";
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import NoImage from "../assets/No-Image.jpg";
@@ -167,6 +167,7 @@ const SingleProductsPage = () => {
         <h1>You May Also Like</h1>
         <AlsoLike />
       </div>
+      <MainFooter />
     </section>
   );
 };

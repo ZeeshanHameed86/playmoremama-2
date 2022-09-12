@@ -72,6 +72,9 @@ const Navbar = ({ offset }) => {
             <Link to="/faqs" className="link" onClick={menuToggle}>
               FAQ
             </Link>
+            <Link to="/digital" className="link" onClick={menuToggle}>
+              FREE
+            </Link>
             <div className="mobile-nav-socials">
               <AiOutlineSearch className="icon" />
               <div className="cart-icon">

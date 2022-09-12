@@ -7,7 +7,11 @@ const ProductCard = ({ item, index }) => {
   const { addCartItems } = useProductsContext();
 
   return (
-    <div className="product-card" key={index}>
+    <div
+      className="product-card"
+      key={index}
+      style={item.fields.images ? {} : { pointerEvents: "none" }}
+    >
       <div className="product-img">
         <Link to={`/products/${item.id}`}>
           <img
