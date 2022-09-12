@@ -214,6 +214,7 @@ header {
 
 .header-mobile {
   display: none;
+  object-position: 30% 50%;
 }
 
 .header-info {
