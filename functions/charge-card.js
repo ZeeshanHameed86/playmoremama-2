@@ -18,8 +18,8 @@ exports.handler = async (event, context) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: `${process.env.URL}/success/${section.id}`,
-    cancel_url: `${process.env.URL}/failed/${section.id}`,
+    success_url: `${process.env.URL}/success/`,
+    cancel_url: `${process.env.URL}/failed/`,
   });
 
   return {

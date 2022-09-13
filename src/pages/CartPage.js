@@ -21,11 +21,9 @@ const CartPage = () => {
     cart_items && cart_items.sort((a, b) => a.name.localeCompare(b.name));
 
   const processPayment = async () => {
+    console.log("payment");
     const url = "/.netlify/functions/charge-card";
-    // const newCart = sortedCartItems.map(({ id, quantity }) => ({
-    //   id,
-    //   quantity,
-    // }));
+
     const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
     const { data } = await axios.post(url, { cart: sortedCartItems });
