@@ -4,6 +4,7 @@ import {
   ProductsPage,
   SingleProductsPage,
   CartPage,
+  FAQPage,
   SuccessPage,
   FailedPage,
 } from "./pages";
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/products" exact element={<ProductsPage />} />
         <Route path="/products/:id" element={<SingleProductsPage />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/faqs" element={<FAQPage />} />
         <Route path="/success/:id" exact element={<SuccessPage />} />
         <Route path="/failed/:id" exact element={<FailedPage />} />
       </Routes>
