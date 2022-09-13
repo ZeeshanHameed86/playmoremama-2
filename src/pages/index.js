@@ -5,6 +5,7 @@ import CartPage from "./CartPage";
 import FAQPage from "./FAQPage";
 import SuccessPage from "./SuccessPage";
 import FailedPage from "./FailedPage";
+import DigitalPage from "./DigitalPage";
 
 export {
   HomePage,
@@ -14,4 +15,5 @@ export {
   FAQPage,
   SuccessPage,
   FailedPage,
+  DigitalPage,
 };

@@ -7,6 +7,7 @@ import {
   FAQPage,
   SuccessPage,
   FailedPage,
+  DigitalPage,
 } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/success/:id" exact element={<SuccessPage />} />
         <Route path="/failed/:id" exact element={<FailedPage />} />
+        <Route path="/digital" exact element={<DigitalPage />} />
       </Routes>
     </Router>
   );
