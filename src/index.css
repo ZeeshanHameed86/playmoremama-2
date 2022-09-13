@@ -840,6 +840,7 @@ footer {
   transition: all 0.1s ease-in;
   cursor: pointer;
   background: white;
+  height: 450px;
 }
 
 .product-card:hover {
