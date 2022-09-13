@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useProductsContext } from "../context/products_context";
-import Soon from "../assets/Coming Soon.png";
+import jars from "../assets/Sensory-Jars.jpeg";
 import left from "../assets/left-arrow.svg";
 import right from "../assets/right-arrow.svg";
 import { useState } from "react";
@@ -17,10 +17,7 @@ const Carousel = () => {
   const swiperNavNextRef = useRef();
 
   useEffect(() => {
-    if (active !== "ALL") {
-      console.log("caro", active);
-      filterProducts(active);
-    }
+    filterProducts(active);
   }, [active]);
 
   return (
@@ -76,7 +73,7 @@ const Carousel = () => {
                   }
                 >
                   {isActive && setActive(item)}
-                  <img src={Soon} alt="" />
+                  <img src={jars} alt="" />
                   <h3>{item}</h3>
                 </div>
               );

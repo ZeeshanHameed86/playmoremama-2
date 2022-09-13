@@ -23,6 +23,19 @@ const SingleProductsPage = () => {
   } = useProductsContext();
   const [fixed, setFixed] = useState();
 
+  const firstString =
+    single_product.description &&
+    single_product.description.slice(
+      0,
+      single_product.description.indexOf("FAQ")
+    );
+
+  const secondString =
+    single_product.description &&
+    single_product.description.slice(
+      single_product.description.indexOf("FAQ") + 3
+    );
+
   useEffect(() => {
     getSingleProduct(id);
   }, [id]);
@@ -156,7 +169,24 @@ const SingleProductsPage = () => {
                 animate="visible"
                 exit={{ height: 0, opacity: 0 }}
               >
-                {single_product.description} <br />
+                {single_product.description &&
+                  single_product.description.includes("FAQ") &&
+                  firstString}
+                {single_product.description &&
+                  single_product.description.includes("FAQ") && (
+                    <span>
+                      <Link to="/faqs" style={{ color: "#e05151" }}>
+                        FAQ
+                      </Link>
+                    </span>
+                  )}
+                {single_product.description &&
+                  single_product.description.includes("FAQ") &&
+                  secondString}
+                {single_product.description &&
+                  !single_product.description.includes("FAQ") &&
+                  single_product.description}
+                <br />
               </motion.p>
             )}
           </AnimatePresence>

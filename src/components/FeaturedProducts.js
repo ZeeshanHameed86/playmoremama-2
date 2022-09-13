@@ -7,11 +7,8 @@ import sensoryJar from "../assets/Sensory-Jars.jpeg";
 import leaf from "../assets/Leaf.png";
 import rainbow2 from "../assets/Rainbow-2.png";
 import { Link } from "react-router-dom";
-import { useProductsContext } from "../context/products_context";
 
 const FeaturedProducts = () => {
-  const { filterProducts } = useProductsContext();
-
   return (
     <section className="featured-products">
       <img src={sideline1} alt="" className="featured-sideline-img-1" />
@@ -21,7 +18,7 @@ const FeaturedProducts = () => {
       <div className="single-featured-detail single-featured-detail-1">
         <div className="featured-img-container">
           <div className="featured-img-shadow"></div>
-          <Link to="/products" onClick={() => filterProducts("Sensory Jars")}>
+          <Link to="/products">
             <img src={sensoryJar} alt="" className="jar-header" />
           </Link>
         </div>
@@ -37,10 +34,7 @@ const FeaturedProducts = () => {
       <div className="single-featured-detail single-featured-detail-2">
         <div className="featured-img-container">
           <div className="featured-img-shadow"></div>
-          <Link
-            to="/products"
-            onClick={() => filterProducts("Sensory Shakers")}
-          >
+          <Link to="/products">
             <div className="shaker-header">
               <img src={bottle1} alt="" />
             </div>
@@ -60,7 +54,7 @@ const FeaturedProducts = () => {
         <div className="featured-img-container">
           <div className="featured-img-shadow cherry"></div>
           <img src={leaf} alt="" className="leaf" />
-          <Link to="/products" onClick={() => filterProducts("Complements")}>
+          <Link to="/products">
             <div className="complement-header">
               <img src={complements} alt="" className="complement-header" />
             </div>

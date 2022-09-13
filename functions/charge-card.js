@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: `${process.env.URL}/success/`,
+    success_url: `${process.env.URL}/success/{CHECKOUT_SESSION_ID}`,
     cancel_url: `${process.env.URL}/failed/`,
   });
 

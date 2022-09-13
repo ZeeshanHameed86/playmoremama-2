@@ -8,7 +8,7 @@ export const faq = [
     id: 1,
     question: "I ordered a product, when will it ship?",
     answer:
-      "We pack your order within 1 business day and ship all of our products via USPS Priority flat-rate. These are typically delivered within one and three days (not counting Sundays.)",
+      "We pack your order within 3 business days and ship all of our products via USPS Priority flat-rate. These are typically delivered within one and three days (not counting Sundays.)",
   },
   {
     id: 2,

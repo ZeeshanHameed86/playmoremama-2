@@ -60,7 +60,6 @@ export const ProductsProvider = ({ children }) => {
   };
 
   const filterProducts = (category) => {
-    console.log(category);
     dispatch({
       type: "FILTER_PRODUCTS",
       payload: category,
