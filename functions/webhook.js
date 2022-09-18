@@ -1,21 +1,14 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-let shippo = require("shippo")(
-  "shippo_test_a61fae7e8405d269c6655838013faf23c970718b"
-);
 const axios = require("axios");
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 exports.handler = async ({ body, headers }) => {
-  const endpoint =
-    "whsec_08f36af4fdd99c21014f79f486299e4b8d7018b8643bd407f8600268941ae0e8";
   const stripeEvent = stripe.webhooks.constructEvent(
     body,
     headers["stripe-signature"],
-    endpoint
+    process.env.STRIPE_WEBHOOK_SECRET
   );
-
-  console.log("hello");
 
   if (stripeEvent.type === "checkout.session.completed") {
     console.log("complete");
@@ -63,22 +56,6 @@ exports.handler = async ({ body, headers }) => {
     const customerEmail = response.email;
     const customerAddress = response.address;
 
-    // const msg = {
-    //   to: "designworld132@gmail.com", // Change to your recipient
-    //   from: "EricaMeldrum@playmoremama.com", // Change to your verified sender
-    //   subject: "Sending with SendGrid is Fun",
-    //   text: "and easy to do anywhere, even with Node.js",
-    //   html: "<strong>and easy to do anywhere, even with Node.js</strong>",
-    // };
-    // sgMail
-    //   .send(msg)
-    //   .then(() => {
-    //     console.log("Email sent");
-    //   })
-    //   .catch((error) => {
-    //     console.error(error.response.body);
-    //   });
-
     sgMail
       .send({
         to: {
@@ -86,7 +63,7 @@ exports.handler = async ({ body, headers }) => {
           name: customerName,
         },
         from: {
-          email: "EricaMeldrum@playmoremama.com",
+          email: "ericameldrum@playmoremama.com",
           name: "Erica Meldrum",
         },
         replyTo: {
@@ -105,103 +82,33 @@ exports.handler = async ({ body, headers }) => {
       .catch((error) => {
         console.error(error.response.body);
       });
-    // const createOrder = await axios.post(
-    //   "https://api.goshippo.com/orders/",
-    //   {
-    //     to_address: {
-    //       city: customerAddress.city,
-    //       country: customerAddress.country,
-    //       email: customerEmail,
-    //       name: customerName,
-    //       state: customerAddress.state,
-    //       street1: customerAddress.line1,
-    //       zip: customerAddress.postal_code,
-    //     },
-    //     line_items: shippoLineItems,
-    //     placed_at: new Date().toISOString(),
-    //     weight: "0.40",
-    //     weight_unit: "lb",
-    //   },
-    //   {
-    //     headers: {
-    //       Authorization:
-    //         "ShippoToken shippo_test_a61fae7e8405d269c6655838013faf23c970718b",
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-
-    // console.log(createOrder);
+    const createOrder = await axios.post(
+      "https://api.goshippo.com/orders/",
+      {
+        to_address: {
+          city: customerAddress.city,
+          country: customerAddress.country,
+          email: customerEmail,
+          name: customerName,
+          state: customerAddress.state,
+          street1: customerAddress.line1,
+          zip: customerAddress.postal_code,
+        },
+        line_items: shippoLineItems,
+        placed_at: new Date().toISOString(),
+        weight: "0.00",
+        weight_unit: "lb",
+      },
+      {
+        headers: {
+          Authorization: `ShippoToken ${process.env.SHIPPO_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
   }
   return {
     statusCode: 200,
     body: "hello",
   };
-
-  // var addressFrom = {
-  //   name: "Erica",
-  //   company: "play.more.mama",
-  //   street1: "P.O. BOX 3282",
-  //   city: "Monterey",
-  //   state: "CA",
-  //   zip: "93942",
-  //   country: "US",
-  //   email: "playmoremama@gmail.com",
-  // };
-
-  // var addressTo = {
-  //   name: customerName,
-  //   street1: customerAddress.line1,
-  //   city: customerAddress.city,
-  //   state: customerAddress.state,
-  //   zip: customerAddress.postal_code,
-  //   country: customerAddress.country,
-  //   email: customerEmail,
-  // };
-
-  // var parcel = {
-  //   name: "Flat Rate Envelope",
-  //   token: "USPS_FlatRateEnvelope",
-  // };
-  // var parcel = {
-  //   length: "5",
-  //   width: "5",
-  //   height: "5",
-  //   distance_unit: "in",
-  //   weight: "2",
-  //   mass_unit: "lb",
-  // };
-
-  // var shipment = {
-  //   address_from: addressFrom,
-  //   address_to: addressTo,
-  //   parcels: [parcel],
-  // };
-
-  // shippo.transaction.create(
-  //   {
-  //     shipment: shipment,
-  //     carrier_account: "d589ff7cdeda42cfac523f4cbbe4b4e3",
-  //     servicelevel_token: "usps_priority",
-  //   },
-  //   function (err, transaction) {
-  //     console.log(transaction);
-  //   }
-  // );
 };
-
-// const msg = {
-//   to: "designworld132@gmail.com", // Change to your recipient
-//   from: "EricaMeldrum@playmoremama.com", // Change to your verified sender
-//   subject: "Sending with SendGrid is Fun",
-//   text: "and easy to do anywhere, even with Node.js",
-//   html: "<strong>and easy to do anywhere, even with Node.js</strong>",
-// };
-// sgMail
-//   .send(msg)
-//   .then(() => {
-//     console.log("Email sent");
-//   })
-//   .catch((error) => {
-//     console.error(error.response.body);
-//   });
