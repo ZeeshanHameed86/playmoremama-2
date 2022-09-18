@@ -1,13 +1,13 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event, context) => {
-  const { cart } = JSON.parse(event.body);
+  const { cart, total } = JSON.parse(event.body);
 
   const lineItems = cart.map((product) => ({
     price_data: {
       currency: "usd",
       product_data: {
-        name: product.name,
+        name: `${product.name} (${product.id})`,
       },
       unit_amount: product.price * 100,
     },
@@ -16,6 +16,24 @@ exports.handler = async (event, context) => {
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
+    shipping_address_collection: {
+      allowed_countries: ["US"],
+    },
+    shipping_options: [
+      {
+        shipping_rate_data: {
+          type: "fixed_amount",
+          fixed_amount: {
+            amount: total >= 50 ? 0 : 7.5 * 100,
+            currency: "usd",
+          },
+          display_name:
+            total >= 50
+              ? "Free shipping for order over $50"
+              : "Shipping with USPS under $50",
+        },
+      },
+    ],
     line_items: lineItems,
     mode: "payment",
     success_url: `${process.env.URL}/success/{CHECKOUT_SESSION_ID}`,

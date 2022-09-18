@@ -1,0 +1,169 @@
+.intro {
+  width: 100vw;
+  min-height: 15vh;
+  position: relative;
+  overflow-y: hidden;
+  background: var(--light-yellow);
+  padding-top: 2rem;
+}
+
+.intro-details {
+  padding-top: 1rem;
+}
+
+.intro-title {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.intro-subtitle {
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+}
+
+.single-detail img {
+  width: 15%;
+  justify-self: end;
+}
+
+.single-detail .img-1 {
+  width: 17%;
+}
+
+.single-detail {
+  padding-bottom: 2rem;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.single-detail-mobile {
+  display: none;
+}
+
+.intro-main-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-detail-text {
+  width: 60%;
+}
+
+.main-detail-text h2 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.main-detail-text div {
+  margin: 0 auto;
+}
+
+.main-detail-text p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1800px) {
+  /* .intro {
+    height: 950px;
+  } */
+}
+
+@media screen and (max-width: 1600px) {
+  /* .intro {
+    height: 850px;
+  } */
+  .intro-layout img {
+    width: 11%;
+  }
+  .intro-layout .img-1 {
+    width: 13%;
+  }
+  .main-detail-text h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .main-detail-text p {
+    font-size: 1rem;
+  }
+  .main-detail-text div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .single-detail {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  /* .intro {
+    height: 750px;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  /* .intro {
+    height: 100vh;
+  } */
+  .intro {
+    height: 970px;
+  }
+  .intro-title {
+    font-size: 2rem;
+  }
+  .single-detail {
+    flex-direction: column;
+    width: 100vw;
+  }
+  .main-detail-text {
+    width: 100%;
+  }
+  .single-detail-mobile {
+    text-align: center;
+    display: block;
+  }
+  .single-detail-oposite {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .intro-title {
+    font-size: 1.5rem;
+  }
+  .intro-subtitle {
+    padding-top: 0.8rem;
+  }
+  /* .intro {
+    height: 1030px;
+  } */
+}
+
+@media screen and (min-width: 2200px) {
+  .main-detail-text h2 {
+    font-size: 3rem;
+  }
+  .main-detail-text p {
+    font-size: 2rem;
+  }
+  .intro-title {
+    font-size: 3.2rem;
+  }
+}
+@media screen and (min-width: 3000px) {
+  .main-detail-text h2 {
+    font-size: 3.5rem;
+  }
+  .main-detail-text p {
+    font-size: 3rem;
+  }
+  .intro-title {
+    font-size: 3.8rem;
+  }
+}

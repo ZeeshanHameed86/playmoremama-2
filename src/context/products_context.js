@@ -10,13 +10,22 @@ var base = new Airtable({ apiKey: "keyHrvfpn3l6Barmf" }).base(
 
 const table = base("products");
 
+const getLocalStorage = () => {
+  let cart = localStorage.getItem("cart");
+  if (cart) {
+    return JSON.parse(localStorage.getItem("cart"));
+  } else {
+    return [];
+  }
+};
+
 const initialState = {
   all_products: [],
   filtered_products: [],
   single_product: {},
   loading: true,
   also_like_products: [],
-  cart_items: [],
+  cart_items: getLocalStorage(),
   total_amount: 0,
   total_quantity: 0,
 };
@@ -101,7 +110,8 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     getRecords();
-  }, []);
+    localStorage.setItem("cart", JSON.stringify(state.cart_items));
+  }, [state.cart_items]);
 
   useEffect(() => {
     dispatch({ type: "COUNT_CART_TOTALS" });

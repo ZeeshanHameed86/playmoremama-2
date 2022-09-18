@@ -1,11 +1,13 @@
 import HomePage from "./HomePage";
-import ProductsPage from "./ProductsPage";
-import SingleProductsPage from "./SingleProductsPage";
-import CartPage from "./CartPage";
-import FAQPage from "./FAQPage";
-import SuccessPage from "./SuccessPage";
-import FailedPage from "./FailedPage";
-import DigitalPage from "./DigitalPage";
+import ProductsPage from "./ProductsPage/ProductsPage";
+import SingleProductsPage from "./SingleProductPage/SingleProductsPage";
+import CartPage from "./CartPage/CartPage";
+import FAQPage from "./FAQPage/FAQPage";
+import SuccessPage from "./SuccessFailedPage/SuccessPage";
+import ReviewPage from "./ReviewPage/ReviewPage";
+import FailedPage from "./SuccessFailedPage/FailedPage";
+import DigitalPage from "./DigitalPage/DigitalPage";
+import Page404 from "./Page404/Page404";
 
 export {
   HomePage,
@@ -14,6 +16,8 @@ export {
   CartPage,
   FAQPage,
   SuccessPage,
+  ReviewPage,
   FailedPage,
   DigitalPage,
+  Page404,
 };

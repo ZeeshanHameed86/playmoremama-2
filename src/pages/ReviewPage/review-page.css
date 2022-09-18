@@ -1,0 +1,5 @@
+.review-page {
+  width: 100vw;
+  min-height: calc(100vh - var(--nav-height));
+  margin-top: var(--nav-height);
+}

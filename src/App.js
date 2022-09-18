@@ -8,6 +8,8 @@ import {
   SuccessPage,
   FailedPage,
   DigitalPage,
+  ReviewPage,
+  Page404,
 } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -21,8 +23,10 @@ const App = () => {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/faqs" element={<FAQPage />} />
         <Route path="/success/:id" exact element={<SuccessPage />} />
-        <Route path="/failed/:id" exact element={<FailedPage />} />
+        <Route path="/review/:id" exact element={<ReviewPage />} />
+        <Route path="/failed" exact element={<FailedPage />} />
         <Route path="/digital" exact element={<DigitalPage />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>
   );

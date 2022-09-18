@@ -1,0 +1,122 @@
+.single-slide-container {
+  pointer-events: none;
+}
+
+.single-slide-container img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  pointer-events: all;
+}
+
+.single-slide-container h3 {
+  color: var(--dark-red) !important;
+}
+.single-slide-container h3 {
+  color: var(--dark-green);
+}
+
+.carousel {
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 70vw;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none !important;
+}
+.swiper {
+  text-align: center !important;
+}
+.arrows-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  position: absolute;
+  width: 70vw;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -60%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.swiper-prev img,
+.swiper-next img {
+  pointer-events: all;
+  width: 50px;
+}
+
+.single-product-slide-container {
+  padding-top: 15px;
+}
+
+.single-product-slide-container img {
+  box-shadow: -6px -6px 5px 4px rgba(254, 212, 129, 0.75);
+  -webkit-box-shadow: -6px -6px 5px 4px rgba(254, 212, 129, 0.75);
+  -moz-box-shadow: -6px -6px 5px 4px rgba(254, 212, 129, 0.75);
+  width: 250px;
+}
+
+.single-product-slide-container h3 {
+  color: var(--dark-red) !important;
+}
+.single-product-slide-container p {
+  color: var(--dark-red);
+}
+
+.single-carousel {
+  padding-top: 2rem;
+  cursor: pointer;
+  width: 90vw;
+  margin-bottom: 1rem;
+}
+
+.swiper {
+  text-align: center !important;
+  display: flex;
+  justify-content: center;
+}
+.single-arrows-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  position: absolute;
+  width: 90vw;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -60%);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.single-swiper-prev,
+.single-swiper-next {
+  color: var(--dark-red);
+  cursor: pointer;
+  font-size: 2rem;
+  pointer-events: all;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 100vw;
+  }
+  .arrows-container {
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .also-like-container h1 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+  }
+  .single-slide-container img {
+    width: 150px;
+  }
+}
