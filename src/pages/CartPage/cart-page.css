@@ -21,6 +21,10 @@
   margin-bottom: 2rem;
 }
 
+.cart-top-bar div {
+  margin-bottom: -0.2rem;
+}
+
 .cart-top-bar svg {
   color: var(--dark-red);
 }
@@ -190,7 +194,7 @@
   .cart-container {
     grid-template-columns: 1fr;
     width: 90%;
-    margin-top: -1rem;
+    margin-top: -1.5rem;
   }
 }
 

@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
 
   const lineItems = cart.map((product) => ({
     price_data: {
-      tax_behavior: "inclusive",
+      tax_behavior: "exclusive",
       currency: "usd",
       product_data: {
         name: `${product.name} (${product.id})`,
@@ -24,7 +24,7 @@ exports.handler = async (event, context) => {
     shipping_options: [
       {
         shipping_rate_data: {
-          tax_behavior: "inclusive",
+          tax_behavior: "exclusive",
           type: "fixed_amount",
           fixed_amount: {
             amount: total >= 50 ? 0 : 5.99 * 100,
