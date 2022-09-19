@@ -32,8 +32,6 @@
 }
 
 .cart-top-bar p {
-  display: flex;
-  align-items: center;
   height: 100%;
   padding-left: 0.5rem;
   text-transform: uppercase;
@@ -200,6 +198,9 @@
     grid-template-columns: 1fr;
     width: 90%;
     margin-top: -1.5rem;
+  }
+  .cart-top-bar p {
+    margin-bottom: -0.3rem;
   }
 }
 
