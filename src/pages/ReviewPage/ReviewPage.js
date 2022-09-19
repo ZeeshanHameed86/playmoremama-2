@@ -21,12 +21,12 @@ const ReviewPage = () => {
     <>
       <Navbar offset={0} />
       <section className="review-page">
-        <form onSubmit={(e) => reviewForm(e)}>
+        {/* <form onSubmit={(e) => reviewForm(e)}>
           <input type="email" name="email" />
           <input type="text" name="name" />
           <textarea name="review" id="review" cols="30" rows="10"></textarea>
           <input type="submit" name="submit" value="submit" />
-        </form>
+        </form> */}
       </section>
       <MainFooter />
     </>
