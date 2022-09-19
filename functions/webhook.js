@@ -94,6 +94,7 @@ exports.handler = async ({ body, headers }) => {
           name: customerName,
           state: customerAddress.state,
           street1: customerAddress.line1,
+          street2: customerAddress.line2,
           zip: customerAddress.postal_code,
         },
         line_items: shippoLineItems,

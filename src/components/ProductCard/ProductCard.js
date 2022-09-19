@@ -46,7 +46,7 @@ const ProductCard = ({ item, index }) => {
             >
               {item.fields.images && item.fields.stock !== 0
                 ? "View Details"
-                : "Coming Soon"}
+                : "Out Of Stock"}
             </button>
           </Link>
 

@@ -110,7 +110,9 @@ const products_reducer = (state, action) => {
     }
     return { ...state, cart_items: [...allItems, tempItem] };
   }
-
+  if (action.type === "CLEAR_CART") {
+    return { ...state, cart_items: [] };
+  }
   return { ...state };
 };
 

@@ -18,11 +18,13 @@ const CartPage = () => {
     useProductsContext();
   const [isCouponOpen, setIsCouponOpen] = useState(false);
   const [shippingPrice, setShippingPrice] = useState(5.99);
+  const [checkoutStatus, setCheckoutStatus] = useState(false);
 
   let sortedCartItems =
     cart_items && cart_items.sort((a, b) => a.name.localeCompare(b.name));
 
   const processPayment = async () => {
+    setCheckoutStatus(true);
     const url = "/.netlify/functions/charge-card";
 
     const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
@@ -31,7 +33,7 @@ const CartPage = () => {
       cart: sortedCartItems,
       total: total_amount,
     });
-
+    setCheckoutStatus(false);
     await stripe.redirectToCheckout({ sessionId: data.id });
   };
 
@@ -132,7 +134,7 @@ const CartPage = () => {
                 </div>
               </div>
               <button type="button" onClick={() => processPayment()}>
-                Checkout
+                {checkoutStatus ? "Loading" : "Checkout"}
               </button>
             </div>
           )}

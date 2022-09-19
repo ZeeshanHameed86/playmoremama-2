@@ -96,6 +96,10 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+
   // const toggleSidebar = () => {
   //   dispatch({ type: "TOGGLE_BAR_MENU" });
   // };
@@ -126,6 +130,7 @@ export const ProductsProvider = ({ children }) => {
         addCartItems,
         removeCartItem,
         addCartQuantity,
+        clearCart,
       }}
     >
       {children}

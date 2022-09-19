@@ -119,6 +119,11 @@
   border: none;
   color: white;
   margin: 1rem 0;
+  cursor: pointer;
+}
+
+.order-summary button:hover {
+  color: var(--light-yellow);
 }
 
 .order-summary button:focus {
