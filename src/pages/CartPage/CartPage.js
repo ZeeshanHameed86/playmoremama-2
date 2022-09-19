@@ -133,7 +133,7 @@ const CartPage = () => {
                 </div>
               </div>
               <button type="button" onClick={() => processPayment()}>
-                {checkoutStatus ? "Loading..." : "Checkout"}
+                {checkoutStatus ? "Redirecting..." : "Checkout"}
               </button>
             </div>
           )}
