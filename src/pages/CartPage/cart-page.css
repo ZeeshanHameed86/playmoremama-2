@@ -190,6 +190,7 @@
   .cart-container {
     grid-template-columns: 1fr;
     width: 90%;
+    margin-top: -1rem;
   }
 }
 

@@ -45,7 +45,9 @@ const CartPage = () => {
           <div className="cart-item-container">
             {cart_items.length !== 0 && (
               <div className="cart-top-bar">
-                <AiFillDollarCircle />
+                <div>
+                  <AiFillDollarCircle />
+                </div>
                 <p>Free Shipping for Orders over $50</p>
               </div>
             )}
@@ -129,6 +131,11 @@ const CartPage = () => {
                     {total_amount >= 50
                       ? total_amount.toFixed(2)
                       : (total_amount + shippingPrice).toFixed(2)}
+                  </p>
+                </div>
+                <div className="order-summary-single-detail">
+                  <p style={{ textAlign: "center", margin: "0 auto" }}>
+                    (Tax Calculated at Checkout)
                   </p>
                 </div>
               </div>
