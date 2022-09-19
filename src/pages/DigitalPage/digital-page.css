@@ -15,7 +15,7 @@
 }
 
 .digital-download img {
-  width: 600px;
+  width: 70%;
 }
 
 .digital-download button {
@@ -26,4 +26,10 @@
   border-radius: 1rem;
   margin-top: 3rem;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .digital-download img {
+    width: 100%;
+  }
 }

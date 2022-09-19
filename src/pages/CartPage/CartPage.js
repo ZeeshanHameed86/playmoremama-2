@@ -117,8 +117,8 @@ const CartPage = () => {
                   <p>Shipping</p>
                   <p>
                     {total_amount >= 50
-                      ? `FREE over 50$`
-                      : `$${shippingPrice} below 50$`}
+                      ? `FREE over $50`
+                      : `$${shippingPrice} below $50`}
                   </p>
                 </div>
                 <div className="order-summary-single-detail">
