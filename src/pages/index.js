@@ -8,6 +8,8 @@ import ReviewPage from "./ReviewPage/ReviewPage";
 import FailedPage from "./SuccessFailedPage/FailedPage";
 import DigitalPage from "./DigitalPage/DigitalPage";
 import Page404 from "./Page404/Page404";
+import PrivacyPolicyPage from "./Privacy&Terms/PrivacyPolicyPage";
+import TermsConditionsPage from "./Privacy&Terms/TermsConditionsPage";
 
 export {
   HomePage,
@@ -20,4 +22,6 @@ export {
   FailedPage,
   DigitalPage,
   Page404,
+  PrivacyPolicyPage,
+  TermsConditionsPage,
 };

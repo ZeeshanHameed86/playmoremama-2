@@ -10,6 +10,8 @@ import {
   DigitalPage,
   ReviewPage,
   Page404,
+  PrivacyPolicyPage,
+  TermsConditionsPage,
 } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/review/:id" exact element={<ReviewPage />} />
         <Route path="/failed" exact element={<FailedPage />} />
         <Route path="/digital" exact element={<DigitalPage />} />
+        <Route path="/privacypolicy" exact element={<PrivacyPolicyPage />} />
+        <Route path="/terms" exact element={<TermsConditionsPage />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>

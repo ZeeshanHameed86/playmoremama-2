@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const SuccessPage = () => {
   useEffect(() => {
-    localStorage.removeItem("cart");
+    window.localStorage.removeItem("cart");
   }, []);
 
   return (

@@ -10,6 +10,8 @@ exports.handler = async ({ body, headers }) => {
     process.env.STRIPE_WEBHOOK_SECRET
   );
 
+  console.log("hello");
+
   if (stripeEvent.type === "checkout.session.completed") {
     console.log("complete");
     // Retrieving Session
@@ -43,7 +45,7 @@ exports.handler = async ({ body, headers }) => {
       return {
         quantity: item.quantity,
         sku: item.id,
-        title: item.description,
+        title: item.description.substring(0, item.description.indexOf("(") - 1),
         total_price: item.amount_total / 100,
         currency: "USD",
         weight: "0.40",

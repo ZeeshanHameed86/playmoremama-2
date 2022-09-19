@@ -35,7 +35,7 @@ const FAQPage = () => {
           <h1 className="faq-title">Frequently Asked Questions</h1>
           <h1 className="faq-title-description">
             For customer support and/or media inquiries contact us at
-            playmoremama@gmail.com. I also respond within 24 hours to all
+            erica@playmoremama.com. I also respond within 24 hours to all
             Instagram direct messages.
           </h1>
           {faq.map((item, index) => {

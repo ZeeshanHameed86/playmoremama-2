@@ -23,7 +23,9 @@ const Footer = () => {
             </span>
           </h1>
         </div>
-        <div></div>
+        <div className="footer-title-img-container">
+          <img src={hearts} alt="" />
+        </div>
       </div>
       <div className="insta-posts">
         <div className="footer-img-left">
@@ -35,7 +37,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-brand-container">
-        <div></div>
+        <div className="footer-brand-img-container">
+          <img src={flowers} alt="" />
+        </div>
         <h1 className="footer-brand">play.more.mama</h1>
         <div className="footer-brand-img-container">
           <img src={flowers} alt="" />

@@ -12,12 +12,22 @@ const ReviewPage = () => {
     getSingleProduct(id);
   }, []);
 
-  console.log(single_product);
+  const reviewForm = (e) => {
+    e.preventDefault();
+    console.log(e.target.email);
+  };
 
   return (
     <>
       <Navbar offset={0} />
-      <section className="review-page"></section>
+      <section className="review-page">
+        <form onSubmit={(e) => reviewForm(e)}>
+          <input type="email" name="email" />
+          <input type="text" name="name" />
+          <textarea name="review" id="review" cols="30" rows="10"></textarea>
+          <input type="submit" name="submit" value="submit" />
+        </form>
+      </section>
       <MainFooter />
     </>
   );

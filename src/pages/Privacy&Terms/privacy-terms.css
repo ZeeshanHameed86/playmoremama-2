@@ -1,0 +1,36 @@
+.privacy-page {
+  margin-top: calc(var(--nav-height));
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.privacy-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.terms-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.privacy-details {
+  line-height: 2.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.terms-details {
+  line-height: 2.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.terms-section {
+  padding: 1rem 0;
+  text-align: left;
+}
