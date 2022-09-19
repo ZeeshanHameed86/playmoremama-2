@@ -10,10 +10,7 @@ exports.handler = async ({ body, headers }) => {
     process.env.STRIPE_WEBHOOK_SECRET
   );
 
-  console.log("hello");
-
   if (stripeEvent.type === "checkout.session.completed") {
-    console.log("complete");
     // Retrieving Session
     const session = await stripe.checkout.sessions.retrieve(
       stripeEvent.data.object.id,
@@ -46,9 +43,9 @@ exports.handler = async ({ body, headers }) => {
         quantity: item.quantity,
         sku: item.id,
         title: item.description.substring(0, item.description.indexOf("(") - 1),
-        total_price: item.amount_total / 100,
+        total_price: item.amount_subtotal / 100,
         currency: "USD",
-        weight: "0.40",
+        weight: "0.00",
         weight_unit: "lb",
       };
     });
@@ -65,7 +62,7 @@ exports.handler = async ({ body, headers }) => {
           name: customerName,
         },
         from: {
-          email: "ericameldrum@playmoremama.com",
+          email: "erica@playmoremama.com",
           name: "Erica Meldrum",
         },
         replyTo: {
