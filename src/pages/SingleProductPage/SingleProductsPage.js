@@ -4,13 +4,14 @@ import { MainFooter, Navbar } from "../../components";
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../../context/products_context";
 import NoImage from "../../assets/No-Image.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import buttonbtnimg from "../../assets/Header-btn-background.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlsoLike } from "../../components";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const SingleProductsPage = () => {
+  const navigate = useNavigate();
   const [descriptionToggle, setDescriptionToggle] = useState(true);
   const [quantity, setQuatity] = useState(1);
   const { id } = useParams();
@@ -24,18 +25,24 @@ const SingleProductsPage = () => {
   } = useProductsContext();
   const [fixed, setFixed] = useState();
 
-  const firstString =
-    single_product.description &&
-    single_product.description.slice(
-      0,
-      single_product.description.indexOf("FAQ")
-    );
+  // const firstString =
+  //   single_product.description &&
+  //   single_product.description.slice(
+  //     0,
+  //     single_product.description.indexOf("FAQ")
+  //   );
 
-  const secondString =
-    single_product.description &&
-    single_product.description.slice(
-      single_product.description.indexOf("FAQ") + 3
-    );
+  // const secondString =
+  //   single_product.description &&
+  //   single_product.description.slice(
+  //     single_product.description.indexOf("FAQ") + 3
+  //   );
+
+  useEffect(() => {
+    if (single_product.stock === 0) {
+      navigate(-1);
+    }
+  }, [single_product.stock]);
 
   useEffect(() => {
     getSingleProduct(id);

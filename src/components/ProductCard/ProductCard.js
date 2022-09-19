@@ -14,7 +14,13 @@ const ProductCard = ({ item, index }) => {
       style={item.fields.images ? {} : { pointerEvents: "none" }}
     >
       <div className="product-img">
-        <Link to={`/products/${item.id}`}>
+        <Link
+          to={
+            item.fields.images && item.fields.stock !== 0
+              ? `/products/${item.id}`
+              : {}
+          }
+        >
           <img
             src={item.fields.images ? item.fields.images[0].url : NoImage}
             alt=""
@@ -28,11 +34,19 @@ const ProductCard = ({ item, index }) => {
         <div className="product-card-btn-container">
           <Link to={`/products/${item.id}`}>
             <button
-              disabled={!item.fields.images}
+              disabled={
+                item.fields.images && item.fields.stock !== 0 ? false : true
+              }
               className="product-btn"
-              style={item.fields.images ? {} : { background: "grey" }}
+              style={
+                item.fields.images && item.fields.stock !== 0
+                  ? {}
+                  : { background: "grey" }
+              }
             >
-              {item.fields.images ? "View Details" : "Coming Soon"}
+              {item.fields.images && item.fields.stock !== 0
+                ? "View Details"
+                : "Coming Soon"}
             </button>
           </Link>
 
@@ -42,7 +56,7 @@ const ProductCard = ({ item, index }) => {
             className="add-to-cart-btn"
             onClick={() => addCartItems(item.id, item.fields, 1)}
           >
-            {item.fields.images && "Add To Cart"}
+            {item.fields.images && item.fields.stock !== 0 && "Add To Cart"}
           </button>
         </div>
       </div>
