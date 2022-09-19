@@ -38,7 +38,7 @@
   column-gap: 3rem;
   position: relative;
   margin: 0 auto;
-  margin-top: calc(var(--nav-height) - 5rem);
+  margin-top: calc(var(--nav-height) - 6rem);
 }
 
 .cart-container h1 {

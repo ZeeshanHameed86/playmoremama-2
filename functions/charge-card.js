@@ -19,9 +19,11 @@ exports.handler = async (event, context) => {
     shipping_address_collection: {
       allowed_countries: ["US"],
     },
+    allow_promotion_codes: true,
     shipping_options: [
       {
         shipping_rate_data: {
+          // tax_behavior: "inclusive",
           type: "fixed_amount",
           fixed_amount: {
             amount: total >= 50 ? 0 : 5.99 * 100,
@@ -34,6 +36,7 @@ exports.handler = async (event, context) => {
         },
       },
     ],
+    // automatic_tax: { enabled: true },
     line_items: lineItems,
     mode: "payment",
     success_url: `${process.env.URL}/success/{CHECKOUT_SESSION_ID}`,

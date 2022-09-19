@@ -243,14 +243,10 @@
 }
 
 @media screen and (max-width: 480px) {
-  /* .value,
-  .value-details {
-    height: 1050px;
-  } */
   .value-details br {
     display: inline;
   }
-  .value-1 .img-1 {
+  /* .value-1 .img-1 {
     width: 50px;
     left: -45px;
     top: 70px;
@@ -278,7 +274,7 @@
   }
   .value-4 .img-9 {
     width: 60px;
-  }
+  } */
 }
 
 @media screen and (max-width: 380px) {

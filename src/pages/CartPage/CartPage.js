@@ -9,14 +9,13 @@ import {
   AiFillCaretUp,
 } from "react-icons/ai";
 import { useState } from "react";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 
 const CartPage = () => {
   const { cart_items, removeCartItem, total_amount, addCartQuantity } =
     useProductsContext();
-  const [isCouponOpen, setIsCouponOpen] = useState(false);
+  // const [isCouponOpen, setIsCouponOpen] = useState(false);
   const [shippingPrice, setShippingPrice] = useState(5.99);
   const [checkoutStatus, setCheckoutStatus] = useState(false);
 
@@ -98,18 +97,18 @@ const CartPage = () => {
           {cart_items.length !== 0 && (
             <div className="order-summary">
               <h1>Order Summary</h1>
-              <div
+              {/* <div
                 className="cart-coupon"
                 onClick={() => setIsCouponOpen(!isCouponOpen)}
               >
                 <h3>Coupon</h3>
                 {isCouponOpen ? <AiFillCaretUp /> : <AiFillCaretDown />}
-              </div>
-              {isCouponOpen && (
+              </div> */}
+              {/* {isCouponOpen && (
                 <div className="cart-coupon-input-container">
                   <input type="text" placeholder="e.g. FREESHIP50" />
                 </div>
-              )}
+              )} */}
               <div className="order-summary-details">
                 <div className="order-summary-single-detail">
                   <p>Subtotal</p>
@@ -134,7 +133,7 @@ const CartPage = () => {
                 </div>
               </div>
               <button type="button" onClick={() => processPayment()}>
-                {checkoutStatus ? "Loading" : "Checkout"}
+                {checkoutStatus ? "Loading..." : "Checkout"}
               </button>
             </div>
           )}
