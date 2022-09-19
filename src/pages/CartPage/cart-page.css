@@ -22,7 +22,7 @@
 }
 
 .cart-top-bar div {
-  margin-bottom: -0.2rem;
+  margin-bottom: -0.3rem;
 }
 
 .cart-top-bar svg {
@@ -33,6 +33,7 @@
   padding-left: 0.5rem;
   text-transform: uppercase;
   font-size: 1rem;
+  margin-bottom: -0.1rem;
 }
 
 .cart-container {
