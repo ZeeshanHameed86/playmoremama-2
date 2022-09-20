@@ -43,7 +43,7 @@ exports.handler = async ({ body, headers }) => {
         quantity: item.quantity,
         sku: item.id,
         title: item.description.substring(0, item.description.indexOf("(") - 1),
-        total_price: item.amount_subtotal / 100,
+        total_price: item.price.unit_amount / 100,
         currency: "USD",
         weight: "0.00",
         weight_unit: "lb",
@@ -81,6 +81,7 @@ exports.handler = async ({ body, headers }) => {
       .catch((error) => {
         console.error(error.response.body);
       });
+
     const createOrder = await axios.post(
       "https://api.goshippo.com/orders/",
       {
