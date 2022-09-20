@@ -53,7 +53,7 @@ exports.handler = async ({ body, headers }) => {
     const response = stripeEvent.data.object.customer_details;
     const customerName = response.name;
     const customerEmail = response.email;
-    const customerAddress = response.address;
+    const customerAddress = stripeEvent.data.object.shipping.address;
 
     sgMail
       .send({
