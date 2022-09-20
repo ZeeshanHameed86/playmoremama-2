@@ -98,7 +98,7 @@ const ReviewPage = () => {
                     : {}
                 }
               >
-                {submitStatus ? "Submiting..." : "Submit"}
+                {submitStatus ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>
