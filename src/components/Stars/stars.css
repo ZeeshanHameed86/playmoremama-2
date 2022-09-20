@@ -1,0 +1,9 @@
+.stars {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .stars {
+    text-align: center;
+  }
+}

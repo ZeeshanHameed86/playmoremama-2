@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 import ProductCard from "./ProductCard/ProductCard";
 import MainFooter from "./Footer/MainFooter";
 import Value from "./Value/Value";
+import Stars from "./Stars/Stars";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   ProductCard,
   MainFooter,
   Value,
+  Stars,
 };

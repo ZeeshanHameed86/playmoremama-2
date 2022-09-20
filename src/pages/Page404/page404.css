@@ -1,0 +1,28 @@
+.page-404 {
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.page-404 h1 {
+  font-size: 10rem;
+}
+
+.page-404 h3 {
+  text-transform: none;
+  margin-bottom: 2rem;
+}
+
+.page-404 .btn {
+  background: var(--dark-blue);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+}

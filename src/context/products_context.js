@@ -4,11 +4,16 @@ import reducer from "../reducers/products_reducer";
 const ProductsContext = React.createContext();
 
 var Airtable = require("airtable");
-var base = new Airtable({ apiKey: "keyHrvfpn3l6Barmf" }).base(
-  "appgDd99dck3S3nQt"
-);
+var base = new Airtable({
+  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+}).base("appgDd99dck3S3nQt");
+
+var reviewBase = new Airtable({
+  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+}).base("appXFuhNR8CtBg8Gu");
 
 const table = base("products");
+const reviewTable = reviewBase("reviews");
 
 const getLocalStorage = () => {
   let cart = localStorage.getItem("cart");
@@ -66,6 +71,29 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: "SINGLE_PRODUCT", payload: record.fields });
     });
     dispatch({ type: "SINGLE_PRODUCT_END" });
+  };
+
+  const addReview = async (product_id, name, rating, review, feedback) => {
+    await reviewTable.create(
+      [
+        {
+          fields: {
+            product_id,
+            name,
+            rating,
+            review,
+            feedback,
+          },
+        },
+      ],
+      (err, records) => {
+        if (err) {
+          console.log(err);
+          return "error";
+        }
+        return "success";
+      }
+    );
   };
 
   const filterProducts = (category) => {
@@ -131,6 +159,7 @@ export const ProductsProvider = ({ children }) => {
         removeCartItem,
         addCartQuantity,
         clearCart,
+        addReview,
       }}
     >
       {children}
