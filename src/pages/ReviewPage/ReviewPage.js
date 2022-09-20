@@ -81,7 +81,6 @@ const ReviewPage = () => {
                 name="feedback"
                 id="feedback"
                 rows="10"
-                required
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 placeholder="Any feedback to improve the product/company?"
