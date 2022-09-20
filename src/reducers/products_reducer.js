@@ -113,6 +113,12 @@ const products_reducer = (state, action) => {
   if (action.type === "CLEAR_CART") {
     return { ...state, cart_items: [] };
   }
+  if (action.type === "SINGLE_PRODUCT_FAILED") {
+    return { ...state, single_product_success: false };
+  }
+  if (action.type === "SINGLE_PRODUCT_SUCCESS") {
+    return { ...state, single_product_success: true };
+  }
   return { ...state };
 };
 

@@ -8,16 +8,29 @@ import { useNavigate } from "react-router-dom";
 const ReviewPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { getSingleProduct, single_product, addReview } = useProductsContext();
+  const {
+    getSingleProduct,
+    single_product,
+    addReview,
+    single_product_success,
+  } = useProductsContext();
   const [name, setName] = useState("");
   const [stars, setStars] = useState(0);
   const [review, setReview] = useState("");
   const [feedback, setFeedback] = useState("");
   const [submitStatus, setSubmitStatus] = useState(false);
 
+  console.log(single_product_success);
+
   useEffect(() => {
     getSingleProduct(id);
   }, []);
+
+  useEffect(() => {
+    if (!single_product_success) {
+      navigate("/");
+    }
+  }, [single_product_success]);
 
   const reviewForm = async (e) => {
     e.preventDefault();
@@ -73,7 +86,19 @@ const ReviewPage = () => {
                 onChange={(e) => setFeedback(e.target.value)}
                 placeholder="Any feedback to improve the product/company?"
               />
-              <button type="submit">
+              <button
+                type="submit"
+                disabled={stars === 0}
+                style={
+                  stars === 0
+                    ? {
+                        background: "grey",
+                        color: "lightgray ",
+                        cursor: "default",
+                      }
+                    : {}
+                }
+              >
                 {submitStatus ? "Submiting..." : "Submit"}
               </button>
             </form>

@@ -33,6 +33,7 @@ const initialState = {
   cart_items: getLocalStorage(),
   total_amount: 0,
   total_quantity: 0,
+  single_product_success: true,
 };
 
 export const ProductsProvider = ({ children }) => {
@@ -66,8 +67,10 @@ export const ProductsProvider = ({ children }) => {
       if (err) {
         console.error(err);
         dispatch({ type: "SINGLE_PRODUCT_END" });
+        dispatch({ type: "SINGLE_PRODUCT_FAILED" });
         return;
       }
+      dispatch({ type: "SINGLE_PRODUCT_SUCCESS" });
       dispatch({ type: "SINGLE_PRODUCT", payload: record.fields });
     });
     dispatch({ type: "SINGLE_PRODUCT_END" });
