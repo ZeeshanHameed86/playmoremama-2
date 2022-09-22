@@ -35,7 +35,7 @@ export const faq = [
   {
     id: 6,
     question: "Do you offer free shipping?",
-    answer: "Psst… after spend $40 + get FREE shipping!",
+    answer: "Psst… after you spend $50 + get FREE shipping!",
   },
   {
     id: 7,
