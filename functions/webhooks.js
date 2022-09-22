@@ -4,12 +4,9 @@ const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 exports.handler = async ({ body, headers }) => {
-  // const endpoint =
-  //   "whsec_0731843f27a8da1b05baa4cefcae1fcdbc601133a3a771cb80c2666af2d8b9bc";
   const stripeEvent = stripe.webhooks.constructEvent(
     body,
     headers["stripe-signature"],
-    // endpoint
     process.env.STRIPE_WEBHOOK_SECRET
   );
 
