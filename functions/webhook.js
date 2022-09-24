@@ -37,6 +37,17 @@ exports.handler = async ({ body, headers }) => {
       return null;
     });
 
+    let order_items = "";
+    emailLinks.map((item) => {
+      order_items += `${item.name}<br>`;
+      return null;
+    });
+
+    let total_amount = 0;
+    session.line_items.data.map((item) => {
+      total_amount += item.amount_subtotal;
+    });
+
     // Shippo Line Items Data Model
     let shippoLineItems = session.line_items.data.map((item) => {
       return {
@@ -55,7 +66,29 @@ exports.handler = async ({ body, headers }) => {
     const customerEmail = response.email;
     const customerAddress = stripeEvent.data.object.shipping_details.address;
 
-    console.log("hello");
+    sgMail
+      .send({
+        to: {
+          email: "playmoremama@gmail.com",
+          name: "Erica Meldrum",
+        },
+        from: {
+          email: "order@playmoremama.com",
+          name: "play.more.mama",
+        },
+        templateId: "d-187726dbc23641a2808bab617d90cc1f",
+        dynamicTemplateData: {
+          customer_name: customerName,
+          order_items,
+          total: total_amount / 100,
+        },
+      })
+      .then(() => {
+        console.log("Email sent");
+      })
+      .catch((error) => {
+        console.error(error.response.body);
+      });
 
     sgMail
       .send({
