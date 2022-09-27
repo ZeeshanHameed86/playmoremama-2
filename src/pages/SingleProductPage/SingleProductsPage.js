@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 import buttonbtnimg from "../../assets/Header-btn-background.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlsoLike } from "../../components";
-import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const SingleProductsPage = () => {
   const navigate = useNavigate();
@@ -25,27 +24,16 @@ const SingleProductsPage = () => {
   } = useProductsContext();
   const [fixed, setFixed] = useState();
 
-  // const firstString =
-  //   single_product.description &&
-  //   single_product.description.slice(
-  //     0,
-  //     single_product.description.indexOf("FAQ")
-  //   );
-
-  // const secondString =
-  //   single_product.description &&
-  //   single_product.description.slice(
-  //     single_product.description.indexOf("FAQ") + 3
-  //   );
-
   useEffect(() => {
     if (single_product.stock === 0) {
       navigate(-1);
     }
+    // eslint-disable-next-line
   }, [single_product.stock]);
 
   useEffect(() => {
     getSingleProduct(id);
+    // eslint-disable-next-line
   }, [id]);
 
   const description = {
@@ -86,7 +74,7 @@ const SingleProductsPage = () => {
           fixed >= 40 ? "single-product-bar single-fixed" : "single-product-bar"
         }
       >
-        <p>Mama founded + 100% natural handmade playdough</p>
+        <p>Mama founded + 100% natural handcrafted playdough</p>
       </div>
       <Navbar offset={40} />
       <div className="single-product-back-btn">

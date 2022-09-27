@@ -61,6 +61,14 @@ exports.handler = async ({ body, headers }) => {
       };
     });
 
+    const total_shipping = session.total_details.amount_shipping / 100;
+    const total_tax = session.total_details.amount_tax / 100;
+    const shippo_total = (
+      total_amount / 100 +
+      total_shipping +
+      total_tax
+    ).toFixed(2);
+
     const response = stripeEvent.data.object.customer_details;
     const customerName = response.name;
     const customerEmail = response.email;
@@ -117,34 +125,44 @@ exports.handler = async ({ body, headers }) => {
         console.error(error.response.body);
       });
 
-    const createOrder = await axios.post(
-      "https://api.goshippo.com/orders/",
-      {
-        to_address: {
-          city: customerAddress.city,
-          country: customerAddress.country,
-          email: customerEmail,
-          name: customerName,
-          state: customerAddress.state,
-          street1: customerAddress.line1,
-          street2: customerAddress.line2,
-          zip: customerAddress.postal_code,
+    const createOrder = await axios
+      .post(
+        "https://api.goshippo.com/orders/",
+        {
+          to_address: {
+            city: customerAddress.city,
+            country: customerAddress.country,
+            email: customerEmail,
+            name: customerName,
+            state: customerAddress.state,
+            street1: customerAddress.line1,
+            street2: customerAddress.line2,
+            zip: customerAddress.postal_code,
+          },
+          line_items: shippoLineItems,
+          placed_at: new Date().toISOString(),
+          weight: "0.00",
+          weight_unit: "lb",
+          shipping_cost_currency: "USD",
+          order_status: "PAID",
+          shipping_cost: `${total_shipping}`,
+          total_tax: `${total_tax}`,
+          total_price: `${shippo_total}`,
+          currency: "USD",
         },
-        line_items: shippoLineItems,
-        placed_at: new Date().toISOString(),
-        weight: "0.00",
-        weight_unit: "lb",
-      },
-      {
-        headers: {
-          Authorization: `ShippoToken ${process.env.SHIPPO_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+        {
+          headers: {
+            Authorization: `ShippoToken ${process.env.SHIPPO_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .catch((error) => {
+        console.log(error.response);
+      });
   }
   return {
     statusCode: 200,
-    body: "hello",
+    body: "Success",
   };
 };

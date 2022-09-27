@@ -5,8 +5,7 @@ import { useProductsContext } from "../../context/products_context";
 import { Carousel } from "../../components";
 
 const ProductsPage = () => {
-  const { loading, all_products, filterProducts, filtered_products } =
-    useProductsContext();
+  const { loading, filterProducts, filtered_products } = useProductsContext();
   const [fixed, setFixed] = useState();
 
   useEffect(() => {
@@ -26,7 +25,7 @@ const ProductsPage = () => {
           fixed >= 40 ? "single-product-bar fixed" : "single-product-bar"
         }
       >
-        <p>Mama founded + 100% natural handmade playdough</p>
+        <p>Mama founded + 100% natural handcrafted playdough</p>
       </div>
       <Navbar offset={40} />
       <Carousel />

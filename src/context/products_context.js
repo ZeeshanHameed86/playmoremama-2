@@ -42,7 +42,7 @@ export const ProductsProvider = ({ children }) => {
   const getRecords = async () => {
     dispatch({ type: "PRODUCTS_START" });
     const temp = [];
-    await table.select().eachPage(
+    await table.select({ view: "Grid view" }).eachPage(
       function page(records, fetchNextPage) {
         records.forEach(function (record) {
           temp.push(record);
