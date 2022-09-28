@@ -34,6 +34,7 @@ const initialState = {
   total_amount: 0,
   total_quantity: 0,
   single_product_success: true,
+  reviews: [],
 };
 
 export const ProductsProvider = ({ children }) => {
@@ -74,6 +75,28 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: "SINGLE_PRODUCT", payload: record.fields });
     });
     dispatch({ type: "SINGLE_PRODUCT_END" });
+  };
+
+  const getReviews = async () => {
+    dispatch({ type: "REVIEWS_START" });
+    const temp = [];
+    await reviewTable.select({ view: "Grid view" }).eachPage(
+      function page(records, fetchNextPage) {
+        records.forEach(function (record) {
+          temp.push(record);
+        });
+        fetchNextPage();
+      },
+      function done(err) {
+        if (err) {
+          console.error(err);
+          dispatch({ type: "REVIEWS_END" });
+          return;
+        }
+        dispatch({ type: "REVIEWS", payload: temp });
+      }
+    );
+    dispatch({ type: "REVIEWS_END" });
   };
 
   const addReview = async (product_id, name, rating, review, feedback) => {
@@ -145,10 +168,11 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     getRecords();
-    localStorage.setItem("cart", JSON.stringify(state.cart_items));
-  }, [state.cart_items]);
+    getReviews();
+  }, []);
 
   useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(state.cart_items));
     dispatch({ type: "COUNT_CART_TOTALS" });
   }, [state.cart_items]);
 

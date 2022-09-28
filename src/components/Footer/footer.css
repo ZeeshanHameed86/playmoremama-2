@@ -52,8 +52,26 @@ footer {
 }
 
 .footer-img-middle {
-  background: white;
+  background: var(--dark-blue);
   z-index: 5;
+  width: 40vw;
+  padding: 1rem 0.5rem;
+  height: 25vw;
+  color: white;
+}
+
+.footer-carousel {
+  height: 100%;
+}
+
+.footer-stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.footer-img-middle h3 {
+  font-size: 1.5rem;
 }
 
 .footer-img-right img {

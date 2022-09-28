@@ -1,7 +1,5 @@
 import React from "react";
 import "./header.css";
-import sideline1 from "../../assets/sideline-left.png";
-import sideline2 from "../../assets/sideline-right.png";
 import headerImg1 from "../../assets/Header-image-1.jpg";
 import headerImg2 from "../../assets/Header-image-2.jpeg";
 import rainbowimg from "../../assets/Rainbow.png";
@@ -11,8 +9,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      {/* <img src={sideline1} alt="" className="header-sideline-img-1" />
-      <img src={sideline2} alt="" className="header-sideline-img-2" /> */}
       <div className="header-container">
         <div className="image-container">
           <img src={headerImg1} alt="" className="header-img header-desktop" />

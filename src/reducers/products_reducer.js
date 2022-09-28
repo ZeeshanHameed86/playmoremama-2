@@ -12,6 +12,18 @@ const products_reducer = (state, action) => {
   if (action.type === "PRODUCTS_END") {
     return { ...state, loading: false };
   }
+  if (action.type === "REVIEWS_START") {
+    return { ...state, loading: true };
+  }
+  if (action.type === "REVIEWS") {
+    return {
+      ...state,
+      reviews: action.payload,
+    };
+  }
+  if (action.type === "REVIEWS_END") {
+    return { ...state, loading: false };
+  }
 
   if (action.type === "SINGLE_PRODUCT_START") {
     return { ...state, loading: true };
