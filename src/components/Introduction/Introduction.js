@@ -12,6 +12,7 @@ const Introduction = () => {
         <h1 className="intro-title intro-subtitle">Creative Experiences</h1>
 
         <div className="single-detail">
+          {console.log(world.split(".").pop())}
           <img src={world} alt="" className="img-1" />
           <div className="main-detail-text">
             <h2>Just For You</h2>

@@ -22,9 +22,16 @@ const ProductCard = ({ item, index }) => {
           }
         >
           <img
-            src={item.fields.images ? item.fields.images[0].url : NoImage}
+            src={
+              (item.fields.images &&
+                item.fields.images[0].url.includes("jpeg")) ||
+              item.fields.images[0].url.includes("jpg")
+                ? item.fields.images[0].url
+                : NoImage
+            }
             alt=""
           />
+          {console.log()}
         </Link>
       </div>
       <div className="product-info">
