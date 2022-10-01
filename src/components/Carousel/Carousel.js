@@ -7,10 +7,10 @@ import "swiper/css/navigation";
 import { useProductsContext } from "../../context/products_context";
 import left from "../../assets/left-arrow.svg";
 import right from "../../assets/right-arrow.svg";
-import all from "../../assets/All-slider.png";
-import jar from "../../assets/Jar1-slider.png";
-import bottle from "../../assets/bottle1-slider.png";
-import dice from "../../assets/Dice-slider.png";
+import all from "../../assets/All-slider.webp";
+import jar from "../../assets/Jar1.webp";
+import bottle from "../../assets/bottle1-slider.webp";
+import dice from "../../assets/Dice.webp";
 
 const Carousel = () => {
   const { filterProducts } = useProductsContext();

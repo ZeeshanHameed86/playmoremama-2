@@ -1,9 +1,9 @@
 import React from "react";
 import "./header.css";
-import headerImg1 from "../../assets/Header-image-1.jpg";
-import headerImg2 from "../../assets/Header-image-2.jpeg";
-import rainbowimg from "../../assets/Rainbow.png";
-import buttonbtnimg from "../../assets/Header-btn-background.png";
+import headerImg1 from "../../assets/Header-image-1.webp";
+import headerImg2 from "../../assets/Header-image-2.webp";
+import rainbowimg from "../../assets/Rainbow.webp";
+import buttonbtnimg from "../../assets/Header-btn-background.webp";
 import { Link } from "react-router-dom";
 
 const Header = () => {

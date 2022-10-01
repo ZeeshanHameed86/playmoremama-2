@@ -2,11 +2,11 @@ import React from "react";
 import "./featured.css";
 import sideline1 from "../../assets/sideline-left.png";
 import sideline2 from "../../assets/sideline-right.png";
-import bottle1 from "../../assets/bottle2.png";
-import complements from "../../assets/complements.jpeg";
-import sensoryJar from "../../assets/Sensory-Jars.jpeg";
+import bottle1 from "../../assets/bottle2.webp";
+import complements from "../../assets/complements.webp";
+import sensoryJar from "../../assets/Sensory-Jars.webp";
 import leaf from "../../assets/Leaf.png";
-import rainbow2 from "../../assets/Rainbow-2.png";
+import rainbow2 from "../../assets/Rainbow-2.webp";
 import { Link } from "react-router-dom";
 
 const FeaturedProducts = () => {

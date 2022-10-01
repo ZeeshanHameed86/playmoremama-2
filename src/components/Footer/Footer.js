@@ -1,9 +1,9 @@
 import React from "react";
 import "./footer.css";
-import img1 from "../../assets/Footer-Image-1.jpeg";
-import img2 from "../../assets/Footer-Image-2.jpeg";
-import hearts from "../../assets/Hearts.png";
-import flowers from "../../assets/Flowers.png";
+import img1 from "../../assets/Footer-Image-1.webp";
+import img2 from "../../assets/Footer-Image-2.webp";
+import hearts from "../../assets/Hearts.webp";
+import flowers from "../../assets/Flowers.webp";
 import { useProductsContext } from "../../context/products_context";
 import { FaStar } from "react-icons/fa";
 import { Autoplay } from "swiper";

@@ -8,7 +8,7 @@ import {
   AiOutlineMenu,
 } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
-import logo from "../../assets/Logo.png";
+import logo from "../../assets/Logo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { useProductsContext } from "../../context/products_context";
@@ -16,7 +16,7 @@ import { useProductsContext } from "../../context/products_context";
 const Navbar = ({ offset }) => {
   const [toggle, setToggle] = useState(false);
   const [fixed, setFixed] = useState();
-  const { cart_items, total_quantity } = useProductsContext();
+  const { total_quantity } = useProductsContext();
 
   const menuToggle = () => {
     setToggle(!toggle);

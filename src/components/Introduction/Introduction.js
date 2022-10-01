@@ -1,8 +1,8 @@
 import React from "react";
 import "./introduction.css";
-import world from "../../assets/World.png";
-import brain from "../../assets/Brain.png";
-import hands from "../../assets/Hands.png";
+import world from "../../assets/World.webp";
+import brain from "../../assets/Brain.webp";
+import hands from "../../assets/Hands.webp";
 
 const Introduction = () => {
   return (

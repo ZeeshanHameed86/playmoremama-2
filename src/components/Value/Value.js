@@ -2,15 +2,15 @@ import React from "react";
 import "./value.css";
 import sideline1 from "../../assets/sideline-left.png";
 import sideline2 from "../../assets/sideline-right.png";
-import jar1 from "../../assets/Jar1.png";
-import jar2 from "../../assets/Jar2.png";
-import jar3 from "../../assets/Jar3.png";
-import jar4 from "../../assets/Jar4.png";
-import jar5 from "../../assets/Jar5.png";
-import bottle1 from "../../assets/bottle1.png";
-import bottle2 from "../../assets/bottle2.png";
-import bottle3 from "../../assets/bottle3.png";
-import dice from "../../assets/Dice.png";
+import jar1 from "../../assets/Jar1.webp";
+import jar2 from "../../assets/Jar2.webp";
+import jar3 from "../../assets/Jar3.webp";
+import jar4 from "../../assets/Jar4.webp";
+import jar5 from "../../assets/Jar5.webp";
+import bottle1 from "../../assets/bottle1.webp";
+import bottle2 from "../../assets/bottle2.webp";
+import bottle3 from "../../assets/bottle3.webp";
+import dice from "../../assets/Dice.webp";
 
 const Value = () => {
   return (

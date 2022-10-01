@@ -167,7 +167,6 @@ export const ProductsProvider = ({ children }) => {
   // };
 
   useEffect(() => {
-    getRecords();
     getReviews();
   }, []);
 
@@ -186,6 +185,7 @@ export const ProductsProvider = ({ children }) => {
         removeCartItem,
         addCartQuantity,
         clearCart,
+        getRecords,
         addReview,
       }}
     >

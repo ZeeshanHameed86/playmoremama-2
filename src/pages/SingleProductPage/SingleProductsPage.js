@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useProductsContext } from "../../context/products_context";
 import NoImage from "../../assets/No-Image.jpg";
 import { Link, useNavigate } from "react-router-dom";
-import buttonbtnimg from "../../assets/Header-btn-background.png";
+import buttonbtnimg from "../../assets/Header-btn-background.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlsoLike } from "../../components";
 

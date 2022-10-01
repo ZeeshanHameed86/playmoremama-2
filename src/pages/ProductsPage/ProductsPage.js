@@ -5,10 +5,12 @@ import { useProductsContext } from "../../context/products_context";
 import { Carousel } from "../../components";
 
 const ProductsPage = () => {
-  const { loading, filterProducts, filtered_products } = useProductsContext();
+  const { loading, filterProducts, filtered_products, getRecords } =
+    useProductsContext();
   const [fixed, setFixed] = useState();
 
   useEffect(() => {
+    getRecords();
     window.addEventListener("scroll", () => {
       setFixed(window.scrollY);
     });
