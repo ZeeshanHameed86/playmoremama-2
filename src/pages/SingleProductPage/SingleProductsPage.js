@@ -15,14 +15,9 @@ const SingleProductsPage = () => {
   const [quantity, setQuatity] = useState(1);
   const { id } = useParams();
   const [imageIndex, setImageIndex] = useState(1);
-  const {
-    loading,
-    getSingleProduct,
-    single_product,
-    all_products,
-    addCartItems,
-  } = useProductsContext();
-  const [fixed, setFixed] = useState();
+  const { loading, getSingleProduct, single_product, addCartItems } =
+    useProductsContext();
+  const [fixed, setFixed] = useState(false);
 
   useEffect(() => {
     if (single_product.stock === 0) {
@@ -41,10 +36,6 @@ const SingleProductsPage = () => {
     visible: { opacity: 1, height: "auto" },
   };
 
-  const handleScroll = () => {
-    setFixed(window.scrollY);
-  };
-
   const decrementQuantity = () => {
     if (quantity === 1) {
       setQuatity(1);
@@ -58,10 +49,14 @@ const SingleProductsPage = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [all_products]);
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 40) {
+        setFixed(true);
+      } else {
+        setFixed(false);
+      }
+    });
+  }, []);
 
   if (loading) {
     return <section className="single-product-layout">Loading...</section>;
@@ -71,7 +66,7 @@ const SingleProductsPage = () => {
     <section>
       <div
         className={
-          fixed >= 40 ? "single-product-bar single-fixed" : "single-product-bar"
+          fixed ? "single-product-bar single-fixed" : "single-product-bar"
         }
       >
         <p>Mama founded + 100% natural handcrafted playdough</p>

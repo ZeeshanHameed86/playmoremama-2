@@ -45,6 +45,7 @@ const Footer = () => {
         <div className="footer-img-middle">
           <Swiper
             className="footer-carousel"
+            centeredSlides={true}
             slidesPerView={1}
             modules={[Autoplay]}
             loop={true}
@@ -77,25 +78,6 @@ const Footer = () => {
               );
             })}
           </Swiper>
-          {/* {reviews.map((item, index) => {
-            return (
-              <div key={item.id} className="home-reviews">
-                <h1>{item.fields.name}</h1>
-                {["", "", "", "", ""].map((__, index) => {
-                  return (
-                    <div>
-                      {index + 1 <= item.fields.rating ? (
-                        <FaStar color={colors.orange} />
-                      ) : (
-                        <FaStar color={colors.grey} />
-                      )}
-                    </div>
-                  );
-                })}
-                <h1>{item.fields.review}</h1>
-              </div>
-            );
-          })} */}
         </div>
         <div className="footer-img-right">
           <img src={img2} alt="" />

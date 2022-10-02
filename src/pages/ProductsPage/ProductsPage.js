@@ -7,12 +7,16 @@ import { Carousel } from "../../components";
 const ProductsPage = () => {
   const { loading, filterProducts, filtered_products, getRecords } =
     useProductsContext();
-  const [fixed, setFixed] = useState();
+  const [fixed, setFixed] = useState(false);
 
   useEffect(() => {
     getRecords();
     window.addEventListener("scroll", () => {
-      setFixed(window.scrollY);
+      if (window.scrollY >= 40) {
+        setFixed(true);
+      } else {
+        setFixed(false);
+      }
     });
   }, []);
 
@@ -23,9 +27,7 @@ const ProductsPage = () => {
   return (
     <section>
       <div
-        className={
-          fixed >= 40 ? "single-product-bar fixed" : "single-product-bar"
-        }
+        className={fixed ? "single-product-bar fixed" : "single-product-bar"}
       >
         <p>Mama founded + 100% natural handcrafted playdough</p>
       </div>

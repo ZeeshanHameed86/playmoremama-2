@@ -60,6 +60,12 @@ footer {
   color: white;
 }
 
+.footer-carousel .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .footer-carousel {
   height: 100%;
 }
