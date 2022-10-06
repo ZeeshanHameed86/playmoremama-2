@@ -5,9 +5,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .digital-download {
+  margin: 0 5rem;
+  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +18,7 @@
 }
 
 .digital-download img {
-  width: 70%;
+  width: 600px;
 }
 
 .digital-download a {
@@ -30,6 +33,6 @@
 
 @media screen and (max-width: 600px) {
   .digital-download img {
-    width: 100%;
+    width: 300px;
   }
 }

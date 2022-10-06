@@ -3,11 +3,7 @@ import "./cart-page.css";
 import { useProductsContext } from "../../context/products_context";
 import { MainFooter, Navbar } from "../../components";
 import { ImCross } from "react-icons/im";
-import {
-  AiFillDollarCircle,
-  AiFillCaretDown,
-  AiFillCaretUp,
-} from "react-icons/ai";
+import { AiFillDollarCircle } from "react-icons/ai";
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
@@ -15,8 +11,7 @@ import axios from "axios";
 const CartPage = () => {
   const { cart_items, removeCartItem, total_amount, addCartQuantity } =
     useProductsContext();
-  // const [isCouponOpen, setIsCouponOpen] = useState(false);
-  const [shippingPrice, setShippingPrice] = useState(5.99);
+  const shippingPrice = 5.99;
   const [checkoutStatus, setCheckoutStatus] = useState(false);
 
   let sortedCartItems =
@@ -68,9 +63,6 @@ const CartPage = () => {
                         onClick={() => removeCartItem(item.id)}
                       />
                       <div className="cart-quantity">
-                        {/* <AiOutlineLeft
-                          onClick={() => addCartQuantity(item, "prev")}
-                        /> */}
                         <p
                           className="cart-quantity-btn"
                           onClick={() => addCartQuantity(item, "prev")}
@@ -78,9 +70,6 @@ const CartPage = () => {
                           -
                         </p>
                         <p>{item.quantity}</p>
-                        {/* <AiOutlineRight
-                          onClick={() => addCartQuantity(item, "next")}
-                        /> */}
                         <p
                           className="cart-quantity-btn"
                           onClick={() => addCartQuantity(item, "next")}
@@ -99,18 +88,6 @@ const CartPage = () => {
           {cart_items.length !== 0 && (
             <div className="order-summary">
               <h1>Order Summary</h1>
-              {/* <div
-                className="cart-coupon"
-                onClick={() => setIsCouponOpen(!isCouponOpen)}
-              >
-                <h3>Coupon</h3>
-                {isCouponOpen ? <AiFillCaretUp /> : <AiFillCaretDown />}
-              </div> */}
-              {/* {isCouponOpen && (
-                <div className="cart-coupon-input-container">
-                  <input type="text" placeholder="e.g. FREESHIP50" />
-                </div>
-              )} */}
               <div className="order-summary-details">
                 <div className="order-summary-single-detail">
                   <p>Subtotal</p>

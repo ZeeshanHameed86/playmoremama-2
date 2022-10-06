@@ -8,7 +8,6 @@ const colors = {
 };
 
 const Stars = ({ stars, setStars }) => {
-  const [currentRating, setCurrentRating] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
 
   const handleClick = (value) => {

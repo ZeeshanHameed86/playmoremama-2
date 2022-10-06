@@ -18,6 +18,7 @@ const ProductsPage = () => {
         setFixed(false);
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   if (loading) {

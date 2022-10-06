@@ -24,12 +24,14 @@ const ReviewPage = () => {
 
   useEffect(() => {
     getSingleProduct(id);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     if (!single_product_success) {
       navigate("/");
     }
+    // eslint-disable-next-line
   }, [single_product_success]);
 
   const reviewForm = async (e) => {

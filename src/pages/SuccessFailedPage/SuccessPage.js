@@ -10,6 +10,7 @@ const SuccessPage = () => {
   useEffect(() => {
     clearCart();
     localStorage.clear();
+    // eslint-disable-next-line
   }, []);
 
   return (
